@@ -1,0 +1,26 @@
+.Logo {
+  color: #0D5608;
+  font-size: 40px;
+  font-weight: 900;
+}
+.Lema {
+  color: #0D5608;
+  font-size: 40px;
+  font-weight: 300;
+}
+
+.LogoLema {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:baseline;
+  float: left;
+}
+
+
+/* Media query */
+@media (max-width: 650px) {
+    .Lema {
+      display: none;
+    }
+  }

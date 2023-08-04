@@ -1,0 +1,123 @@
+.segmento-buscador {
+  /* width: 95%; */
+  left: 0;
+  width: 40%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+
+  gap: 1rem;
+  color: rgb(126, 125, 125);
+}
+
+.boton-buscador {
+  border: 1px solid #79c479;
+  border-radius: 20px 20px 20px 20px;
+  border-radius: 20px 30px 30px 20px;
+  background-color: white;
+  color: #15770e;
+  padding-left: 1rem;
+  padding-right: 0rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  width: 400px;
+  height: 38px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.segmento {
+  border-left: 1px solid rgb(221, 221, 221);
+}
+
+.buscar-por {
+  cursor: pointer;
+  /* position: relative; */
+  font-size: 1.1rem;
+  /* width: 65px; */
+  
+  /* padding-left: 0.5rem;
+  padding-right: 0.5rem; */
+}
+
+.buscar-por:hover {
+  font-weight: 600;
+  transform: translateY(-5%);
+  background: hsl(0 0% 90%);
+}
+
+.separador {
+  width: 0px;
+  padding: 0 5px;
+}
+
+.espaciado-centrado {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 4px;
+  gap: 1rem;
+  width: 300px;
+}
+
+
+.icono-lupa {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding-right: 0rem;
+  margin-right: 0;
+}
+
+.icon {
+  font-size: 40px;
+  color: white;
+  padding-left: 3px;
+  padding: 4px;
+  /* background-color: #1eaf70; */
+  background-color:  #79c479;;
+  border-radius: 50%;
+  transition: 0.3s transform ease;
+  will-change: transform;
+  z-index: 0;
+}
+
+.icon:hover {
+ 
+  color: rgb(255, 255, 255);
+  transform: scale(1.07);
+  font-weight: 1000;
+  font-size: 45px;
+  will-change: transform;
+}
+
+
+
+/* Media query */
+@media (max-width: 650px) {
+  .buscar-por {
+    display: none;
+  }
+  .boton-buscador {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: end;
+  }
+  .segmento-buscador{
+    width: 95%;
+
+  }
+  .boton-buscador {
+    width: 80%;
+  }
+  .separador {
+    display: none;
+  }
+}
+

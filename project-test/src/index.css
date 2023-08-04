@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,600;8..144,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500&display=swap");
+
+#root {
+  --color: #111;
+  --colorGrey: #717171;
+  --colorGrey2: #c3c3c3;
+  --red: #ff385c;
+  margin: 0;
+  padding: 0;
+}
+
+code {
+  font-family: source-code-pro, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+  display: block;
+}
+
+header,
+main,
+footer {
+  width: 100%;
+}
+
+/*   //////////////   Seteo de estilos genericos   //////////////    */
+
+.wrapper {
+  width: 95%;
+  margin: 0;
+}
+
+a {
+  color: black;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.caja-blanca-sombreada {
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  background-color: rgb(255, 255, 255);
+}
+
+.fondo-icono {
+  padding: 0.4rem 1.5rem;
+  text-align: center;
+}
+
+.fondo-icono:hover {
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+}

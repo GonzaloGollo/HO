@@ -1,0 +1,82 @@
+.card-body-producto {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  height: 95%;
+  border-radius: 11px 11px 11px 11px;
+  -webkit-border-radius: 11px 11px 11px 11px;
+  -moz-border-radius: 11px 11px 11px 11px;
+  /* margin-left: 3rem; */
+  /* border: 1px solid red; */
+}
+
+.ImgCard-producto {
+  max-width: 100%; 
+  max-height: 100%; 
+  width: 700px;
+  height: 400px;
+  border-radius: 10px 10px 10px 10px;
+  margin-right: 0px;
+  object-fit: cover; 
+}
+/* 
+.ImgCard-producto {
+  width: 100%; 
+  height: auto; 
+  max-width: 700px; 
+  max-height: 400px;
+  border-radius: 10px; 
+  margin-right: 0px;
+  object-fit: fill;
+} */
+
+.texto-card {
+  display: flex;
+  justify-content:space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  height: 80px;
+  width: 645px;
+  max-width: 100%; 
+  border-radius: 0px 10px 10px 0px;
+  /* ----------- Borrar despues de poner dinamicas las categorias */
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+   max-width: 280px;
+
+}
+
+.titulo-card-producto {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  color: #717171;
+  line-height: 20px;
+  width: 295px;
+
+}
+
+.descripcion-card {
+  max-height: 30px;
+  line-height: 20px;
+  font-size: 10px;
+   /* ----------- Borrar despues de poner dinamicas las categorias */
+   white-space: wrap; /* Evita el salto de línea */
+   overflow: hidden; /* Oculta el contenido que excede el ancho */
+   text-overflow: ellipsis; /* Muestra puntos suspensivos (...) cuando el contenido excede el ancho */
+   max-width: 90%; /* Ajusta este valor según el ancho deseado */
+   
+}
+
+.precio {
+  font-size: 20px;
+  font-weight: 400;
+  color: black;
+  
+  margin: 0;
+  padding: 0;
+}
