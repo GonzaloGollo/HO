@@ -1,6 +1,6 @@
 import React from "react";
-import ListadoProductos from "../Components/ListadoProductos";
-import Recomendaciones from "../Components/Recomendaciones";
+import ListadoProductos from "../Components/ListadoDeProductos/ListadoProductos";
+import Recomendaciones from "../Components/Recomendaciones/Recomendaciones";
 
 const Home = () => {
   return (

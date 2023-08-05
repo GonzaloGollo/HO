@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { Boton } from '../Boton';
+import { Boton } from '../Genericos/Boton';
 import { useEffect, useState } from 'react';
 
 const BotonCrearCuenta = () => {

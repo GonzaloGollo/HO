@@ -1,6 +1,6 @@
 import React from "react";
-import CardProducto from "./CardProducto";
-import { useState, useEffect } from "react";
+// import CardProducto from "../CardProducto";
+// import { useState, useEffect } from "react";
 import "./Recomendaciones.css";
 import CardRecomendaciones from "./CardRecomendaciones";
 import "./CardRecomendaciones.css";
