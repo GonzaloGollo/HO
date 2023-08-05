@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <>
       <Recomendaciones CantidadCards={3} />
-      <ListadoProductos CantidadCards={15} />
+      <ListadoProductos CantidadCards={10} />
     </>
   );
 };

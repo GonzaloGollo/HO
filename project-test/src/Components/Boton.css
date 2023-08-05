@@ -47,7 +47,7 @@
 .boton::after {
   /* background-color: #ff385c; */
   content: "";
-  display: block;
+  /* display: block; */
   height: 100%;
   width: 100%;
   position: absolute;

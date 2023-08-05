@@ -120,29 +120,54 @@ const ListadoProductos = ({ CantidadCards }) => {
       src: "/images/F.jpg",
     },
   ];
+//////////////////////////////////////
+  // const getRandomProducts = () => {
+  //   const randomProducts = [...productos]
+  //     .sort(() => Math.random() - 0.2)
+  //     .slice(0, CantidadCards);
+  //   return randomProducts;
+  // };
 
-  const getRandomProducts = () => {
-    const randomProducts = [...productos]
-      .sort(() => Math.random() - 0.2)
-      .slice(0, CantidadCards);
-    return randomProducts;
+  // const productosAleatorios = getRandomProducts();
+  /////////////////////////////
+
+  const chunk = (arr, size) => {
+    const chunkedArray = [];
+    for (let i = 0; i < arr.length; i += size) {
+      chunkedArray.push(arr.slice(i, i + size));
+    }
+    return chunkedArray;
   };
 
-  const productosAleatorios = getRandomProducts();
+  const [paginatedProducts, setPaginatedProducts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  useEffect(() => {
+    const paginatedArray = chunk(productos, CantidadCards);
+    setPaginatedProducts(paginatedArray);
+  }, [productos, CantidadCards]);
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+
+  const handlePreviousPage = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
+  };
 
   return (
     <div className="segmento-listado-productos">
       <h3 className="txt-titulo-listado-productos"></h3>
     
        <div className="grid-container-listado"> 
-        {productosAleatorios.length ? (
-          productosAleatorios.map((producto, index) => (
+       {paginatedProducts.length ? (
+          paginatedProducts[currentPage].map((producto, index) => (
             <CardProducto
               key={producto.id}
               className="item-grid"
               title={producto.name}
               descripcion={producto.descripcion}
-              url={producto.src} 
+              url={producto.src}
               precio={producto.id}
             />
           ))
@@ -150,6 +175,17 @@ const ListadoProductos = ({ CantidadCards }) => {
           <h3> No encontramos productos para recomendar </h3>
         )}
       </div>
+
+
+      <div className="pagination">
+        {currentPage > 0 && (
+          <button onClick={handlePreviousPage}>Anterior</button>
+        )}
+        {currentPage < paginatedProducts.length - 1 && (
+          <button onClick={handleNextPage}>Siguiente</button>
+        )}
+      </div>
+
     </div>
   );
 };
@@ -169,3 +205,35 @@ export default ListadoProductos;
   //   useEffect(() => {
   //     getProductos();
   //   }, []);
+
+
+
+  
+
+  ////////
+
+  // const getRandomProductsPaginado = () => {
+  //   const listadoAleatorio = [...productos].sort(() => Math.random() - 0.2);
+  //   const cantPaginas = listadoAleatorio.length/10;
+
+    
+    
+  //   for (let i = 0; i < cantPaginas.length; i++) {
+      
+  //      listadoPaginado[i].push(listadoAleatorio.slice(0,10)) ;
+  //     const element = cantPaginas[i];
+      
+  //   }
+  //   listadoAleatorio.slice(0,10)
+
+  //   while(listadoAleatorio.length !=0 ){
+
+  //   }
+
+  //   const randomProducts =[...productos]
+  //     .sort(() => Math.random() - 0.2)
+  //     .slice(0, CantidadCards);
+  //   return randomProducts;
+  // };
+
+  // const productosAleatoriosPaginados = getRandomProductsPaginado();

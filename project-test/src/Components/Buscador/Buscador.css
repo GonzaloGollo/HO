@@ -1,7 +1,7 @@
 .segmento-buscador {
   /* width: 95%; */
   left: 0;
-  width: 40%;
+  width: 45%;
   height: 50px;
   display: flex;
   flex-direction: row;
@@ -98,20 +98,23 @@
 
 
 /* Media query */
-@media (max-width: 650px) {
+@media (max-width: 770px) {
   .buscar-por {
     display: none;
   }
   .boton-buscador {
-    width: 200px;
+    width: 250px;
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
     justify-content: end;
   }
   .segmento-buscador{
     width: 95%;
-
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
   .boton-buscador {
     width: 80%;

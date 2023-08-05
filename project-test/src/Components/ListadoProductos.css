@@ -4,7 +4,8 @@
   margin-top: 1rem;
   display: grid;
   grid-template-columns: repeat(2, 45%); /* Dos columnas con ancho del 45% de la página */
-  grid-auto-rows: minmax(100px, auto); /* Altura mínima de 100px, se ajusta según el contenido */
+  /* grid-auto-rows: minmax(100px, auto);  */
+  grid-template-rows: repeat(5, minmax(100px, auto)); /* Máximo de 5 filas con altura mínima de 100px, se ajusta según el contenido */
   gap: 1rem;
   justify-content: center;
   align-items: center;

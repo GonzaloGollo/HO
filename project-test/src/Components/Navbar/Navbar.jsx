@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Categorias from "../Categorias/Categorias";
 import Buscador from "../Buscador/Buscador";
+import { BsPersonCircle } from "react-icons/bs";
 
 const Navbar = () => {
   return (
@@ -14,18 +15,17 @@ const Navbar = () => {
         <nav>
           <ul>
             <li>
-              {" "}
-              <Logo />{" "}
+              <Logo />
             </li>
-
             <div className="botones-header">
               <li>
-                {" "}
-                <BotonCrearCuenta />{" "}
+                <BotonCrearCuenta className="boton-persona"/>
               </li>
               <li>
-                {" "}
-                <BotonInicio />{" "}
+                <BotonInicio className="boton-inicio"/>
+              </li>
+              <li>
+              <BsPersonCircle className="icono-persona"/>
               </li>
             </div>
           </ul>
