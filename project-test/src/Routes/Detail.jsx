@@ -1,7 +1,10 @@
 import React from "react";
-import { useState } from "react";
+
 import { useParams } from "react-router-dom";
 import "../Components/Detail.css";
+import { Link } from "react-router-dom";
+import Modal from "../Components/Modal/Modal";
+import Screen from "./Screen";
 import {
   MdKeyboardArrowLeft,
   MdArrowBackIosNew,
@@ -12,8 +15,137 @@ import {
   MdLocationOn,
   MdSignalWifi2Bar,
 } from "react-icons/md";
+import { useContext, useState } from "react";
+import GaleriaModal from "../Components/GaleriaFotos/GaleriaModal";
+// import { ContextGlobal } from "../Components/utils/global.context";
+// import GaleriaModal from "../Components/GaleriaFotos/GaleriaModal";
+
 
 const Detail = () => {
+const [modalIsOpen, setModalisOpen] = useState(false);
+const openModal = ()=> {
+  setModalisOpen(true);
+}
+
+const closeModal =()=> {
+  setModalisOpen(false);
+}
+
+  // const {showModal, selectedImage, closeModal, openModal, productos} = useContext(ContextGlobal);
+  // const [showModal, setShowModal] = useState(false);
+  // const [selectedImage, setSelectedImage] = useState(null);
+
+  // const openModal = () => {
+  //   setSelectedImage(imageSrc);
+  //   setShowModal(true);
+  // };
+
+  // const closeModal = () => {
+  //   setShowModal(false);
+  // };
+
+
+  const datosProducto = {
+    id: "1",
+    nombreProducto: "Habilitación privada con escitorio",
+    descripcion:
+      "Oficina privada para 20 a 30 personas con escritorios, punto de internet, impresora,estación de cafe, terraza y sala de reuniones. ",
+    descripcion2:
+      " Ubicado en el límite entre Capital Federal y Vicente López, en el corredor norte de la ciudad, HIT Libertador es un edificio corporativo con certificación LEED Gold con increíbles vistas panorámicas al Río de la Plata. En línea con la modalidad de oficinas flexibles y con las nuevas tendencias laborales, HIT Libertador cuenta con pisos de oficinas exclusivas.",
+    fotos: {
+      foto1: "/images/240_F_339066729_zCf9icIjEsSEIWwCxr2ytFlCO17H74cx.jpg",
+      foto2: "/images/240_F_339067218_vOkmzJSC56JrOsrDej28FZP8eUYjlMJX.jpg",
+      foto3: "/images/240_F_339068434_cKk0JCfni4o6f2H9fl5svDmb8wuMr6rJ.jpg",
+      foto4: "/images/240_F_610971454_DBLcfDXBVOeIJQMGBNbE0r5Szfx3e9OL.jpg",
+      foto5: "/images/240_F_329295566_V0MgwRwWoO34UKfqAllv89lZ2AJldNwz.jpg",
+    },
+  };
+
+
+  return (
+    <>
+    {/* <GaleriaModal isOpen={modalIsOpen} onClose={closeModal}>
+      <button onClick={openModal}> abrir</button> */}
+      <div className="segmento-producto">
+        <div className="encabezado-descripcion">
+          <div className="contenido-encabezado">
+            <div className="encabezado">
+              <h1>{datosProducto.nombreProducto}</h1>
+              <MdArrowBackIosNew className="flecha" />
+            </div>
+            <h3 className="descripcion">
+              Localidad {datosProducto.descripcion}
+            </h3>
+          </div>
+        </div>
+
+        <div className="galeria-detalleservicios-compra">
+          <div className="grid-container-galeria">
+            <img
+              className="item-grid-fotos1 foto-producto block"
+              src={datosProducto.fotos.foto1}
+            />
+            <img
+              className="item-grid-fotos2 foto-producto block"
+              src={datosProducto.fotos.foto2}
+            />
+            <img
+              className="item-grid-fotos3 foto-producto block"
+              src={datosProducto.fotos.foto3}
+            />
+            <img
+              className="item-grid-fotos4 foto-producto block"
+              src={datosProducto.fotos.foto4}
+            />
+            <img
+              className="item-grid-fotos5 foto-producto block"
+              src={datosProducto.fotos.foto5}
+            />
+          </div>
+          <Link to={"/Screen/"}>
+            <button className="ver-mas" onClick={() => openModal()}>
+              + Ver más
+              
+            </button>
+            {/* <button onClick={openModal}> abrir</button> */}
+
+          </Link>
+          {/* <div>Pagina Detalle</div> */}
+          <div className="contenedor-detalle-producto">
+            <p className="descripcion-producto">{datosProducto.descripcion2}</p>
+            <div className="segmento-icon-detalle">
+              <div className="items-icon-detalle">
+                <MdPerson className="icono-detalle-producto" />
+                <p>para 3 personas</p>
+              </div>
+
+              <div className="items-icon-detalle">
+                <MdWifi className="icono-detalle-producto" />
+                <p>internet</p>
+              </div>
+              <div className="items-icon-detalle">
+                <MdApartment className="icono-detalle-producto" />
+                <p>Piso exclusivo hecho a tu medida.</p>
+              </div>
+              <div className="items-icon-detalle">
+                <MdAcUnit className="icono-detalle-producto" />
+                <p>aire acondicionado </p>
+              </div>
+              <div className="items-icon-detalle">
+                <MdLocationOn className="icono-detalle-producto" />
+                <p>En la ubicación que tu elijas</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+    </>
+  );
+};
+
+export default Detail;
+
   // const { id } = useParams();
 
   // const [productoID, setProductoID] = useState([]);
@@ -39,21 +171,7 @@ const Detail = () => {
   //   },
   // });
 
-  const datosProducto = {
-    id: "1",
-    nombreProducto: "Habilitación privada con escitorio",
-    descripcion:
-      "Oficina privada para 20 a 30 personas con escritorios, punto de internet, impresora,estación de cafe, terraza y sala de reuniones. ",
-    descripcion2:
-      " Ubicado en el límite entre Capital Federal y Vicente López, en el corredor norte de la ciudad, HIT Libertador es un edificio corporativo con certificación LEED Gold con increíbles vistas panorámicas al Río de la Plata. En línea con la modalidad de oficinas flexibles y con las nuevas tendencias laborales, HIT Libertador cuenta con pisos de oficinas exclusivas.",
-    fotos: {
-      foto1: "/images/240_F_339066729_zCf9icIjEsSEIWwCxr2ytFlCO17H74cx.jpg",
-      foto2: "/images/240_F_339067218_vOkmzJSC56JrOsrDej28FZP8eUYjlMJX.jpg",
-      foto3: "/images/240_F_339068434_cKk0JCfni4o6f2H9fl5svDmb8wuMr6rJ.jpg",
-      foto4: "/images/240_F_610971454_DBLcfDXBVOeIJQMGBNbE0r5Szfx3e9OL.jpg",
-      foto5: "/images/240_F_329295566_V0MgwRwWoO34UKfqAllv89lZ2AJldNwz.jpg",
-    },
-  };
+
 
   // const getProductoID = async(id) => {
   //     const res = await fetch(`datosProducto(${id})`);
@@ -179,80 +297,3 @@ const Detail = () => {
   // const { id } = useParams();
 
   // getProductoID(id);
-
-  return (
-    <>
-      <div className="segmento-producto">
-        <div className="encabezado-descripcion">
-          <div className="contenido-encabezado">
-            <div className="encabezado">
-              <h1>{datosProducto.nombreProducto}</h1>
-              <MdArrowBackIosNew className="flecha" />
-            </div>
-            <h3 className="descripcion">Localidad {datosProducto.descripcion}</h3>
-          </div>
-        </div>
-
-        <div className="galeria-detalleservicios-compra">
-          <div className="grid-container-galeria">
-            <img
-              className="item-grid-fotos1 foto-producto block"
-              src={datosProducto.fotos.foto1}
-            />
-            <img
-              className="item-grid-fotos2 foto-producto block"
-              src={datosProducto.fotos.foto2}
-            />
-            <img
-              className="item-grid-fotos3 foto-producto block"
-              src={datosProducto.fotos.foto3}
-            />
-            <img
-              className="item-grid-fotos4 foto-producto block"
-              src={datosProducto.fotos.foto4}
-            />
-            <img
-              className="item-grid-fotos5 foto-producto block"
-              src={datosProducto.fotos.foto5}
-            />
-          </div>
-          <div className="ver-mas">
-            + Ver más
-            {/* 4ta linea dividida a la mitad con logos de lo que incluye el producto y la otra mitad con el call to action  a la reserva */}
-          </div>
-          {/* <div>Pagina Detalle</div> */}
-          <div className="contenedor-detalle-producto">
-            <p className="descripcion-producto">{datosProducto.descripcion2}</p>
-            <div className="segmento-icon-detalle">
-              <div className="items-icon-detalle">
-                <MdPerson className="icono-detalle-producto" />
-                <p>para 3 personas</p>
-              </div>
-
-              <div className="items-icon-detalle">
-                <MdWifi className="icono-detalle-producto" />
-                <p>internet</p>
-              </div>
-              <div className="items-icon-detalle">
-                <MdApartment className="icono-detalle-producto" />
-                <p>Piso exclusivo hecho a tu medida.</p>
-              </div>
-              <div className="items-icon-detalle">
-                <MdAcUnit className="icono-detalle-producto" />
-                <p>aire acondicionado </p>
-              </div>
-              <div className="items-icon-detalle">
-                <MdLocationOn className="icono-detalle-producto" />
-                <p>En la ubicación que tu elijas</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 3era linea con  Encabezado con nombre producto   + flecha */}
-      </div>
-    </>
-  );
-};
-
-export default Detail;
