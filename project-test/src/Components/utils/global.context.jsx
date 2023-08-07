@@ -15,19 +15,19 @@ export const ContextProvider = ({ children }) => {
   //     getDatos();
   // }, []);
   //////////////////////////////////////////////////
-  const getMapeoProductos = (productos, tituloProducto, claseCss) => {
-    const mapeo = productos.map((producto, index) => (
-      <div key={producto.id} className={claseCss}>
-        {tituloProducto? <div className="titulo-producto">{producto.name}</div>:""};
-        <img
-          src={producto.src}
-          alt={`Imagen del producto ${producto.id}`}
-        />
-      </div>
-    ));
+  // const getMapeoProductos = (productos, tituloProducto, claseCss) => {
+  //   const mapeo = productos.map((producto, index) => (
+  //     <div key={producto.id} className={claseCss}>
+  //       {tituloProducto? <div className="titulo-producto">{producto.name}</div>:""};
+  //       <img
+  //         src={producto.src}
+  //         alt={`Imagen del producto ${producto.id}`}
+  //       />
+  //     </div>
+  //   ));
 
-    return mapeo;
-  };
+  //   return mapeo;
+  // };
 
   const productos = [
     {
@@ -144,7 +144,7 @@ export const ContextProvider = ({ children }) => {
   ];
 
   ///////////////////////////////////////////////////////////////////////////
-
+///Modal Fotos ////
   const [showModal, setShowModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -156,6 +156,21 @@ export const ContextProvider = ({ children }) => {
   const closeModal = () => {
     setShowModal(false);
   };
+
+  ////////////////////////// Modal Galerias  ///////////////////////
+
+  // const [modalIsOpen, setModalisOpen] = useState(false);
+  // const openModal = () => {
+  //   setModalisOpen(true);
+  // };
+
+  // const closeModal = () => {
+  //   setModalisOpen(false);
+  // };
+
+
+
+  //////////////////////////////
 
   // /////////GetDatosxProductoID //////////////
   // const [datosID, setDatosID] = useState([]);
@@ -170,7 +185,6 @@ export const ContextProvider = ({ children }) => {
   return (
     <ContextGlobal.Provider
       value={{
-        getMapeoProductos,
         productos,
         showModal,
         selectedImage,

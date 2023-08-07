@@ -1,7 +1,7 @@
-import React, { Children } from "react";
+import React from "react";
 import "./GaleriaModal.css";
 
-const GaleriaModal = ({isOpen, onClose,  children }) => {
+const GaleriaModal = ({ onClose, children }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
@@ -9,7 +9,6 @@ const GaleriaModal = ({isOpen, onClose,  children }) => {
         <div className="modal-close-button" onClick={onClose}>
           Cerrar X
         </div>
-
         {children}
       </div>
     </div>
