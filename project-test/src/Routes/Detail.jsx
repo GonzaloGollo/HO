@@ -18,18 +18,6 @@ const Detail = () => {
   const { showModal, closeModal, openModal, productos } =
     useContext(ContextGlobal);
 
-    const [showScreen, setShowScreen] = useState(false);
-
-    const openScreen = () => {
-      setShowScreen(true);
-      openModal(); // Abre el modal al cambiar a la pantalla completa
-    };
-  
-    const closeScreen = () => {
-      setShowScreen(false);
-      closeModal(); // Cierra el modal al volver de la pantalla completa
-    };
-  
   
   const datosProducto = {
     id: "1",

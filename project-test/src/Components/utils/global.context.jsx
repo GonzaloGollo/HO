@@ -2,32 +2,7 @@ import { useState, useEffect, createContext } from "react";
 export const ContextGlobal = createContext();
 
 export const ContextProvider = ({ children }) => {
-  /////////GetDatos //////////////
-  // const [producto, setProducto] = useState([]);
 
-  // const getDatos = async () => {
-  //   const res = await fetch("https://jsonplaceholder.typicode.com/photos/");
-  //   const data = await res.json();
-  //   setProducto(data);
-  // };
-
-  // useEffect(() => {
-  //     getDatos();
-  // }, []);
-  //////////////////////////////////////////////////
-  // const getMapeoProductos = (productos, tituloProducto, claseCss) => {
-  //   const mapeo = productos.map((producto, index) => (
-  //     <div key={producto.id} className={claseCss}>
-  //       {tituloProducto? <div className="titulo-producto">{producto.name}</div>:""};
-  //       <img
-  //         src={producto.src}
-  //         alt={`Imagen del producto ${producto.id}`}
-  //       />
-  //     </div>
-  //   ));
-
-  //   return mapeo;
-  // };
 
   const productos = [
     {
@@ -157,30 +132,8 @@ export const ContextProvider = ({ children }) => {
     setShowModal(false);
   };
 
-  ////////////////////////// Modal Galerias  ///////////////////////
-
-  // const [modalIsOpen, setModalisOpen] = useState(false);
-  // const openModal = () => {
-  //   setModalisOpen(true);
-  // };
-
-  // const closeModal = () => {
-  //   setModalisOpen(false);
-  // };
 
 
-
-  //////////////////////////////
-
-  // /////////GetDatosxProductoID //////////////
-  // const [datosID, setDatosID] = useState([]);
-
-  // const GetDatosxProductoID = async (id) => {
-  //   const res = await fetch(`https://jsonplaceholder.typicode.com/photos/${id}`);
-  //   const data = await res.json();
-  //   setDatosID(data);
-  //   return producto;
-  // };
 
   return (
     <ContextGlobal.Provider
@@ -196,3 +149,30 @@ export const ContextProvider = ({ children }) => {
     </ContextGlobal.Provider>
   );
 };
+
+  /////////GetDatos //////////////
+  // const [producto, setProducto] = useState([]);
+
+  // const getDatos = async () => {
+  //   const res = await fetch("https://jsonplaceholder.typicode.com/photos/");
+  //   const data = await res.json();
+  //   setProducto(data);
+  // };
+
+  // useEffect(() => {
+  //     getDatos();
+  // }, []);
+  //////////////////////////////////////////////////
+  // const getMapeoProductos = (productos, tituloProducto, claseCss) => {
+  //   const mapeo = productos.map((producto, index) => (
+  //     <div key={producto.id} className={claseCss}>
+  //       {tituloProducto? <div className="titulo-producto">{producto.name}</div>:""};
+  //       <img
+  //         src={producto.src}
+  //         alt={`Imagen del producto ${producto.id}`}
+  //       />
+  //     </div>
+  //   ));
+
+  //   return mapeo;
+  // };

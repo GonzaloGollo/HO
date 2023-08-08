@@ -83,7 +83,7 @@
   border-radius: 50%;
   transition: 0.3s transform ease;
   will-change: transform;
-  z-index: 0;
+  z-index: 3;
 }
 
 .icon:hover {

@@ -1,3 +1,9 @@
+.LogoJpg {
+  width: 100%;
+  max-width: 200px;
+  overflow: cover;
+}
+
 .Logo {
   color: #0D5608;
   font-size: 40px;

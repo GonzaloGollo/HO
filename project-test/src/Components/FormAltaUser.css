@@ -1,0 +1,56 @@
+.pagina-formulario-alta {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 360px;
+  height: 600px;
+  margin-top: 10px;
+  margin: auto auto;
+
+}
+  .titulo-form-inicio-sesion {
+    font-size: 30px;
+    color:rgb(3, 141, 165);
+  }
+
+  .formulario {
+    
+  }
+
+  .campo-anotacion {
+    margin: 1rem 0rem;
+  }
+
+  .anotacion {
+    color: #717171;
+  }
+
+  .campo-formulario {
+    border-radius: 10px 10px 10px 10px;
+    width: 340px;
+    height: 30px;
+    background-color: #dfdfdf;
+   
+  }
+
+  .boton-acceso {
+
+    text-align: center;
+    line-height: 30px;
+    background-color:  rgb(3, 141, 165);
+    width: 340px;
+    height: 30px;
+    border-radius: 10px 10px 10px 10px;
+    color: white;
+  }
+
+  .acceso-cuenta-o-usuarionuevo {
+    color:  rgb(3, 141, 165);
+    font-weight: 700;
+    width: 340px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }

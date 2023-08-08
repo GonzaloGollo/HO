@@ -1,37 +1,79 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
-import { Boton } from '../Genericos/Boton';
-import { useEffect, useState } from 'react';
+import { Boton } from "../Genericos/Boton";
+import { useEffect, useState } from "react";
+import FormAltaUser from "../../Routes/FormAltaUser";
+import Modal from "../Modal/Modal";
+import { useModalContext } from "../utils/global.contextModal";
+import ModalGlobalX3 from "../Modal/ModalGlobalX3";
 
 const BotonCrearCuenta = () => {
-const textoBoton = "Crear Cuenta";
-const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const textoBoton = "Crear Cuenta";
 
-useEffect(() => {
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth);
-  };
+  const { modals, openModalx3, closeModalX3 } = useModalContext();
 
-  window.addEventListener('resize', handleResize);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  
 
-  return () => {
-    window.removeEventListener('resize', handleResize);
-  };
-}, []);
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setWindowWidth(window.innerWidth);
+  //   };
 
-const ocultarComponente = windowWidth < 650;
+  //   window.addEventListener("resize", handleResize);
 
-if (ocultarComponente) {
-  return null;
-}
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    const ocultarComponente = windowWidth < 650;
+    if (ocultarComponente && modals.modal1) {
+      closeModalX3("modal1");
+    }
+  }, [windowWidth, modals.modal1]);
+  
 
   return (
-    <Link to={"/"}>
-      <Boton texto={textoBoton}>
-        
-      </Boton>
-    </Link>
-  )
-}
+    //     <div className="open-Modal1" modalName="modal1" onClick={() => openModalx3("modal1")}>
 
-export default BotonCrearCuenta
+    //       <Boton texto={textoBoton}></Boton>
+
+    //       {modals.modal1 && (
+    //         <ModalGlobalX3 modalName="modal1" onClose={closeModalX3}>
+    //           <FormAltaUser />
+    //         </ModalGlobalX3>
+    //       )}
+    //     </div>
+    //   );
+    // };
+
+    <div className="open-Modal1" onClick={() => openModalx3("modal1")}>
+      <Boton texto={textoBoton}></Boton>
+
+      {modals.modal1 && (
+        <ModalGlobalX3
+          modalName="modal1"
+          onClose={() => closeModalX3("modal1")}
+        >
+          <FormAltaUser />
+        </ModalGlobalX3>
+      )}
+    </div>
+  );
+};
+
+export default BotonCrearCuenta;
