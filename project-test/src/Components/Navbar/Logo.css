@@ -1,6 +1,12 @@
-.LogoJpg {
+/* .LogoJpg {
   width: 100%;
   max-width: 200px;
+  overflow: cover;
+} */
+
+.LogoJpg {
+  width: 100%;
+  max-width: 500px;
   overflow: cover;
 }
 

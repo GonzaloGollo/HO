@@ -107,22 +107,8 @@ const AgregarProducto = () => {
       foto4: "",
       foto5: "",
     },
-
-    // direccion: "",
-    // email: "",
+ 
   });
-
-  // const [producto, setProducto] = useState({
-  //     nombreProducto: "",
-  //         direccion: "",
-  //         descripcion: "",
-  //         servicios: "",
-  //         fotos: "",
-  //         costoPorDia: 0,
-  //         disponible:false,
-  //         contactoEmail:"",
-
-  // })
 
   const [form, setForm] = useState(false);
 

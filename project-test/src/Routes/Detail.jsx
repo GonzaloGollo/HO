@@ -82,7 +82,7 @@ const Detail = () => {
             <Modal onClose={closeModal}>
               <Screen />
             </Modal>
-          )}
+          )} 
 
 
           <div className="contenedor-detalle-producto">

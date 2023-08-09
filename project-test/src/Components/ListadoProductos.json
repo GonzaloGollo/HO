@@ -1,0 +1,377 @@
+  [
+    {
+        "id": 1,
+        "tipoRecurso": "Oficina Privada",
+        "nombreProducto": "Oficina privada en Buenos Aires",
+        "descripcion": "Oficina privada para 2 personas en Buenos Aires",
+        "capacidadMáxima": 2,
+        "precio": "$1000",
+        "sede": "Argentina",
+        "estadoDisponibilidad": true,
+        "idReservaVigente": "",
+        "servicios": {
+            "servicio1": "Internet de alta velocidad",
+            "servicio2": "Impresora y escáner",
+            "servicio3": "Terraza",
+            "servicio4": "Sala de juegos", 
+            "servicio5": "Estacionamiento"
+        },
+        "fotos": {
+          "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada.jpg",
+          "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
+          "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg",
+          "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/domiciliofiscalyjuridico.jpg",
+          "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg"
+        }
+      },
+      {
+        "id": 2,
+        "tipoRecurso": "Coworking",
+        "nombreProducto": "Coworking en Bogotá",
+        "descripcion": "",
+        "capacidadMáxima": 10,
+        "precio": "$500",
+        "sede": "Colombia",
+        "estadoDisponibilidad": true,
+        "idReservaVigente": "",
+        "servicios": {
+            "servicio1": "Maquina de cafe",
+            "servicio2": "Locker",
+            "servicio3": "WIFI",
+            "servicio4": "Sala de juegos",
+            "servicio5": "Estacionamiento"
+        },
+        "fotos": {
+          "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/lockers.jpg",
+          "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/mobiliario.jpg",
+          "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada.jpg",
+          "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
+          "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg"
+        }
+      },
+    {
+      "id": 3,
+      "tipoRecurso": "",
+      "nombreProducto": "",
+      "descripcion": "",
+      "capacidadMáxima": 0,
+      "precio": "",
+      "sede": "",
+      "estadoDisponibilidad": false,
+      "idReservaVigente": "",
+      "servicios": {
+        "servicio1": "WIFI",
+        "servicio2": "Fotocopiadora",
+        "servicio3": "Locker",
+        "servicio4": "",
+        "servicio5": ""
+      },
+      "fotos": {
+        "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada.jpg",
+        "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
+        "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg",
+        "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/domiciliofiscalyjuridico.jpg",
+        "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg"
+      }
+    },
+    {
+      "id": 4,
+      "tipoRecurso": "",
+      "nombreProducto": "",
+      "descripcion": "",
+      "capacidadMáxima": 0,
+      "precio": "",
+      "sede": "",
+      "estadoDisponibilidad": false,
+      "idReservaVigente": "",
+      "servicios": {
+        "servicio1": "WIFI",
+        "servicio2": "Fotocopiadora",
+        "servicio3": "Locker",
+        "servicio4": "Estacionamiento",
+        "servicio5": ""
+      },
+      "fotos": {
+        "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/lockers.jpg",
+        "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/mobiliario.jpg",
+        "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada.jpg",
+        "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
+        "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg"
+      }
+    },
+      {
+        "id": 5,
+        "tipoRecurso": "Sala Auditorio",
+        "nombreProducto": "Sala auditorio en Buenos Aires",
+        "descripcion": "",
+        "capacidadMáxima": 50,
+        "precio": "$5000",
+        "sede": "Argentina",
+        "estadoDisponibilidad": false,
+        "idReservaVigente": "",
+        "servicios": {
+          "servicio1": "Fotocopiadora",
+          "servicio2": "Impresora",
+          "servicio3": "Maquina de cafe",
+          "servicio4": "Seguridad privada",
+          "servicio5": ""
+        },
+        "fotos": {
+            "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/lockers.jpg",
+            "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/mobiliario.jpg",
+            "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada.jpg",
+            "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
+            "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg"
+        }
+      },
+      {
+        "id": 6,
+        "tipoRecurso": "Sala Auditorio",
+        "nombreProducto": "Sala auditorio en Buenos Aires",
+        "descripcion": "",
+        "capacidadMáxima": 50,
+        "precio": "$5000",
+        "sede": "Argentina",
+        "estadoDisponibilidad": true,
+        "idReservaVigente": "",
+        "servicios": {
+            "servicio1": "Terraza",
+            "servicio2": "Impresora",
+            "servicio3": "Maquina de cafe",
+            "servicio4": "",
+            "servicio5": ""
+        },
+        "fotos": {
+            "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada.jpg",
+            "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
+            "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg",
+            "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/domiciliofiscalyjuridico.jpg",
+            "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg"
+        }
+      },
+      {
+        "id": 7,
+        "tipoRecurso": "Coworking",
+        "nombreProducto": "Coworking en Bogotá",
+        "descripcion": "",
+        "capacidadMáxima": 20,
+        "precio": "$1000",
+        "sede": "Colombia",
+        "estadoDisponibilidad": true,
+        "idReservaVigente": "",
+        "servicios": {
+            "servicio1": "Locker",
+            "servicio2": "WIFI",
+            "servicio3": "Fotocopiadora",
+            "servicio4": "",
+            "servicio5": ""
+        },
+        "fotos": {
+          "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg",
+          "foto2": "",
+          "foto3": "",
+          "foto4": "",
+          "foto5": ""
+        }
+      },
+      {
+        "id": 8,
+        "tipoRecurso": "Sala de Reuniones",
+        "nombreProducto": "Sala de reuniones en Santiago",
+        "descripcion": "",
+        "capacidadMáxima": 10,
+        "precio": "$1500",
+        "sede": "Chile",
+        "estadoDisponibilidad": false,
+        "idReservaVigente": 1,
+        "servicios": {
+            "servicio1": "Fotocopiadora",
+            "servicio2": "Terraza",
+            "servicio3": "Impresora",
+            "servicio4": "",
+            "servicio5": ""
+        },
+        "fotos": {
+            "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg",
+            "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
+            "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg",
+            "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/domiciliofiscalyjuridico.jpg",
+            "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg"
+        }
+      },
+      {
+        "id": 9,
+        "tipoRecurso": "Sala Flexible",
+        "nombreProducto": "Sala flexible en Buenos Aires",
+        "descripcion": "",
+        "capacidadMáxima": 15,
+        "precio": "$2000",
+        "sede": "Argentina",
+        "estadoDisponibilidad": false,
+        "idReservaVigente": 2,
+        "servicios": {
+            "servicio1": "Impresora",
+            "servicio2": "WIFI",
+            "servicio3": "Maquina de cafe",
+            "servicio4": "",
+            "servicio5": ""
+        },
+        "fotos": {
+            "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg",
+            "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
+            "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg",
+            "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/domiciliofiscalyjuridico.jpg",
+            "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg"
+        }
+      },
+      {
+        "id": 10,
+        "tipoRecurso": "Oficina Privada",
+        "nombreProducto": "Oficina privada en Bogotá",
+        "descripcion": "",
+        "capacidadMáxima": 2,
+        "precio": "$1000",
+        "sede": "Colombia",
+        "estadoDisponibilidad": true,
+        "idReservaVigente": "",
+        "servicios": {
+            "servicio1": "Locker",
+            "servicio2": "Fotocopiadora",
+            "servicio3": "Terraza",
+            "servicio4": "Seguridad privada",
+            "servicio5": ""
+        },
+        "fotos": {
+            "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg",
+            "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
+            "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg",
+            "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/domiciliofiscalyjuridico.jpg",
+            "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg"
+        }
+      },
+      {
+        "id": 11,
+        "tipoRecurso": "Coworking",
+        "nombreProducto": "Coworking en Buenos Aires",
+        "descripcion": "",
+        "capacidadMáxima": 20,
+        "precio": "$1500",
+        "sede": "Argentina",
+        "estadoDisponibilidad": false,
+        "idReservaVigente": 3,
+        "servicios": {
+          "servicio1": "Impresora",
+          "servicio2": "WIFI",
+          "servicio3": "Terraza",
+          "servicio4": "Sala de juegos",
+          "servicio5": "Estacionamiento"
+        },
+        "fotos": {
+            "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg",
+            "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
+            "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg",
+            "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/domiciliofiscalyjuridico.jpg",
+            "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg"
+        }
+      },
+      {
+        "id": 12,
+        "tipoRecurso": "Sala de Reuniones",
+        "nombreProducto": "Sala de reuniones en Bogotá",
+        "descripcion": "",
+        "capacidadMáxima": 10,
+        "precio": "$1500",
+        "sede": "Colombia",
+        "estadoDisponibilidad": true,
+        "idReservaVigente": "",
+        "servicios": {
+          "servicio1": "Locker",
+          "servicio2": "Impresora",
+          "servicio3": "Fotocopiadora",
+          "servicio4": "",
+          "servicio5": ""
+        },
+        "fotos": {
+            "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg",
+            "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
+            "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg",
+            "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/domiciliofiscalyjuridico.jpg",
+            "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg"
+        }
+      },
+      {
+        "id": 13,
+        "tipoRecurso": "Sala Flexible",
+        "nombreProducto": "Sala flexible en Santiago",
+        "descripcion": "",
+        "capacidadMáxima": 15,
+        "precio": "$2000",
+        "sede": "Chile",
+        "estadoDisponibilidad": false,
+        "idReservaVigente": 4,
+        "servicios": {
+          "servicio1": "Terraza",
+          "servicio2": "Locker",
+          "servicio3": "WIFI",
+          "servicio4": "Estacionamiento",
+          "servicio5": ""
+        },
+        "fotos": {
+          "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg",
+          "foto2": "",
+          "foto3": "",
+          "foto4": "",
+          "foto5": ""
+        }
+      },
+      {
+        "id": 14,
+        "tipoRecurso": "Sala Auditorio",
+        "nombreProducto": "Sala auditorio en Bogotá",
+        "descripcion": "",
+        "capacidadMáxima": 50,
+        "precio": "$5000",
+        "sede": "Colombia",
+        "estadoDisponibilidad": true,
+        "idReservaVigente": "",
+        "servicios": {
+          "servicio1": "Impresora",
+          "servicio2": "Maquina de cafe",
+          "servicio3": "Locker",
+          "servicio4": "Seguridad privada",
+          "servicio5": "Estacionamiento"
+        },
+        "fotos": {
+          "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg",
+          "foto2": "",
+          "foto3": "",
+          "foto4": "",
+          "foto5": ""
+        }
+      },
+      {
+        "id": 15,
+        "tipoRecurso": "Coworking",
+        "nombreProducto": "Coworking en Santiago",
+        "descripcion": "",
+        "capacidadMáxima": 20,
+        "precio": "$1500",
+        "sede": "Chile",
+        "estadoDisponibilidad": false,
+        "idReservaVigente": 5,
+        "servicios": {
+          "servicio1": "WIFI",
+          "servicio2": "Fotocopiadora",
+          "servicio3": "Impresora",
+          "servicio4": "",
+          "servicio5": ""
+        },
+        "fotos": {
+            "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg",
+            "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
+            "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg",
+            "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/domiciliofiscalyjuridico.jpg",
+            "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg"
+        }
+      }
+    ]

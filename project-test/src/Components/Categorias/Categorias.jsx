@@ -18,22 +18,43 @@ import { GiOfficeChair } from "react-icons/gi";
 const Categorias = ({NombreCategoria}) => {
   return (
     <div className="segmento-categorias">
+
       <div className="card-categoria">
-        <div className="fondo-icono caja-blanca-sombreada">
+        {/* <div className="fondo-icono caja-blanca-sombreada"> */}
+        <div className="fondo-icono">
           <HiOutlineBuildingOffice2 className="icono" />
         </div>
-        <div className="nombre-icono-categoria">Oficina Privada</div>
+        <div className="nombre-icono-categoria">Oficina privada</div>
       </div>
 
       <div className="card-categoria">
-        <div className="fondo-icono caja-blanca-sombreada">
+        {/* <div className="fondo-icono caja-blanca-sombreada"> */}
+        <div className="fondo-icono">
+          <HiOutlineBuildingOffice2 className="icono" />
+        </div>
+        <div className="nombre-icono-categoria">Coworking</div>
+      </div>
+
+      <div className="card-categoria">
+        {/* <div className="fondo-icono caja-blanca-sombreada"> */}
+        <div className="fondo-icono">
+          <HiOutlineBuildingOffice2 className="icono" />
+        </div>
+        <div className="nombre-icono-categoria">Sala de reuniones</div>
+      </div>
+
+
+      <div className="card-categoria">
+        {/* <div className="fondo-icono caja-blanca-sombreada"> */}
+        <div className="fondo-icono">
           <HiOutlineHome className="icono" />
         </div>
         <div className="nombre-icono-categoria">Office house</div>
       </div>
 
       <div className="card-categoria">
-        <div className="fondo-icono caja-blanca-sombreada">
+        {/* <div className="fondo-icono caja-blanca-sombreada"> */}
+        <div className="fondo-icono">
           <HiMiniComputerDesktop className="icono" />
         </div>
         <div className="nombre-icono-categoria">Oficina abierta</div>

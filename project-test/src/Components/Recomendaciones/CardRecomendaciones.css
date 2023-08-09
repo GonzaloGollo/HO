@@ -44,7 +44,7 @@
   margin: 0;
   padding: 0;
   font-size: 25px;
-  color: #ffffff;
+  color: #5e5e5e;
   line-height: 30px;
   overflow: visible;
   width: 200px;
@@ -55,7 +55,7 @@
 .precio {
   font-size: 30px;
   font-weight: 900;
-  color: #ffffff;
+  color: #5e5e5e;
   margin: 0;
   padding: 0;
 }
