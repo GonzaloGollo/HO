@@ -1,9 +1,9 @@
-  [
+[
     {
         "id": 1,
         "tipoRecurso": "Oficina Privada",
         "nombreProducto": "Oficina privada en Buenos Aires",
-        "descripcion": "Oficina privada para 2 personas en Buenos Aires",
+        "descripcion": "Oficina privada para 2 personas en Buenos Aires.",
         "capacidadMáxima": 2,
         "precio": "$1000",
         "sede": "Argentina",
@@ -18,17 +18,17 @@
         },
         "fotos": {
           "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada.jpg",
-          "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
-          "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg",
-          "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/domiciliofiscalyjuridico.jpg",
-          "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg"
+          "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg",
+          "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/OficinaPrivada/oficinaprivada3.jpg",
+          "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/OficinaPrivada/oficinaprivada4.jpg",
+          "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/OficinaPrivada/oficinaprivada5.jpg"
         }
       },
       {
         "id": 2,
         "tipoRecurso": "Coworking",
         "nombreProducto": "Coworking en Bogotá",
-        "descripcion": "El lugar ideal para que trabajes solo con tu equipo. Comodidad y Espacio Asegurados, Mobiliario de Última generación. ",
+        "descripcion": "Espacio para coworking ubicado en la ciudad de Bogotá, con hermosos y cómodos espacios de trabajo.",
         "capacidadMáxima": 10,
         "precio": "$500",
         "sede": "Colombia",
@@ -42,23 +42,23 @@
             "servicio5": "Estacionamiento"
         },
         "fotos": {
-          "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/lockers.jpg",
-          "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/mobiliario.jpg",
-          "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada.jpg",
-          "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
-          "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg"
+          "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/domiciliofiscalyjuridico.jpg",
+          "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg",
+          "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/PuestosDeTrabajo/puestodetrabajo3.jpg",
+          "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/PuestosDeTrabajo/puestodetrabajo4.jpg",
+          "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/PuestosDeTrabajo/puestodetrabajo5.jpg"
         }
       },
     {
       "id": 3,
-      "tipoRecurso":  "Coworking",
-      "nombreProducto": "Oficina privada en Buenos Aires",
-      "descripcion": "El lugar ideal para que trabajes solo con tu equipo. Comodidad y Espacio Asegurados, Mobiliario de Última generación. ",
-      "capacidadMáxima": 10,
-      "precio": "$700",
-      "sede": "Argentina",
+      "tipoRecurso": "Coworking",
+      "nombreProducto": "Coworking en Medellín",
+      "descripcion": "Espacio para coworking ubicado en la ciudad de Medellín, con hermosos y cómodos espacios de trabajo.",
+      "capacidadMáxima": 15,
+      "precio": "$1000",
+      "sede": "Colombia",
       "estadoDisponibilidad": false,
-      "idReservaVigente": 52,
+      "idReservaVigente": "",
       "servicios": {
         "servicio1": "WIFI",
         "servicio2": "Fotocopiadora",
@@ -67,23 +67,23 @@
         "servicio5": ""
       },
       "fotos": {
-        "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada.jpg",
-        "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
-        "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg",
-        "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/domiciliofiscalyjuridico.jpg",
-        "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg"
+        "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/Coworking/coworking10.jpg",
+        "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/Coworking/coworking11.jpg",
+        "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/Coworking/coworking12.jpg",
+        "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/Coworking/coworking14.jpg",
+        "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/Coworking/coworking16.jpg"
       }
     },
     {
       "id": 4,
-      "tipoRecurso": "Coworking",
-      "nombreProducto": "Oficina  completa",
-      "descripcion": "Oficina de planta completa en Buenos Aires",
-      "capacidadMáxima": 0,
-      "precio": "35000",
-      "sede": "Argentina",
+      "tipoRecurso": "Oficina Privada",
+      "nombreProducto": "Oficina privada en Medellín",
+      "descripcion": "Oficina privada para 2 personas en Medellín",
+      "capacidadMáxima": 2,
+      "precio": "1500",
+      "sede": "Colombia",
       "estadoDisponibilidad": false,
-      "idReservaVigente": "62",
+      "idReservaVigente": "",
       "servicios": {
         "servicio1": "WIFI",
         "servicio2": "Fotocopiadora",
@@ -92,23 +92,23 @@
         "servicio5": ""
       },
       "fotos": {
-        "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/lockers.jpg",
-        "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/mobiliario.jpg",
-        "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada.jpg",
-        "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
-        "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg"
+        "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/OficinaPrivada/oficinaprivada6.jpg",
+        "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/OficinaPrivada/oficinaprivada7.jpg",
+        "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/OficinaPrivada/oficinaprivada10.jpg",
+        "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/OficinaPrivada/oficinaprivada11.jpg",
+        "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/OficinaPrivada/oficinaprivada12.jpg"
       }
     },
       {
         "id": 5,
         "tipoRecurso": "Sala Auditorio",
         "nombreProducto": "Sala auditorio en Buenos Aires",
-        "descripcion": "El lugar ideal para que trabajes solo con tu equipo. Comodidad y Espacio Asegurados, Mobiliario de Última generación. ",
+        "descripcion": "Hermoso auditorio, con excelente acústica y gran comodidad para realizar todo tipo de eventos corporativos.",
         "capacidadMáxima": 50,
         "precio": "$5000",
         "sede": "Argentina",
         "estadoDisponibilidad": false,
-        "idReservaVigente": "85",
+        "idReservaVigente": "",
         "servicios": {
           "servicio1": "Fotocopiadora",
           "servicio2": "Impresora",
@@ -117,18 +117,18 @@
           "servicio5": ""
         },
         "fotos": {
-            "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/lockers.jpg",
-            "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/mobiliario.jpg",
-            "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada.jpg",
-            "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
-            "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg"
+          "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/SalaDeReuniones/saladereuniones8.jpg",
+          "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/SalaAuditorio/SalaAuditorio.jpg",
+          "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/SalaAuditorio/SalaAuditorio3.jpg",
+          "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/SalaAuditorio/SalaAuditorio4.jpg",
+          "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/SalaAuditorio/SalaAuditorio5.jpg"
         }
       },
       {
         "id": 6,
         "tipoRecurso": "Sala Auditorio",
         "nombreProducto": "Sala auditorio en Buenos Aires",
-        "descripcion": "El lugar ideal para que trabajes solo con tu equipo. Comodidad y Espacio Asegurados, Mobiliario de Última generación. ",
+        "descripcion": "Espectacular auditorio, con excelente acústica y gran comodidad para realizar todo tipo de eventos corporativos.",
         "capacidadMáxima": 50,
         "precio": "$5000",
         "sede": "Argentina",
@@ -142,18 +142,18 @@
             "servicio5": ""
         },
         "fotos": {
-            "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada.jpg",
-            "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
-            "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg",
-            "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/domiciliofiscalyjuridico.jpg",
-            "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg"
+          "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/SalaAuditorio/SalaAuditorio7.jpg",
+          "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/SalaAuditorio/SalaAuditorio8.jpg",
+          "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/SalaAuditorio/SalaAuditorio9.jpg",
+          "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/SalaAuditorio/SalaAuditorio10.jpg",
+          "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/SalaAuditorio/SalaAuditorio11.jpg"
         }
       },
       {
         "id": 7,
         "tipoRecurso": "Coworking",
         "nombreProducto": "Coworking en Bogotá",
-        "descripcion": "El lugar ideal para que trabajes solo con tu equipo. Comodidad y Espacio Asegurados, Mobiliario de Última generación. ",
+        "descripcion": "Espacio para coworking ubicado en la ciudad de Bogotá, con hermosos y cómodos espacios de trabajo. Excelente ubicación.",
         "capacidadMáxima": 20,
         "precio": "$1000",
         "sede": "Colombia",
@@ -167,18 +167,18 @@
             "servicio5": ""
         },
         "fotos": {
-          "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg",
-          "foto2": "",
-          "foto3": "",
-          "foto4": "",
-          "foto5": ""
+          "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/PuestosDeTrabajo/puestodetrabajo12.jpg",
+          "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/PuestosDeTrabajo/puestodetrabajo14.jpg",
+          "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/PuestosDeTrabajo/puestodetrabajo15.jpg",
+          "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/PuestosDeTrabajo/puestodetrabajo16.jpg",
+          "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/PuestosDeTrabajo/puestodetrabajo19.jpg"
         }
       },
       {
         "id": 8,
         "tipoRecurso": "Sala de Reuniones",
         "nombreProducto": "Sala de reuniones en Santiago",
-        "descripcion": "Oficina privada para 2 personas en Buenos Aires",
+        "descripcion": "Espaciosa sala de reuniones, en ubicación céntrica, disponible para realizar reuniones empresariales.",
         "capacidadMáxima": 10,
         "precio": "$1500",
         "sede": "Chile",
@@ -192,18 +192,18 @@
             "servicio5": ""
         },
         "fotos": {
-            "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg",
-            "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
-            "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg",
-            "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/domiciliofiscalyjuridico.jpg",
-            "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg"
+          "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
+          "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/SalaDeReuniones/saladereuniones3.jpg",
+          "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/SalaDeReuniones/saladereuniones4.jpg",
+          "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/SalaDeReuniones/saladereuniones9.jpg",
+          "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/SalaDeReuniones/saladereuniones10.jpg"
         }
       },
       {
         "id": 9,
         "tipoRecurso": "Sala Flexible",
         "nombreProducto": "Sala flexible en Buenos Aires",
-        "descripcion": "Oficina privada para 2 personas en Buenos Aires",
+        "descripcion": "Espacio con mobiliario que puede ser reubicado dentro de la sala según sus necesidades.",
         "capacidadMáxima": 15,
         "precio": "$2000",
         "sede": "Argentina",
@@ -217,18 +217,18 @@
             "servicio5": ""
         },
         "fotos": {
-            "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg",
-            "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
-            "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg",
-            "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/domiciliofiscalyjuridico.jpg",
-            "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg"
+          "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/PuestosDeTrabajo/puestodetrabajo1.jpeg",
+          "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/PuestosDeTrabajo/puestodetrabajo2.jpg",
+          "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/PuestosDeTrabajo/puestodetrabajo6.jpg",
+          "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/PuestosDeTrabajo/puestodetrabajo13.jpg",
+          "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/PuestosDeTrabajo/puestodetrabajo17.jpg"
         }
       },
       {
         "id": 10,
         "tipoRecurso": "Oficina Privada",
         "nombreProducto": "Oficina privada en Bogotá",
-        "descripcion": "Oficina privada para 2 personas en Buenos Aires",
+        "descripcion": "Oficina privada para 2 personas en Bogotá.",
         "capacidadMáxima": 2,
         "precio": "$1000",
         "sede": "Colombia",
@@ -242,18 +242,18 @@
             "servicio5": ""
         },
         "fotos": {
-            "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg",
-            "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
-            "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg",
-            "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/domiciliofiscalyjuridico.jpg",
-            "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg"
+          "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/SalaDeReuniones/saladereuniones2.jpg",
+          "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/SalaDeReuniones/saladereuniones5.jpg",
+          "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/OficinaPrivada/oficinaprivada13.jpg",
+          "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/OficinaPrivada/oficinaprivada14.jpg",
+          "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/OficinaPrivada/oficinaprivada15.jpg"
         }
       },
       {
         "id": 11,
         "tipoRecurso": "Coworking",
         "nombreProducto": "Coworking en Buenos Aires",
-        "descripcion": "Oficina privada para 2 personas en Buenos Aires",
+        "descripcion": "Espacio para coworking ubicado en la ciudad de Buenos Aires, con hermosos y cómodos espacios de trabajo.",
         "capacidadMáxima": 20,
         "precio": "$1500",
         "sede": "Argentina",
@@ -267,18 +267,18 @@
           "servicio5": "Estacionamiento"
         },
         "fotos": {
-            "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg",
-            "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
-            "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg",
-            "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/domiciliofiscalyjuridico.jpg",
-            "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg"
+          "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/PuestosDeTrabajo/puestodetrabajo7.jpg",
+          "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/PuestosDeTrabajo/puestodetrabajo9.jpg",
+          "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/PuestosDeTrabajo/puestodetrabajo20.jpg",
+          "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/PuestosDeTrabajo/puestodetrabajo21.jpg",
+          "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/Coworking/coworking1.jpg"
         }
       },
       {
         "id": 12,
         "tipoRecurso": "Sala de Reuniones",
         "nombreProducto": "Sala de reuniones en Bogotá",
-        "descripcion": "Oficina privada para 2 personas en Buenos Aires",
+        "descripcion": "Espaciosa sala de reuniones, excelente ubicación, disponible para realizar reuniones empresariales.",
         "capacidadMáxima": 10,
         "precio": "$1500",
         "sede": "Colombia",
@@ -292,18 +292,18 @@
           "servicio5": ""
         },
         "fotos": {
-            "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg",
-            "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
-            "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg",
-            "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/domiciliofiscalyjuridico.jpg",
-            "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg"
+          "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/PuestosDeTrabajo/puestodetrabajo10.jpg",
+          "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/SalaDeReuniones/saladereuniones6.jpg",
+          "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/SalaDeReuniones/saladereuniones7.jpg",
+          "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/SalaDeReuniones/saladereuniones11.jpg",
+          "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes08Ago2023/SalaDeReuniones/saladereuniones13.jpg"
         }
       },
       {
         "id": 13,
         "tipoRecurso": "Sala Flexible",
         "nombreProducto": "Sala flexible en Santiago",
-        "descripcion": "Oficina privada para 2 personas en Buenos Aires",
+        "descripcion": "Espacio con mobiliario que puede ser redistribuido dentro de la sala según sus necesidades.",
         "capacidadMáxima": 15,
         "precio": "$2000",
         "sede": "Chile",
@@ -317,18 +317,18 @@
           "servicio5": ""
         },
         "fotos": {
-          "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg",
-          "foto2": "",
-          "foto3": "",
-          "foto4": "",
-          "foto5": ""
+          "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/SalaFlexible/salaflexible1.jpg",
+          "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/SalaFlexible/salaflexible2.jpg",
+          "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/SalaFlexible/salaflexible4.jpg",
+          "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/SalaFlexible/salaflexible6.jpg",
+          "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/SalaFlexible/salaflexible7.jpg"
         }
       },
       {
         "id": 14,
         "tipoRecurso": "Sala Auditorio",
         "nombreProducto": "Sala auditorio en Bogotá",
-        "descripcion": "Oficina privada para 2 personas en Buenos Aires",
+        "descripcion": "Hermoso auditorio, con excelente acústica y gran comodidad para realizar todo tipo de eventos corporativos.",
         "capacidadMáxima": 50,
         "precio": "$5000",
         "sede": "Colombia",
@@ -342,18 +342,18 @@
           "servicio5": "Estacionamiento"
         },
         "fotos": {
-          "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg",
-          "foto2": "",
-          "foto3": "",
-          "foto4": "",
-          "foto5": ""
+          "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/SalaAuditorio/SalaAuditorio12.jpg",
+          "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/SalaAuditorio/SalaAuditorio13.jpg",
+          "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/SalaAuditorio/SalaAuditorio14.jpg",
+          "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/SalaAuditorio/SalaAuditorio15.jpg",
+          "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/SalaAuditorio/SalaAuditorio16.jpg"
         }
       },
       {
         "id": 15,
         "tipoRecurso": "Coworking",
         "nombreProducto": "Coworking en Santiago",
-        "descripcion": "Oficina privada para 2 personas en Buenos Aires",
+        "descripcion": "Espacio para coworking ubicado en la ciudad de Santiago, con hermosos y cómodos espacios de trabajo.",
         "capacidadMáxima": 20,
         "precio": "$1500",
         "sede": "Chile",
@@ -367,11 +367,11 @@
           "servicio5": ""
         },
         "fotos": {
-            "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg",
-            "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/saladereunion.jpg",
-            "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg",
-            "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/domiciliofiscalyjuridico.jpg",
-            "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinadeplantacompleta.jpg"
+          "foto1": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/Coworking/coworking2.jpg",
+          "foto2": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/Coworking/coworking3.jpg",
+          "foto3": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/Coworking/coworking4.jpg",
+          "foto4": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/Coworking/coworking5.jpg",
+          "foto5": "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/Coworking/coworking7.jpg"
         }
       }
     ]

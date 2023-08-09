@@ -25,8 +25,9 @@ const CardRecomendaciones = ({
           <img className="ImgCardReco" src={url} alt="Foto producto" />
           <div className="texto-card-reco">
             <h3 className="nombre-card-producto">{title}</h3>
-            <p className="descripcion-card">{descripcion}</p>
             <p className="tipo-recurso-card">{tipoRecurso}</p>
+            <p className="descripcion-card">{descripcion}</p>
+
             <p className="precio">{precio}</p>
        
           </div>

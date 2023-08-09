@@ -59,7 +59,7 @@ h1 {
   max-width: 1210px;
 }
 
-h3 {
+h3.descripcion {
   line-height: 25px;
   margin: 0;
   font-weight: 300;

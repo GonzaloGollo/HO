@@ -47,8 +47,8 @@ ul {
   height: 75px;
   width: 100%;
 
-  gap: 1rem;
-  border-bottom: 1px solid #e6e6e6;
+  /* gap: 1rem; */
+  /* border-bottom: 1px solid #e6e6e6; */
 }
 
 .icono-persona {
@@ -56,19 +56,26 @@ ul {
 }
 
 @media (max-width: 1260px) {
+
+  .header {
+    height: 255px;
+  }
+
 .buscador-cat {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: 80px;
-
-
+  height: 160px;
   gap: 1rem;
   border-bottom: 1px solid #e6e6e6;
 }
 }
 
+
+
+
+/* 
 @media (max-width: 770px) {
 .buscador-cat{
   height: 57px;
@@ -77,13 +84,24 @@ ul {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}}
+}} */
 
 @media (max-width: 770px) {
   .icono-persona {
     display: inline;
     font-size: 45px;
-    color: #79c479;
+    color: var(--colorGrey2);
   }
 
+}
+@media (max-width: 700px) {
+  /* .nombre-icono-categoria {
+    display: none;
+  } */
+  .buscador-cat {
+    height: 140px;
+    overflow: hidden;
+    
+  }
+  
 }

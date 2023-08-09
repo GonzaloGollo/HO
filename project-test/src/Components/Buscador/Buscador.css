@@ -1,22 +1,23 @@
 .segmento-buscador {
   /* width: 95%; */
   left: 0;
-  width: 45%;
+  width: 42%;
   height: 50px;
   display: flex;
   flex-direction: row;
   justify-content:center;
   align-items: center;
-
-  gap: 1rem;
+  /* gap: 1rem; */
   color: rgb(126, 125, 125);
+  color: var( --colorGrey2);
+
 }
 
 .boton-buscador {
-  border: 1px solid #d8d8d8;
+  border: 1px solid var(--colorGrey4);
   border-radius: 20px 20px 20px 20px;
   border-radius: 20px 30px 30px 20px;
-  background-color: white;
+  /* background-color: white; */
   color: #0b0b0b;
   padding-left: 1rem;
   padding-right: 0rem;
@@ -30,16 +31,16 @@
   align-items: center;
 }
 
-.segmento {
+/* .segmento {
   border-left: 1px solid rgb(221, 221, 221);
-}
+} */
 
 .buscar-por {
   cursor: pointer;
   /* position: relative; */
   font-size: 1.1rem;
   /* width: 65px; */
-  
+  color: var(--colorGrey2);
   /* padding-left: 0.5rem;
   padding-right: 0.5rem; */
 }
@@ -79,7 +80,8 @@
   padding-left: 3px;
   padding: 4px;
   /* background-color: #1eaf70; */
-  background-color:  #646464;;
+  /* background-color:  #646464; */
+  background-color: var(--colorGrey2);
   border-radius: 50%;
   transition: 0.3s transform ease;
   will-change: transform;

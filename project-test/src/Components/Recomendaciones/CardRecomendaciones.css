@@ -6,13 +6,13 @@
   gap: 1rem;
   width: 95%;
   height: 95%;
-  width: 500px;
+  width: 600px;
   height: 180px;
   border-radius: 11px 11px 11px 11px;
   -webkit-border-radius: 11px 11px 11px 11px;
   -moz-border-radius: 11px 11px 11px 11px;
   margin-left: 1rem;
-  /* border: 1px solid red;  */
+   /* border: 1px solid red; */
 }
 
 .ImgCardReco {
@@ -22,18 +22,21 @@
   height: 160px;
   border-radius: 10px 10px 10px 10px;
   margin-right: 0px;
-  object-fit: fill;
+  object-fit: cover;
+  /* border: 1px solid red; */
 }
 
 .texto-card-reco {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: left;
   flex-direction: column;
-  height: 160px;
+  height: 170px;
   width: 250px;
-  flex-wrap: wrap;
-  /* border-radius: 0px 10px 10px 0px; */
+  flex-wrap: nowrap;
+  
+  /* border: 1px solid rgb(255, 0, 247); */
+  
   /* ----------- Borrar despues de poner dinamicas las categorias */
   white-space: nowrap; /* Evita el salto de línea */
   /* overflow: hidden;*/ /* Oculta el contenido que excede el ancho */
@@ -48,10 +51,33 @@
   color: #5e5e5e;
   line-height: 30px;
   overflow: visible;
-  width: 200px;
+  /* width: 250px; */
   white-space: normal;
   word-wrap: break-word;
+  /* border: 1px solid rgb(38, 236, 12); */
 }
+
+.tipo-recurso-card {
+  line-height: 20px;
+  /* border: 1px solid rgb(85, 255, 0); */
+
+}
+
+.descripcion-card {
+  line-height: 15px;
+  overflow: visible;
+ width: 250px;
+  white-space: normal;
+  word-wrap: break-word;
+  height: 70px;
+  margin: 0;
+  padding: 0;
+  white-space: wrap; /* Evita el salto de línea */
+  overflow: hidden; /* Oculta el contenido que excede el ancho */
+   text-overflow: ellipsis; 
+  /* border: 1px solid rgb(236, 12, 90); */
+}
+
 
 .precio {
   font-size: 25px;
@@ -59,6 +85,7 @@
   color: #5e5e5e;
   margin: 0;
   padding: 0;
+  /* border: 1px solid rgb(32, 143, 239); */
 }
 
 

@@ -27,21 +27,30 @@
 
 
 .boton {
+    /* box-shadow: var(--hoverBShadow); */
+  /* border-radius: 3rem; */
     background-color: white;
-  border: 1px solid #c7c7c7;
-  box-shadow: 0 1px 2px #b3b3b3;
-  border-radius: 3rem;
+  border: 1px solid var(--colorGrey4);
+  box-shadow: var(--BShadow);
+
+  border-radius: var(--bRadiusButton);
   color: #676867;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: 300;
   max-height: 1.5rem;
+  max-width:  150px;
   overflow: hidden;
-  padding: 0.7rem 2rem;
+  line-height: 2rem;
+  padding: 1rem 1.5rem;
   position: relative;
-  transition: 0.2s transform ease;
+  transition: 0.3s transform ease;
   will-change: transform;
   z-index: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
 }
 
 .boton::after {
@@ -66,14 +75,15 @@
 }
 
 .boton:hover {
-  /* border: 2px solid #c3c3c3;
-  color: rgb(255, 255, 255);
+  border: 1px solid var(--BGrey);
+  
   transform: scale(1.05);
-  font-weight: 500;
+  /*  font-weight: 500;
   will-change: transform;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
   /* box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4); */
-  box-shadow: 0 3px 6px #949494;
+
+  box-shadow: var(--BShadowD);
 }
 
 

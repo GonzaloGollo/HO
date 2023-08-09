@@ -2,8 +2,11 @@ import React, { useState } from "react";
 
 import "../Components/AgregarProducto.css";
 import Error from "../Components/Error";
+import { Boton } from "../Components/Genericos/Boton";
 
 const AgregarProducto = () => {
+
+
   // const [sede, setSede] = useState({
   //     id:"",
   //     sede:"",
@@ -407,11 +410,13 @@ const AgregarProducto = () => {
 
           {/* //////////////-----------------------------////////////// */}
           <div className="boton-acceso-agregar-producto">
-            <button type="submit" value="Guardar">
+            {/* <button type="submit" value="Guardar">
               {" "}
               Guardar{" "}
-            </button>
-            <button type="reset">Cancelar</button>
+            </button> */}
+            <Boton  type="submit" value="Guardar" texto="Guardar" ></Boton>
+            <Boton texto="Cancelar" type="reset"></Boton>
+            
           </div>
         </div>
         {form && (
