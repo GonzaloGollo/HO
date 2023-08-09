@@ -46,6 +46,11 @@ const BotonCrearCuenta = () => {
     }
   }, [windowWidth, modals.modal1]);
   
+  const ocultarComponente = windowWidth < 770;
+
+  if (ocultarComponente) {
+    return null;
+  }
 
   return (
     //     <div className="open-Modal1" modalName="modal1" onClick={() => openModalx3("modal1")}>

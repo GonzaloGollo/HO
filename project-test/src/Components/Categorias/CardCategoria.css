@@ -6,16 +6,18 @@
   align-items: center;
    gap: 0.5rem;
   width: 100px;
-  height: 40px;
+  height: 45px;
   border-radius: 11px 11px 11px 11px;
   -webkit-border-radius: 11px 11px 11px 11px;
   -moz-border-radius: 11px 11px 11px 11px;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
 
 }
 
-.fondo-icono-categoria:hover{
-  
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+.card-categoria:hover {
+  color: black; 
+  transform: scale(1.05); 
 }
 
 .ImgCardCategoria {
@@ -35,6 +37,29 @@
   overflow: hidden; /* Oculta el contenido que excede el ancho */
   text-overflow: ellipsis; /* Muestra puntos suspensivos (...) cuando el contenido excede el ancho */
   max-width: 180px; /* Ajusta este valor según el ancho deseado */
+}
+
+.icono:hover {
+  color: black; 
+
+}
+
+
+
+@media (max-width: 1260px) {
+  .card-categoria {
+    flex-direction: column;
+    height: 80%;
+    justify-content: center;
+    
+  }
+  .icono{
+    font-size: 2rem;
+  }
+  .texto-card-categoria {
+  text-align: center;
+  }
+
 }
 
 @media (max-width: 650px) {

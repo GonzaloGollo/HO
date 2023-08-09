@@ -49,11 +49,11 @@ a {
   background-color: rgb(255, 255, 255);
 }
 
-.fondo-icono {
+/* .fondo-icono {
   padding: 0.4rem 0.5rem;
   text-align: center;
-}
+} */
 
-.fondo-icono:hover {
+/* .fondo-icono:hover {
   box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
-}
+} */

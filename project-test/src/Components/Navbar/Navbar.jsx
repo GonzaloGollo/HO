@@ -23,7 +23,7 @@ const Navbar = () => {
     <>
       <div className="header">
         <nav>
-          <ul>
+          <ul> 
             <li>
               
               <Logo />

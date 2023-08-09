@@ -7,7 +7,8 @@ const Logo = () => {
     <Link to={"/"} >
     <div className="LogoLema">
         {/* <img className="LogoJpg" src="/images/Logo.jpg"/> */}
-        <img className="LogoJpg" src="/images/Logo1.jpg"/>
+        {/* <img className="LogoJpg" src="/images/Logo1.jpg"/> */}
+        <img className="LogoJpg" src="/images/Logo1 - sin lema.jpg"/>
         {/* <img className="LogoJpg" src="/images/Logo2.jpg"/> */}
 
         {/* <div className="Logo">Home</div>

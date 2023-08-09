@@ -28,10 +28,10 @@
 
 .boton {
     background-color: white;
-  border: 2px solid #79c479;
-  box-shadow: 0 2px 4px #79c479;
+  border: 1px solid #c7c7c7;
+  box-shadow: 0 1px 2px #b3b3b3;
   border-radius: 3rem;
-  color: #15770e;
+  color: #676867;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: 300;
@@ -73,7 +73,7 @@
   will-change: transform;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
   /* box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4); */
-  box-shadow: 0 4px 7px #15770e;
+  box-shadow: 0 3px 6px #949494;
 }
 
 

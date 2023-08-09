@@ -13,11 +13,11 @@
 }
 
 .boton-buscador {
-  border: 1px solid #79c479;
+  border: 1px solid #d8d8d8;
   border-radius: 20px 20px 20px 20px;
   border-radius: 20px 30px 30px 20px;
   background-color: white;
-  color: #15770e;
+  color: #0b0b0b;
   padding-left: 1rem;
   padding-right: 0rem;
   padding-top: 0.1rem;
@@ -79,7 +79,7 @@
   padding-left: 3px;
   padding: 4px;
   /* background-color: #1eaf70; */
-  background-color:  #79c479;;
+  background-color:  #646464;;
   border-radius: 50%;
   transition: 0.3s transform ease;
   will-change: transform;

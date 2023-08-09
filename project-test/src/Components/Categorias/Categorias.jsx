@@ -35,7 +35,7 @@ const Categorias = ({NombreCategoria}) => {
         <div className="nombre-icono-categoria">Coworking</div>
       </div>
 
-      <div className="card-categoria">
+      <div className="card-categoria  sala-reu">
         {/* <div className="fondo-icono caja-blanca-sombreada"> */}
         <div className="fondo-icono">
           <HiOutlineBuildingOffice2 className="icono" />
@@ -44,7 +44,7 @@ const Categorias = ({NombreCategoria}) => {
       </div>
 
 
-      <div className="card-categoria">
+      <div className="card-categoria  ofi-house">
         {/* <div className="fondo-icono caja-blanca-sombreada"> */}
         <div className="fondo-icono">
           <HiOutlineHome className="icono" />
@@ -52,7 +52,7 @@ const Categorias = ({NombreCategoria}) => {
         <div className="nombre-icono-categoria">Office house</div>
       </div>
 
-      <div className="card-categoria">
+      <div className="card-categoria  ofi-abierta">
         {/* <div className="fondo-icono caja-blanca-sombreada"> */}
         <div className="fondo-icono">
           <HiMiniComputerDesktop className="icono" />
