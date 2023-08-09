@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-
+import { Boton } from "../Components/Genericos/Boton";
 import "../Components/FormAltaUser.css";
 import Error from "../Components/Error";
 
 const FormAltaUser = () => {
+  const textoBotonGuardarForm = "Crear Cuenta";
   const [usuario, setUsuario] = useState({
     nombre: "",
     apellido: "",
@@ -148,7 +149,7 @@ const onChangeConfirmacionPassword = (e) => {
       </div>
 
       <form onSubmit={handleSubmitCrearCuenta}>
-        <div className="formulario">
+        <div className="formularioAltaUser">
           <div  className="campo-anotacion">
             <div className="anotacion">Username *</div>
             <input
@@ -241,9 +242,8 @@ const onChangeConfirmacionPassword = (e) => {
 
 
 {/* //////////////-----------------------------////////////// */}
-          <div  className="boton-acceso">
-          <button type="submit" value="Acceso"> Acceso </button>
-          </div>
+            <Boton className="botonCrearUser" texto={textoBotonGuardarForm} type="submit" value="Acceso"/>
+        
         </div>
         {form && (
           <h5>

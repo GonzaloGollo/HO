@@ -11,7 +11,7 @@ import ModalGlobalX3 from "../Modal/ModalGlobalX3";
 
 const BotonInicio = () => {
   // const { showModal, closeModal, openModal } = useContext(ContextGlobal);
-  const { modals, openModalx3, closeModalX3 } = useModalContext();
+  // const { modals, openModalx3, closeModalX3 } = useModalContext();
 
 
   const textoBoton = "Inicio";
@@ -37,31 +37,15 @@ const BotonInicio = () => {
   }
 
   return (
-    //     <div onClick={openModal}>
 
-    //       <Boton texto={textoBoton}></Boton>
+    <div>
+ 
+    <Link to={"/formingreso/"}>
+      <Boton texto={textoBoton} />
+    </Link>
+  </div>
 
-    //       {showModal && (
-    //         <Modal onClose={closeModal}>
-    //           <FormIngreso />
-    //         </Modal>
-    //       )}
-    //     </div>
-    //   );
-    // };
 
-    <div className="open-Modal1" onClick={() => openModalx3("modal2")}>
-      <Boton texto={textoBoton}></Boton>
-
-      {modals.modal2 && (
-        <ModalGlobalX3
-          modalName="modal2"
-          onClose={() => closeModalX3("modal2")}
-        >
-          <FormIngreso />
-        </ModalGlobalX3>
-      )}
-    </div>
   );
 };
 

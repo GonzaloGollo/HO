@@ -255,7 +255,7 @@ const AgregarProducto = () => {
       </div>
 
       <form onSubmit={handleSubmitCrearCuenta}>
-        <div className="formulario">
+        <div className="formularioAgregarProducto">
           <div className="campo-anotacion">
             <label className="anotacion" for="nombreProducto">
               Nombre del producto *

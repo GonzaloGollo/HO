@@ -6,9 +6,16 @@
 
 .LogoJpg {
   width: 100%;
-  max-width: 350px;
+  padding-top: 0.7rem;
+  max-width: 500px;
   overflow: cover;
 }
+
+.LogoJpgsinLema {
+  display: none;
+}
+
+
 
 .Logo {
   color: #0D5608;
@@ -31,8 +38,21 @@
 
 
 /* Media query */
-@media (max-width: 650px) {
+@media (max-width: 800px) {
     .Lema {
       display: none;
     }
+    
+.LogoJpg {
+  display: none;
+}
+
+.LogoJpgsinLema {
+  display: inline;
+  width: 100%;
+  padding-top: 0.7rem;
+  max-width: 300px;
+  overflow: cover;
+}
+
   }

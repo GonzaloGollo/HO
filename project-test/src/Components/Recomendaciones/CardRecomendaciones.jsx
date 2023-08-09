@@ -41,7 +41,7 @@ const CardRecomendaciones = ({
 CardRecomendaciones.propTypes = {
   title: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+  // id: PropTypes.number.isRequired,
   descripcion: PropTypes.string.isRequired,
   precio: PropTypes.string.isRequired, // Cambiado a string ya que en el JSON parece ser una cadena
   tipoRecurso: PropTypes.string.isRequired, 

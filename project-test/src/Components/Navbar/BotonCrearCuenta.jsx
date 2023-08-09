@@ -1,31 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Boton } from "../Genericos/Boton";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import FormAltaUser from "../../Routes/FormAltaUser";
-import Modal from "../Modal/Modal";
-import { useModalContext } from "../utils/global.contextModal";
-import ModalGlobalX3 from "../Modal/ModalGlobalX3";
+import ModalFormCrearCuenta from "../Modal/ModalFormAgregarProd";
+import { ContextGlobal } from "../utils/global.context";
+
 
 const BotonCrearCuenta = () => {
   const textoBoton = "Crear Cuenta";
 
-  const { modals, openModalx3, closeModalX3 } = useModalContext();
+  const [modalVisible, setModalVisible] = useState(false);
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  
 
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setWindowWidth(window.innerWidth);
-  //   };
+  const { showModalCU, closeModalCU, openModalCU } = useContext(ContextGlobal);
 
-  //   window.addEventListener("resize", handleResize);
-
-  //   return () => {
-  //     window.removeEventListener("resize", handleResize);
-  //   };
-  // }, []);
+  const [showScreen, setShowScreen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -39,13 +30,14 @@ const BotonCrearCuenta = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const ocultarComponente = windowWidth < 650;
-    if (ocultarComponente && modals.modal1) {
-      closeModalX3("modal1");
-    }
-  }, [windowWidth, modals.modal1]);
-  
+  const openModal = () => {
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
+
   const ocultarComponente = windowWidth < 770;
 
   if (ocultarComponente) {
@@ -53,32 +45,31 @@ const BotonCrearCuenta = () => {
   }
 
   return (
-    //     <div className="open-Modal1" modalName="modal1" onClick={() => openModalx3("modal1")}>
+    <div>
+      {/* <Boton texto={textoBoton} onClick={openModalCU} />
 
-    //       <Boton texto={textoBoton}></Boton>
-
-    //       {modals.modal1 && (
-    //         <ModalGlobalX3 modalName="modal1" onClose={closeModalX3}>
-    //           <FormAltaUser />
-    //         </ModalGlobalX3>
-    //       )}
-    //     </div>
-    //   );
-    // };
-
-    <div className="open-Modal1" onClick={() => openModalx3("modal1")}>
-      <Boton texto={textoBoton}></Boton>
-
-      {modals.modal1 && (
-        <ModalGlobalX3
-          modalName="modal1"
-          onClose={() => closeModalX3("modal1")}
-        >
+      {showModalCU && (
+        <ModalFormCrearCuenta onClose={closeModalCU}>
           <FormAltaUser />
-        </ModalGlobalX3>
-      )}
+        </ModalFormCrearCuenta>
+      )} */}
+      <Link to={"/formaltauser/"}>
+        <Boton texto={textoBoton} />
+      </Link>
     </div>
   );
 };
 
 export default BotonCrearCuenta;
+
+// import ModalGlobalX3 from "../Modal/ModalGlobalX3";
+// import Modal from "../Modal/Modal";
+
+// <div className="open-Modal1" onClick={() => openModalx3("modal1")}>
+// <Boton texto={textoBoton}></Boton>
+
+// <ModalFormCrearCuenta>
+//   <FormAltaUser />
+// </ModalFormCrearCuenta>
+
+// </div>

@@ -27,13 +27,15 @@
   --fsizeCat:15px;
   --fsizeP:13px;
   --fsizeS:10px
-  margin: 0;
-  padding: 0;
+  /* margin: 0;
+  padding: 0; */
 }
 
 * {
   box-sizing: border-box;
   line-break: strict;
+  margin: 0;
+  padding: 0;
 }
 
 code {
@@ -48,7 +50,7 @@ body {
   font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; 
+  height: 100vh; 
   display: block;
 }
 

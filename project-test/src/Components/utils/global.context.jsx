@@ -132,7 +132,19 @@ export const ContextProvider = ({ children }) => {
     setShowModal(false);
   };
 
+///////////////////Modal CrearUser ///////////
+const [showModalCU, setShowModalCU] = useState(false);
+// const [selectedImage, setSelectedImage] = useState(null);
 
+const openModalCU = () => {
+  // setSelectedImage(imageSrc);
+  setShowModalCU(true);
+};
+
+const closeModalCU = () => {
+  setShowModalCU(false);
+};
+///////////
 
 
   return (
@@ -143,6 +155,9 @@ export const ContextProvider = ({ children }) => {
         selectedImage,
         closeModal,
         openModal,
+        openModalCU,
+        closeModalCU,
+        showModalCU,
       }}
     >
       {children}

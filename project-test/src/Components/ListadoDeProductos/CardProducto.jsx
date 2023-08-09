@@ -81,7 +81,6 @@ const CardProducto = ({
 CardProducto.propTypes = {
   title: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
   descripcion: PropTypes.string.isRequired,
   precio: PropTypes.string.isRequired,
   tipoRecurso: PropTypes.string.isRequired,

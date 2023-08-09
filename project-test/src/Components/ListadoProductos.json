@@ -2,7 +2,7 @@
     {
         "id": 1,
         "tipoRecurso": "Oficina Privada",
-        "s": "Oficina privada en Buenos Aires",
+        "nombreProducto": "Oficina privada en Buenos Aires",
         "descripcion": "Oficina privada para 2 personas en Buenos Aires.",
         "capacidadMáxima": 2,
         "precio": "$1000",
@@ -80,7 +80,7 @@
       "nombreProducto": "Oficina privada en Medellín",
       "descripcion": "Oficina privada para 2 personas en Medellín",
       "capacidadMáxima": 2,
-      "precio": "1500",
+      "precio": "$1500",
       "sede": "Colombia",
       "estadoDisponibilidad": false,
       "idReservaVigente": "",

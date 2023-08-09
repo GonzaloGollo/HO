@@ -1,12 +1,14 @@
 .pagina-formulario-alta {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  width: 360px;
-  height: 600px;
-  margin-top: 10px;
-  margin: auto auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 360px;
+    /* height: auto; */
+    padding-top: 18rem;
+    padding-bottom: 2rem;
+    margin: auto auto;
+
 
 }
   .titulo-form-inicio-sesion {
@@ -14,8 +16,11 @@
     color:rgb(3, 141, 165);
   }
 
-  .formulario {
-    
+  .formularioAltaUser {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
   }
 
   .campo-anotacion {
