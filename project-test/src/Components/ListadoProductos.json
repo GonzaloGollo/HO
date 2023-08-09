@@ -2,7 +2,7 @@
     {
         "id": 1,
         "tipoRecurso": "Oficina Privada",
-        "nombreProducto": "Oficina privada en Buenos Aires",
+        "s": "Oficina privada en Buenos Aires",
         "descripcion": "Oficina privada para 2 personas en Buenos Aires.",
         "capacidadMáxima": 2,
         "precio": "$1000",
