@@ -2,19 +2,87 @@ import React from "react";
 import CardProducto from "./CardProducto";
 import { useState, useEffect, useContext } from "react";
 import "./ListadoProductos.css";
-// import { ContextGlobal } from "../utils/global.context";
+import { ContextGlobal } from "../utils/global.context";
 import listadoProductosData from "../ListadoProductos.json";
 
-const ListadoProductos = ({ CantidadCards }) => {
 
-  const [listaProductosBase, setListaProductosBase] = useState([]);
+
+const ListadoProductos = ({ CantidadCards }) => {
+  const { listaProductosBase, setListaProductosBase, cargarDatos } =
+    useContext(ContextGlobal);
+  console.log(" ----------Listado de Productos");
+
+  console.log(listaProductosBase.length);
+
+  console.log(listaProductosBase);
+  
+
+  const productoMas = {
+    id: 16,
+    tipoRecurso: "Coworking",
+    nombreProducto: "Prueba de nuevo producto",
+    descripcion: " Otra descripcion otra descripcion",
+    capacidadMáxima: 20,
+    precio: "$1500",
+    sede: "Chile",
+    estadoDisponibilidad: false,
+    idReservaVigente: 78,
+    servicios: {
+      servicio1: "WIFI",
+      servicio2: "Fotocopiadora",
+      servicio3: "Impresora",
+      servicio4: "",
+      servicio5: "",
+    },
+    fotos: {
+      foto1:
+        "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/Coworking/coworking2.jpg",
+      foto2:
+        "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/Coworking/coworking3.jpg",
+      foto3:
+        "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/Coworking/coworking4.jpg",
+      foto4:
+        "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/Coworking/coworking5.jpg",
+      foto5:
+        "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/Coworking/coworking7.jpg",
+    },
+  };
+
+  console.log(productoMas);
+
+  // Carga infinita
+  // const carga = () => {
+  //   setListaProductosBase((prevListaProductos) => [
+  //     ...prevListaProductos,
+  //     productoMas,
+  //   ]);
+  //   carga();
+  // };
+
+  // const productoMasAdaptado = JSON.parse(productoMas);
+  const listaPrevia = listaProductosBase;
+
+  // solo visualiza los de productoMas 2 veces, no el resto
+  // useEffect(() => {
+  //   setListaProductosBase{listaProductosBase} => [
+  //     ...listaProductosBase,
+  //     JSonCarga,
+  //   ]);
+  // }, []);
+  const productoAdaptadoObjeto = productoMas;
 
   useEffect(() => {
-    const cargarDatos = async () => {
-      setListaProductosBase(listadoProductosData);
-    };
-    cargarDatos();
-  }, []);
+  const addToListJson = () => {
+
+    const nuevaLista = [...listaProductosBase, productoAdaptadoObjeto];
+    setListaProductosBase(nuevaLista);
+  };
+  addToListJson();
+  }, []); 
+
+
+  console.log(" Aca empieza a mostras el resultado de CARGA");
+  console.log(listaProductosBase.length);
 
   const chunk = (arr, size) => {
     const chunkedArray = [];
@@ -28,7 +96,9 @@ const ListadoProductos = ({ CantidadCards }) => {
   const [currentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
-    const randomProducts = [...listaProductosBase].sort(() => Math.random() - 0.5);
+    const randomProducts = [...listaProductosBase].sort(
+      () => Math.random() - 0.5
+    );
 
     const paginatedArray = chunk(randomProducts, CantidadCards);
     setPaginatedProducts(paginatedArray);
@@ -43,6 +113,16 @@ const ListadoProductos = ({ CantidadCards }) => {
   };
 
 
+  console.log("Tipo de listaProductosBase:", typeof listaProductosBase);
+  console.log("Estructura de listaProductosBase:", listaProductosBase);
+
+  console.log("Tipo de productoAdaptadoObjeto:", typeof productoAdaptadoObjeto);
+  console.log("Estructura de productoAdaptadoObjeto:", productoAdaptadoObjeto);
+  console.log("Estructura de productoMas:", productoMas);
+
+  productoMas
+
+  console.log("Length listaProductosBase:", listaProductosBase);
 
   return (
     <div className="segmento-listado-productos">
@@ -66,7 +146,9 @@ const ListadoProductos = ({ CantidadCards }) => {
         ) : (
           <>
             <h3> No encontramos productos para recomendar </h3>
-            <h3>Los datos del carga son  {listaProductosBase.ListadoProductos}</h3>
+            <h3>
+              Los datos del carga son {listaProductosBase.ListadoProductos}
+            </h3>
           </>
         )}
       </div>
@@ -84,6 +166,15 @@ const ListadoProductos = ({ CantidadCards }) => {
 };
 
 export default ListadoProductos;
+
+// const [listaProductosBase, setListaProductosBase] = useState([]);
+
+// useEffect(() => {
+//   const cargarDatos = async () => {
+//     setListaProductosBase(listadoProductosData);
+//   };
+//   cargarDatos();
+// }, []);
 
 //////
 // const [producto, setProducto] = useState([]);
