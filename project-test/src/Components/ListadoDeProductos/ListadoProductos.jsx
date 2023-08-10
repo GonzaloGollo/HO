@@ -118,7 +118,7 @@ const ListadoProductos = ({ CantidadCards }) => {
   console.log("Estructura de productoAdaptadoObjeto:", productoAdaptadoObjeto);
   console.log("Estructura de productoMas:", productoMas);
 
-  productoMas;
+
 
   console.log("Length listaProductosBase:", listaProductosBase);
 

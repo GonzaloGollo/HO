@@ -108,6 +108,7 @@ import React, { useState, useContext, useEffect } from "react";
 import Error from "../Components/Error";
 import "../Components/Screen.css";
 import Modal from "../Components/Modal/Modal";
+import "../Components/Modal/Modal.css"
 import { ContextGlobal } from "../Components/utils/global.context";
 import GaleriaModal from "../Components/GaleriaFotos/GaleriaModal";
 import { useParams } from "react-router-dom";
@@ -132,13 +133,26 @@ const Screen = () => {
     return <div>Product not found</div>;
   }
 
+  // const openScreen = (imageSrc) => {
+  //   setSelectedFullScreenImage(imageSrc);
+  //   openModal(); // Abre el modal al cambiar a la pantalla completa
+  // };
+
+  // const closeScreen = () => {
+  //   setSelectedFullScreenImage(null);
+  //   closeModal(); // Cierra el modal al volver de la pantalla completa
+  // };
+
+
   const openScreen = (imageSrc) => {
     setSelectedFullScreenImage(imageSrc);
+    setShowScreen(true);
     openModal(); // Abre el modal al cambiar a la pantalla completa
   };
 
   const closeScreen = () => {
     setSelectedFullScreenImage(null);
+    setShowScreen(false);
     closeModal(); // Cierra el modal al volver de la pantalla completa
   };
 
@@ -158,8 +172,8 @@ const Screen = () => {
                 src={productoID.fotos.foto1}
                 alt={`Imagen del producto 1`}
                 onClick={() => {
-                  openScreen(productoID.fotos.foto1);
-                }}
+                  openModal(productoID.fotos.foto1);
+                  openScreen(productoID.fotos.foto1);}}
               />
             </div>
             <div className="item-grid">
@@ -167,8 +181,8 @@ const Screen = () => {
                 src={productoID.fotos.foto2}
                 alt={`Imagen del producto 2`}
                 onClick={() => {
-                  openScreen(productoID.fotos.foto2);
-                }}
+                  openModal(productoID.fotos.foto2);
+                  openScreen(productoID.fotos.foto2);}}
               />
             </div>
             <div className="item-grid">
@@ -176,8 +190,8 @@ const Screen = () => {
                 src={productoID.fotos.foto3}
                 alt={`Imagen del producto 3`}
                 onClick={() => {
-                  openScreen(productoID.fotos.foto3);
-                }}
+                  openModal(productoID.fotos.foto3);
+                  openScreen(productoID.fotos.foto3);}}
               />
             </div>
             <div className="item-grid">
@@ -185,8 +199,8 @@ const Screen = () => {
                 src={productoID.fotos.foto4}
                 alt={`Imagen del producto 4`}
                 onClick={() => {
-                  openScreen(productoID.fotos.foto4);
-                }}
+                  openModal(productoID.fotos.foto4);
+                  openScreen(productoID.fotos.foto4);}}
               />
             </div>
             <div className="item-grid">
@@ -194,15 +208,15 @@ const Screen = () => {
                 src={productoID.fotos.foto5}
                 alt={`Imagen del producto 5`}
                 onClick={() => {
-                  openScreen(productoID.fotos.foto5);
-                }}
+                  openModal(productoID.fotos.foto5);
+                  openScreen(productoID.fotos.foto5);}}
               />
             </div>
           </div>
           {showScreen && (
             <Modal onClose={closeScreen}>
               <img
-                className="modal-img"
+                className="modal-img-previsual"
                 alt="Imagen de previsualización"
                 src={selectedFullScreenImage}
               />

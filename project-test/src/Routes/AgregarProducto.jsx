@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
+import{useLocalStorage} from '../Components/utils/useLocalStorage'
 
 import "../Components/AgregarProducto.css";
 import Error from "../Components/Error";
@@ -13,6 +14,36 @@ const AgregarProducto = () => {
   const [showPreview, setShowPreview] = useState(false);
   const [selectedServiceIds, setSelectedServiceIds] = useState([]);
   const MAX_SELECTED_SERVICES = 5;
+
+
+  /////////////////////////////
+  const [storedFormValue, setStoredFormValue] = useLocalStorage("formularioProducto", {});
+
+  useEffect(() => {
+    if (storedFormValue) {
+      setProducto(storedFormValue);
+    }
+  }, [storedFormValue]);
+//   const [texto, setTexto] = useState([
+//     window.localStorage.getItem("")
+//   ]);
+
+
+// const setLocalStorage = valor => {
+
+//   try {
+//     setTexto(value)
+//     window.localStorage.setItem("text", valor)
+//   } catch (error) {
+//     console.error(error)
+    
+//   }
+// }
+//         setLocalStorage(nuevoProducto)
+
+
+////////////////////////
+
 
   // const [sede, setSede] = useState({
   //     id:"",
@@ -262,13 +293,15 @@ const AgregarProducto = () => {
       };
       console.log(listaProductosBase);
 
+      setStoredFormValue(nuevoProducto);
+
       // useEffect(() => {
-      const addToProdALista = () => {
-        const nuevoArrayProductos = [...listaProductosBase, nuevoProducto];
-        setListaProductosBase(nuevoArrayProductos);
-      };
-      addToProdALista();
-      // }, []);
+      // const addToProdALista = () => {
+      //   const nuevoArrayProductos = [...listaProductosBase, nuevoProducto];
+      //   setListaProductosBase(nuevoArrayProductos);
+      // };
+      // addToProdALista();
+      // // }, []);
       console.log(listaProductosBase.length);
       console.log(listaProductosBase);
       setVerError("");

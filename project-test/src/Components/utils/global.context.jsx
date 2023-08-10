@@ -4,7 +4,13 @@ import listadoProductosData from "../ListadoProductos.json";
 export const ContextGlobal = createContext();
 
 export const ContextProvider = ({ children }) => {
+
+  // const [listaProductosBase, setListaProductosBase] = useLocalStorageList("listaProductosBase", listadoProductosData);
+
+
+  ///////// este funcionaba
   const [listaProductosBase, setListaProductosBase] = useState([]);
+  ///////
 
     useEffect(() => {
       const cargarDatos = async () => {
@@ -17,6 +23,7 @@ export const ContextProvider = ({ children }) => {
     }, [listaProductosBase]);
 
 
+    //////
 
 
   ///////////////////////////////////////////////////////////////////////////
@@ -33,19 +40,6 @@ export const ContextProvider = ({ children }) => {
     setShowModal(false);
   };
 
-  ///////////////////Modal CrearUser ///////////
-  // const [showModalCU, setShowModalCU] = useState(false);
-  // // const [selectedImage, setSelectedImage] = useState(null);
-
-  // const openModalCU = () => {
-  //    setSelectedImageCU(imageSrc);
-  //   setShowModalCU(true);
-  // };
-
-  // const closeModalCU = () => {
-  // //   setShowModalCU(false);
-  // };
-  ///////////
 
   return (
     <ContextGlobal.Provider
