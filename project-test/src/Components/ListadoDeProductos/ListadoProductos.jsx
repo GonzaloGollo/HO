@@ -88,6 +88,21 @@ const ListadoProductos = ({ CantidadCards }) => {
   console.log(" Aca empieza a mostras el resultado de CARGA");
   console.log(listaProductosBase.length);
 
+
+  useEffect(() => {
+    if (storedFormValue) {
+      setListaProductosBase((prevList) => [...prevList, storedFormValue]);
+    }
+  }, [storedFormValue]);
+
+  console.log("Tipo de listaProductosBase:", typeof listaProductosBase);
+  console.log("Estructura de listaProductosBase:", listaProductosBase);
+  // console.log("Tipo de productoAdaptadoObjeto:", typeof productoAdaptadoObjeto);
+  // console.log("Estructura de productoAdaptadoObjeto:", productoAdaptadoObjeto);
+
+  console.log("Length listaProductosBase:", listaProductosBase);
+
+
   const chunk = (arr, size) => {
     const chunkedArray = [];
     for (let i = 0; i < arr.length; i += size) {
@@ -116,19 +131,6 @@ const ListadoProductos = ({ CantidadCards }) => {
     setCurrentPage((prevPage) => prevPage - 1);
   };
 
-  useEffect(() => {
-    if (storedFormValue) {
-      setListaProductosBase((prevList) => [...prevList, storedFormValue]);
-    }
-  }, [storedFormValue]);
-
-  console.log("Tipo de listaProductosBase:", typeof listaProductosBase);
-  console.log("Estructura de listaProductosBase:", listaProductosBase);
-
-  console.log("Tipo de productoAdaptadoObjeto:", typeof productoAdaptadoObjeto);
-  console.log("Estructura de productoAdaptadoObjeto:", productoAdaptadoObjeto);
-
-  console.log("Length listaProductosBase:", listaProductosBase);
 
   return (
     <div className="segmento-listado-productos">
@@ -145,9 +147,9 @@ const ListadoProductos = ({ CantidadCards }) => {
               url={producto.fotos.foto1} // Aquí usamos la URL de la foto
               precio={producto.precio}
               tipoRecurso={producto.tipoRecurso}
-              servicio1={producto.servicios.servicio1}
-              servicio2={producto.servicios.servicio2}
-              servicio3={producto.servicios.servicio3}
+              // servicio1={producto.servicios.servicio1}
+              // servicio2={producto.servicios.servicio2}
+              // servicio3={producto.servicios.servicio3}
               id={producto.id}
             />
           ))
