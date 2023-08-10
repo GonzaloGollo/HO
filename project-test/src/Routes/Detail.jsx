@@ -40,13 +40,13 @@ const Detail = () => {
         <div className="encabezado-descripcion">
           <div className="contenido-encabezado">
             <div className="encabezado">
-              <h1>{productoID.nombreProducto}</h1>
+              <h1 className="nombre-producto-en-detail">{productoID.nombreProducto}</h1>
               <div onClick={() => navigate(-1)}>
                 <MdArrowBackIosNew className="flecha" />
               </div>
             </div>
-            <h3 className="descripcion">
-              Localidad y tipo {productoID.descripcion}
+            <h3 className="descripcion-producto-en-detail">
+              {productoID.descripcion}
             </h3>
           </div>
         </div>

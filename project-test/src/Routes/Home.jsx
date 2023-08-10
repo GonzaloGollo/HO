@@ -8,7 +8,7 @@ const Home = () => {
     <>
       <Recomendaciones CantidadCards={3} />
       <ListadoProductos CantidadCards={10} />
-      <ProductList></ProductList>
+   
     </>
   );
 };

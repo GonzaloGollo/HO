@@ -5,9 +5,15 @@
   /* margin: auto; */
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: repeat(2, 45%); /* Dos columnas con ancho del 45% de la página */
+  grid-template-columns: repeat(
+    2,
+    45%
+  ); /* Dos columnas con ancho del 45% de la página */
   /* grid-auto-rows: minmax(100px, auto);  */
-  grid-template-rows: repeat(5, minmax(100px, auto)); /* Máximo de 5 filas con altura mínima de 100px, se ajusta según el contenido */
+  grid-template-rows: repeat(
+    5,
+    minmax(100px, auto)
+  ); /* Máximo de 5 filas con altura mínima de 100px, se ajusta según el contenido */
   gap: 1rem;
   justify-content: center;
   align-items: center;
@@ -18,40 +24,45 @@
 /* Estilos para pantallas medianas */
 @media (max-width: 900px) {
   .grid-container-listado-home {
-    grid-template-columns: repeat(1, 90%); /* Una columna con ancho del 90% de la página */
+    grid-template-columns: repeat(
+      1,
+      90%
+    ); /* Una columna con ancho del 90% de la página */
     margin-left: 15%;
   }
 }
 
 /* Estilos para pantallas pequeñas */
-@media (max-width: 380px) {
-  .grid-container-listado-home{
+@media (max-width: 600px) {
+  .grid-container-listado-home {
     grid-template-columns: repeat(1, 100%);
+    margin-left: 10%;
+  }
+}
 
-    /* Una columna con ancho del 100% de la página */
-    /* grid-auto-rows: minmax(20%, 1fr); Altura mínima del 20% de la página, máximo de 1fr (equivalente a 1/5 de la página) */
+
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 380px) {
+  .grid-container-listado-home {
+    grid-template-columns: repeat(1, 100%);
   }
 }
 
 @media (max-width: 380px) {
-  .grid-container-listado-home{
-   
-     margin-left: 15%; 
-    /* Una columna con ancho del 100% de la página */
-    /* grid-auto-rows: minmax(20%, 1fr); Altura mínima del 20% de la página, máximo de 1fr (equivalente a 1/5 de la página) */
+  .grid-container-listado-home {
+    margin-left: 15%;
   }
 }
-
-
 
 .segmento-listado-productos {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  
+
   width: 100%;
-  
+
   z-index: 0;
 }
 
@@ -68,6 +79,10 @@
   margin-bottom: 2rem;
   width: 100%;
   border: 1px solid rebeccapurple;
+}
+
+.pagination {
+  margin: 3rem;
 }
 
 /* .ImgCard-producto {

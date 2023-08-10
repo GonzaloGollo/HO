@@ -150,3 +150,12 @@
   box-shadow: var(--BShadowD);
 }
 
+/* Estilos para pantallas pequeñas */
+@media (max-width: 600px) {
+  .card-body-producto {
+    
+    width: 90%;
+    margin-left: 0;
+    
+  }
+}

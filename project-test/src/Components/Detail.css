@@ -1,5 +1,5 @@
 .segmento-producto {
-  padding-top: 10rem;
+  padding-top: 13rem;
   max-width: 1210px;
   margin: auto;
   padding-left: 2rem;
@@ -53,17 +53,23 @@
   background-color: white;
 }
 
-h1 {
-  line-height: 30px;
+
+.nombre-producto-en-detail {
+  font-size:var(--fsizeT) ;
+  color: var(--colorGrey1);
+  font-weight: var(--fweightXL);
+  line-height: 25px;
   margin-bottom: 1rem;
   max-width: 1210px;
 }
 
-h3.descripcion {
+.descripcion-producto-en-detail {
   line-height: 25px;
-  margin: 0;
-  font-weight: 300;
+  margin-bottom: 1.5rem;
+  font-weight: var(--fweightL);
   max-width: 1210px;
+  font-size: var(--fsizeSecc) ;
+  color:var(--colorGrey2) ;
 }
 
 .nombre-producto {

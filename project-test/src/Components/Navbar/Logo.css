@@ -5,8 +5,8 @@
 } */
 
 .LogoJpg {
-  width: 100%;
-  padding-top: 0.7rem;
+  width: 300px;
+  padding-top: 0;
   max-width: 500px;
   overflow: cover;
 }
@@ -42,17 +42,17 @@
     .Lema {
       display: none;
     }
-    
+     
 .LogoJpg {
-  display: none;
-}
+  width: 250px;
+} 
 
-.LogoJpgsinLema {
+/* .LogoJpgsinLema {
   display: inline;
   width: 100%;
   padding-top: 0.7rem;
   max-width: 300px;
   overflow: cover;
-}
+} */
 
   }

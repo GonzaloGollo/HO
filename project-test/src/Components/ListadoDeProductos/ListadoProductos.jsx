@@ -3,15 +3,14 @@ import CardProducto from "./CardProducto";
 import { useState, useEffect, useContext } from "react";
 import "./ListadoProductos.css";
 import { ContextGlobal } from "../utils/global.context";
-// import listadoProductosData from "../ListadoProductos.json";
-// import { useHistory } from "react-router-dom";
+
 import { useNavigate } from "react-router-dom";
 import { useLocalStorageList } from "../utils/useStorageList.js";
-// import {Paginacion} from "./Paginacion";
+
 
 const ListadoProductos = ({ CantidadCards }) => {
   const navigate = useNavigate();
-  // const history = useHistory();
+
 
   const { listaProductosBase, setListaProductosBase } =
     useContext(ContextGlobal);
@@ -164,7 +163,47 @@ const ListadoProductos = ({ CantidadCards }) => {
       </div>
 
       <div className="pagination">
-      <nav
+  
+       {currentPage > 0 && (
+          <button onClick={handlePreviousPage}>Anterior</button>
+        )}
+        {currentPage < paginatedProducts.length - 1 && (
+          <>
+            <button onClick={handleNextPage}>Siguiente</button>
+          </>
+        )}
+
+        {currentPage > 0 && (
+          <button onClick={handlePreviousPage}>Anterior</button>
+        )}
+        {currentPage < paginatedProducts.length - 1 && (
+          <>
+            <button onClick={handleNextPage}>Siguiente</button>
+            <button onClick={() => navigate(-1)}>Go back</button>
+          </> 
+        )}
+        {currentPage < paginatedProducts.length - 1 && (
+          <> 
+      
+            <button onClick={() => navigate(1)}>Go forward</button>
+          </>
+        )}
+        {currentPage < paginatedProducts.length - 1 && (
+          <>
+            <button onClick={handleNextPage}>Siguiente</button>
+          </>
+        )}  
+        
+      </div>
+
+    </div>
+  );
+};
+
+export default ListadoProductos;
+
+
+ {/* <nav
         class="pagination is-centered"
         role="navigation"
         aria-label="pagination"
@@ -199,92 +238,4 @@ const ListadoProductos = ({ CantidadCards }) => {
             </a>
           </li>
         </ul>
-      </nav>
-    
-
-    
-       {currentPage > 0 && (
-          <button onClick={handlePreviousPage}>Anterior</button>
-        )}
-        {currentPage < paginatedProducts.length - 1 && (
-          <>
-            <button onClick={handleNextPage}>Siguiente</button>
-          </>
-        )}
-
-        {currentPage > 0 && (
-          <button onClick={handlePreviousPage}>Anterior</button>
-        )}
-        {currentPage < paginatedProducts.length - 1 && (
-          <>
-            <button onClick={handleNextPage}>Siguiente</button>
-            {/* <button onClick={() => navigate(-1)}>Go back</button>*/}
-          </> 
-        )}
-        {currentPage < paginatedProducts.length - 1 && (
-          <> 
-            {/* <button onClick={handleNextPage}>Siguiente</button> */}
-            <button onClick={() => navigate(1)}>Go forward</button>
-          </>
-        )}
-        {currentPage < paginatedProducts.length - 1 && (
-          <>
-            <button onClick={handleNextPage}>Siguiente</button>
-          </>
-        )}  
-        
-      </div>
-
-    </div>
-  );
-};
-
-export default ListadoProductos;
-
-// const [listaProductosBase, setListaProductosBase] = useState([]);
-
-// useEffect(() => {
-//   const cargarDatos = async () => {
-//     setListaProductosBase(listadoProductosData);
-//   };
-//   cargarDatos();
-// }, []);
-
-//////
-// const [producto, setProducto] = useState([]);
-
-//   const getProductos = async () => {
-//     const res = await fetch("https://jsonplaceholder.typicode.com/photos/");
-//     const data = await res.json();
-//     setProducto(data);
-//   };
-
-//   useEffect(() => {
-//     getProductos();
-//   }, []);
-
-////////
-
-// const getRandomProductsPaginado = () => {
-//   const listadoAleatorio = [...productos].sort(() => Math.random() - 0.2);
-//   const cantPaginas = listadoAleatorio.length/10;
-
-//   for (let i = 0; i < cantPaginas.length; i++) {
-
-//      listadoPaginado[i].push(listadoAleatorio.slice(0,10)) ;
-//     const element = cantPaginas[i];
-
-//   }
-//   listadoAleatorio.slice(0,10)
-
-//   while(listadoAleatorio.length !=0 ){
-
-//   }
-
-//   const randomProducts =[...productos]
-//     .sort(() => Math.random() - 0.2)
-//     .slice(0, CantidadCards);
-//   return randomProducts;
-// };
-
-// const productosAleatoriosPaginados = getRandomProductsPaginado();
+      </nav> */}
