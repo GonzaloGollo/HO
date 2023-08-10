@@ -1,17 +1,21 @@
 
-.pagina-formulario {
-
+.pagina-formulario-Ingreso {
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     width: 360px;
-    /* height: auto; */
-    padding-top: 18rem;
+    height: auto;
+    padding-top: 15rem;
     padding-bottom: 2rem;
-    margin: auto auto;
+    margin: 0 auto;
+
 
   }
+
+  
+
   .titulo-form-inicio-sesion {
     font-size: 30px;
     color:rgb(3, 141, 165);
@@ -36,7 +40,7 @@
     border-radius: 10px 10px 10px 10px;
     width: 340px;
     height: 30px;
-    background-color: #dfdfdf;
+    background-color:white;
    
   }
 

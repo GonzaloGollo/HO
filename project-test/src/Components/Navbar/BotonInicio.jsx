@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 const BotonInicio = () => {
 
 
-  const textoBoton = "Inicio";
+  const textoBoton = "Iniciar sesion";
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 

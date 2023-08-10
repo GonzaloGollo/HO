@@ -5,12 +5,18 @@
     align-items: center;
     width: 360px;
     /* height: auto; */
-    padding-top: 18rem;
+    padding-top: 13rem;
     padding-bottom: 2rem;
     margin: auto auto;
 
 
 }
+
+.campo-formulario {
+  background-color: white;
+}
+
+
   .titulo-form-inicio-sesion {
     font-size: 30px;
     color:rgb(3, 141, 165);

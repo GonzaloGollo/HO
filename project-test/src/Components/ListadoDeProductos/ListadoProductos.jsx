@@ -6,12 +6,19 @@ import { ContextGlobal } from "../utils/global.context";
 // import listadoProductosData from "../ListadoProductos.json";
 // import { useHistory } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useLocalStorageList } from "../utils/useStorageList.js";
+// import {Paginacion} from "./Paginacion";
 
 const ListadoProductos = ({ CantidadCards }) => {
   const navigate = useNavigate();
   // const history = useHistory();
-  const { listaProductosBase, setListaProductosBase, cargarDatos } =
+
+  const { listaProductosBase, setListaProductosBase } =
     useContext(ContextGlobal);
+  const [storedFormValue] = useLocalStorageList("formularioProducto", {});
+
+  //   const { listaProductosBase, setListaProductosBase, cargarDatos } =
+  //   useContext(ContextGlobal);
   console.log(" ----------Listado de Productos");
 
   console.log(listaProductosBase.length);
@@ -101,7 +108,6 @@ const ListadoProductos = ({ CantidadCards }) => {
     setPaginatedProducts(paginatedArray);
   }, [CantidadCards, listaProductosBase]);
 
- 
   const handleNextPage = () => {
     setCurrentPage((prevPage) => prevPage + 1);
   };
@@ -110,15 +116,17 @@ const ListadoProductos = ({ CantidadCards }) => {
     setCurrentPage((prevPage) => prevPage - 1);
   };
 
+  useEffect(() => {
+    if (storedFormValue) {
+      setListaProductosBase((prevList) => [...prevList, storedFormValue]);
+    }
+  }, [storedFormValue]);
 
   console.log("Tipo de listaProductosBase:", typeof listaProductosBase);
   console.log("Estructura de listaProductosBase:", listaProductosBase);
 
   console.log("Tipo de productoAdaptadoObjeto:", typeof productoAdaptadoObjeto);
   console.log("Estructura de productoAdaptadoObjeto:", productoAdaptadoObjeto);
-  console.log("Estructura de productoMas:", productoMas);
-
-
 
   console.log("Length listaProductosBase:", listaProductosBase);
 
@@ -126,10 +134,11 @@ const ListadoProductos = ({ CantidadCards }) => {
     <div className="segmento-listado-productos">
       <h3 className="txt-titulo-listado-productos"></h3>
 
-      <div className="grid-container-listado">
+      <div className="grid-container-listado-home">
         {paginatedProducts.length ? (
           paginatedProducts[currentPage].map((producto, index) => (
             <CardProducto
+              className='.item-grid'
               key={producto.id}
               title={producto.nombreProducto}
               descripcion={producto.descripcion}
@@ -153,39 +162,77 @@ const ListadoProductos = ({ CantidadCards }) => {
       </div>
 
       <div className="pagination">
-      {currentPage > 0 && (
+      <nav
+        class="pagination is-centered"
+        role="navigation"
+        aria-label="pagination"
+      >
+        <a class="pagination-previous">Previous</a>
+        <a class="pagination-next">Next page</a>
+        <ul class="pagination-list">
+          <li>
+            <a class="pagination-link" aria-label="Goto page 1">
+              1
+            </a>
+          </li>
+          <li>
+            <span class="pagination-ellipsis">&hellip;</span>
+          </li>
+          <li>
+            <a
+              class="pagination-link is-current"
+              aria-label="Page 46"
+              aria-current="page"
+            >
+              {currentPage +1}
+            </a>
+          </li>
+          <li>
+            <a
+              class="pagination-link"
+              aria-label="Page 46"
+              aria-current="page"
+            >
+              {currentPage +2}
+            </a>
+          </li>
+        </ul>
+      </nav>
+    
+
+    
+       {currentPage > 0 && (
           <button onClick={handlePreviousPage}>Anterior</button>
         )}
         {currentPage < paginatedProducts.length - 1 && (
           <>
             <button onClick={handleNextPage}>Siguiente</button>
-         
           </>
         )}
-
 
         {currentPage > 0 && (
           <button onClick={handlePreviousPage}>Anterior</button>
         )}
         {currentPage < paginatedProducts.length - 1 && (
           <>
-            {/* <button onClick={handleNextPage}>Siguiente</button> */}
-            <button onClick={() => navigate(-1)}>Go back</button>
-          </>
+            <button onClick={handleNextPage}>Siguiente</button>
+            {/* <button onClick={() => navigate(-1)}>Go back</button>*/}
+          </> 
         )}
         {currentPage < paginatedProducts.length - 1 && (
-          <>
+          <> 
             {/* <button onClick={handleNextPage}>Siguiente</button> */}
             <button onClick={() => navigate(1)}>Go forward</button>
           </>
         )}
-         {currentPage < paginatedProducts.length - 1 && (
+        {currentPage < paginatedProducts.length - 1 && (
           <>
             <button onClick={handleNextPage}>Siguiente</button>
-           
           </>
-        )}
+        )}  
+        
       </div>
+
     </div>
   );
 };

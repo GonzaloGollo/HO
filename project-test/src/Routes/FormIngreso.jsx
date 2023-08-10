@@ -83,7 +83,7 @@ const FormIngreso = () => {
   };
 
   return (
-    <div className="pagina-formulario">
+    <div className="pagina-formulario-Ingreso">
       <div className="encabezado-formulario">
         <div className="titulo-form-inicio-sesion">Inicia sesión ahora</div>
       </div>

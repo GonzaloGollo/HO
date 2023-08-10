@@ -1,16 +1,15 @@
-.footer {
+.footer-HO {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
   height: 50px;
- 
+  width: 100%;
   padding: 0 2rem;
   background-color: #2E4F4F;
   color: white;
   margin-top: auto;
   position: relative;
-  bottom: 0px;
+  bottom: 0px; 
   
 }

@@ -24,13 +24,13 @@ const CardProducto = ({
             <div className="descripcion-tipo">
               <p className="descripcion-card-home p-sinmargin">{descripcion}</p>
               {/* <p className="tipo-recurso-card p-sinmargin">{tipoRecurso}</p> */}
-              <div className="servicios">
+              {/* <div className="servicios">
                 <p className="servicio-card p-sinmargin">{servicio1}</p>
                 <p className="p-sinmargin">-</p>
                 <p className="servicio-card p-sinmargin">{servicio2}</p>
                 <p className="p-sinmargin">-</p>
                 <p className="servicio-card p-sinmargin">{servicio3}</p>
-              </div>
+              </div> */}
             </div>
           </div>
 

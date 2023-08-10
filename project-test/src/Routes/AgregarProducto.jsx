@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
 import{useLocalStorage} from '../Components/utils/useLocalStorage'
-
 import "../Components/AgregarProducto.css";
 import Error from "../Components/Error";
 import { Boton } from "../Components/Genericos/Boton";
@@ -24,33 +23,6 @@ const AgregarProducto = () => {
       setProducto(storedFormValue);
     }
   }, [storedFormValue]);
-//   const [texto, setTexto] = useState([
-//     window.localStorage.getItem("")
-//   ]);
-
-
-// const setLocalStorage = valor => {
-
-//   try {
-//     setTexto(value)
-//     window.localStorage.setItem("text", valor)
-//   } catch (error) {
-//     console.error(error)
-    
-//   }
-// }
-//         setLocalStorage(nuevoProducto)
-
-
-////////////////////////
-
-
-  // const [sede, setSede] = useState({
-  //     id:"",
-  //     sede:"",
-  //     ciudad: "",
-  //     pais: "",
-  //     });
 
   const sedesArray = [
     {
@@ -293,8 +265,11 @@ const AgregarProducto = () => {
       };
       console.log(listaProductosBase);
 
-      setStoredFormValue(nuevoProducto);
-
+      setListaProductosBase((prevList) => {
+        const newList = Array.isArray(prevList) ? prevList : [];
+        return [...newList, nuevoProducto];
+      });
+    
       // useEffect(() => {
       // const addToProdALista = () => {
       //   const nuevoArrayProductos = [...listaProductosBase, nuevoProducto];
@@ -302,6 +277,11 @@ const AgregarProducto = () => {
       // };
       // addToProdALista();
       // // }, []);
+      console.log("Muestra el valor de StoredValue");
+      console.log(listaProductosBase);
+
+      console.log("Muestra el valor de StoredValue");
+      console.log(storedFormValue);
       console.log(listaProductosBase.length);
       console.log(listaProductosBase);
       setVerError("");
@@ -538,6 +518,7 @@ const AgregarProducto = () => {
       <div className="acceso-cuenta-o-usuarionuevo"></div>
 
       {showPreview && <PreviewProduct producto={producto} />}
+
     </div>
   );
 };

@@ -1,36 +1,57 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
 /* Estilos para pantallas grandes */
-.grid-container-listado {
-  margin: 0 auto;
+.grid-container-listado-home {
+  /* margin: auto; */
   margin-top: 1rem;
   display: grid;
   grid-template-columns: repeat(2, 45%); /* Dos columnas con ancho del 45% de la página */
   /* grid-auto-rows: minmax(100px, auto);  */
   grid-template-rows: repeat(5, minmax(100px, auto)); /* Máximo de 5 filas con altura mínima de 100px, se ajusta según el contenido */
-  gap: 2rem;
+  gap: 1rem;
   justify-content: center;
   align-items: center;
+  margin-left: 2rem;
+  /* max-width: 1900px; */
 }
 
 /* Estilos para pantallas medianas */
 @media (max-width: 900px) {
-  .grid-container-listado {
+  .grid-container-listado-home {
     grid-template-columns: repeat(1, 90%); /* Una columna con ancho del 90% de la página */
+    margin-left: 15%;
   }
 }
 
 /* Estilos para pantallas pequeñas */
-@media (max-width: 300px) {
-  .grid-container-listado {
-    grid-template-columns: 100%; /* Una columna con ancho del 100% de la página */
-    grid-auto-rows: minmax(20%, 1fr); /* Altura mínima del 20% de la página, máximo de 1fr (equivalente a 1/5 de la página) */
+@media (max-width: 380px) {
+  .grid-container-listado-home{
+    grid-template-columns: repeat(1, 100%);
+
+    /* Una columna con ancho del 100% de la página */
+    /* grid-auto-rows: minmax(20%, 1fr); Altura mínima del 20% de la página, máximo de 1fr (equivalente a 1/5 de la página) */
+  }
+}
+
+@media (max-width: 380px) {
+  .grid-container-listado-home{
+   
+     margin-left: 15%; 
+    /* Una columna con ancho del 100% de la página */
+    /* grid-auto-rows: minmax(20%, 1fr); Altura mínima del 20% de la página, máximo de 1fr (equivalente a 1/5 de la página) */
   }
 }
 
 
 
 .segmento-listado-productos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  
   width: 100%;
-  margin: 0;
+  
   z-index: 0;
 }
 
@@ -44,10 +65,12 @@
   align-items: center;
   justify-content: space-between;
   flex: 1;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  border: 1px solid rebeccapurple;
 }
 
-.ImgCard-producto {
+/* .ImgCard-producto {
   max-width: 100%;
   max-height: 100%;
   width: 700px;
@@ -55,4 +78,4 @@
   border-radius: 10px 10px 10px 10px;
   margin-right: 0px;
   object-fit: cover; 
-}
+} */

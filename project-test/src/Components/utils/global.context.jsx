@@ -1,17 +1,13 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import listadoProductosData from "../ListadoProductos.json";
-
+import {useLocalStorageList} from '../utils/useStorageList.js'
 export const ContextGlobal = createContext();
-
 export const ContextProvider = ({ children }) => {
 
-  // const [listaProductosBase, setListaProductosBase] = useLocalStorageList("listaProductosBase", listadoProductosData);
-
+  const [listaProductosBase, setListaProductosBase] = useLocalStorageList("listaProductosBase", listadoProductosData);
 
   ///////// este funcionaba
-  const [listaProductosBase, setListaProductosBase] = useState([]);
-  ///////
-
+  // const [listaProductosBase, setListaProductosBase] = useState([]);
     useEffect(() => {
       const cargarDatos = async () => {
         // Verificar si listaProductosBase ya está cargada para evitar duplicados
@@ -22,25 +18,16 @@ export const ContextProvider = ({ children }) => {
       cargarDatos();
     }, [listaProductosBase]);
 
-
-    //////
-
-
-  ///////////////////////////////////////////////////////////////////////////
   ///Modal Fotos ////
   const [showModal, setShowModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
-
   const openModal = (imageSrc) => {
     setSelectedImage(imageSrc);
     setShowModal(true);
   };
-
   const closeModal = () => {
     setShowModal(false);
   };
-
-
   return (
     <ContextGlobal.Provider
       value={{

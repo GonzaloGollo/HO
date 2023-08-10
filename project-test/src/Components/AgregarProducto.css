@@ -27,13 +27,14 @@
       color:var(-colorGrey)
     }
   
-    .campo-formulario {
-      border-radius: 10px 10px 10px 10px;
-      width: 340px;
-      height: 30px;
-      background-color:var(--colorGrey2)
-     
-    }
+   
+  .campo-formulario {
+    border-radius: 10px 10px 10px 10px;
+    width: 340px;
+    height: 30px;
+    background-color:white;
+   
+  }
   
     .boton-acceso-agregar-producto {
 

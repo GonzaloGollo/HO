@@ -16,8 +16,8 @@ const Buscador = () => {
           <div className="separador">|</div>
         </div>
 
-        <div className="icono-lupa">
-          <MdSearch className="icon"/>
+        <div className="icono-lupa-contenedor">
+          <MdSearch className="icono-lupa"/>
         </div>
       </div>
     </div>
