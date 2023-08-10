@@ -5,6 +5,7 @@ import Error from "../Components/Error";
 
 const FormAltaUser = () => {
   const textoBotonGuardarForm = "Crear Cuenta";
+  
   const [usuario, setUsuario] = useState({
     nombre: "",
     apellido: "",

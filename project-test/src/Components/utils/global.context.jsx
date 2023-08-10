@@ -6,14 +6,6 @@ export const ContextGlobal = createContext();
 export const ContextProvider = ({ children }) => {
   const [listaProductosBase, setListaProductosBase] = useState([]);
 
-  // useEffect(() => {
-  //   const cargarDatos = async () => {
-  //     // Verificar si listaProductosBase ya está cargada para evitar duplicados
-  //     if (listaProductosBase.length === 0) {
-  //       setListaProductosBase(JSON.parse(listadoProductosData));
-  //     }
-  //   };
-
     useEffect(() => {
       const cargarDatos = async () => {
         // Verificar si listaProductosBase ya está cargada para evitar duplicados
@@ -24,29 +16,8 @@ export const ContextProvider = ({ children }) => {
       cargarDatos();
     }, [listaProductosBase]);
 
-    // useEffect(() => {
-    //   const cargarDatos = async () => {
-    //     // Verificar si listaProductosBase ya está cargada para evitar duplicados
-    //     if (listaProductosBase.length === 0) {
-    //       setListaProductosBase(JSON.parse(listadoProductosData));
-    //     }
-    //   };
 
 
-
-
-    /*cargarDatos()*/;
-  // }, []);
-
-  // useEffect(() => {
-  //   const cargarDatos = async () => {
-  //     // Verificar si listaProductosBase ya está cargada para evitar duplicados
-  //     if (listaProductosBase.length === 0) {
-  //       setListaProductosBase(listadoProductosData);
-  //     }
-  //   };
-  //   cargarDatos();
-  // });
 
   ///////////////////////////////////////////////////////////////////////////
   ///Modal Fotos ////
@@ -63,17 +34,17 @@ export const ContextProvider = ({ children }) => {
   };
 
   ///////////////////Modal CrearUser ///////////
-  const [showModalCU, setShowModalCU] = useState(false);
-  // const [selectedImage, setSelectedImage] = useState(null);
+  // const [showModalCU, setShowModalCU] = useState(false);
+  // // const [selectedImage, setSelectedImage] = useState(null);
 
-  const openModalCU = () => {
-    // setSelectedImage(imageSrc);
-    setShowModalCU(true);
-  };
+  // const openModalCU = () => {
+  //    setSelectedImageCU(imageSrc);
+  //   setShowModalCU(true);
+  // };
 
-  const closeModalCU = () => {
-    setShowModalCU(false);
-  };
+  // const closeModalCU = () => {
+  // //   setShowModalCU(false);
+  // };
   ///////////
 
   return (
@@ -85,9 +56,9 @@ export const ContextProvider = ({ children }) => {
         selectedImage,
         closeModal,
         openModal,
-        openModalCU,
-        closeModalCU,
-        showModalCU,
+        // openModalCU,
+        // closeModalCU,
+        // showModalCU,
       }}
     >
       {children}

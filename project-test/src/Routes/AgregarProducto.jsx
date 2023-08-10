@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 
 import "../Components/AgregarProducto.css";
 import Error from "../Components/Error";
 import { Boton } from "../Components/Genericos/Boton";
+import PreviewProduct from "../Components/PreviewProduct.jsx";
+import { ContextGlobal } from "../Components/utils/global.context";
 
 const AgregarProducto = () => {
+  const { listaProductosBase, setListaProductosBase } =
+    useContext(ContextGlobal);
 
+  const [showPreview, setShowPreview] = useState(false);
+  const [selectedServiceIds, setSelectedServiceIds] = useState([]);
+  const MAX_SELECTED_SERVICES = 5;
 
   // const [sede, setSede] = useState({
   //     id:"",
@@ -86,6 +93,41 @@ const AgregarProducto = () => {
     },
   ];
 
+  const serviciosArray = [
+    {
+      id: 1,
+      tipo: "Wifi",
+    },
+    {
+      id: 2,
+      tipo: "Internet de alta velocidad",
+    },
+    {
+      id: 3,
+      tipo: "Impresora y escáner",
+    },
+    {
+      id: 4,
+      tipo: "Terraza",
+    },
+    {
+      id: 5,
+      tipo: "Sala de juegos",
+    },
+    {
+      id: 6,
+      tipo: "Estacionamiento",
+    },
+    {
+      id: 7,
+      tipo: "Locker",
+    },
+    {
+      id: 8,
+      tipo: "Seguridad privada",
+    },
+  ];
+
   const [producto, setProducto] = useState({
     id: "",
     tipoRecurso: "",
@@ -110,7 +152,6 @@ const AgregarProducto = () => {
       foto4: "",
       foto5: "",
     },
- 
   });
 
   const [form, setForm] = useState(false);
@@ -153,6 +194,21 @@ const AgregarProducto = () => {
     setVerError("");
   };
 
+  const onChangeServicios = (e) => {
+    const selectedServiceId = e.target.value;
+
+    if (selectedServiceIds.includes(selectedServiceId)) {
+      setSelectedServiceIds(selectedServiceIds.filter(id => id !== selectedServiceId));
+    } else {
+      if (selectedServiceIds.length < MAX_SELECTED_SERVICES) {
+        setSelectedServiceIds([...selectedServiceIds, selectedServiceId]);
+      }
+    }
+
+    setVerError("");
+  };
+  
+
   const onChangeFoto = (e) => {
     const fotos = e.target.files; // Obtener los archivos seleccionados
     const fotosArray = Array.from(fotos); // Convertir FileList en un array
@@ -163,7 +219,7 @@ const AgregarProducto = () => {
     setProducto({
       ...producto,
       fotos: {
-        foto1: fotosTempUrls[0] || "", // Asignar URL de la primera foto o cadena vacía
+        foto1: fotosTempUrls[0] || "",
         foto2: fotosTempUrls[1] || "",
         foto3: fotosTempUrls[2] || "",
         foto4: fotosTempUrls[3] || "",
@@ -184,37 +240,37 @@ const AgregarProducto = () => {
     }
   };
 
-  const handleSubmitCrearCuenta = (e) => {
+  const handleSubmitCrearProducto = (e) => {
     e.preventDefault();
     const isUsernameValid = validarNombreProducto(producto.nombreProducto);
 
     if (isUsernameValid) {
       setForm(true);
-      setProducto({
-        id: "",
-        tipoRecurso: "",
-        nombreProducto: "",
-        descripcion: "",
-        capacidadMáxima: "",
-        precio: "",
-        sede: "",
-        estadoDisponibilidad: "",
-        idReservaVigente: "",
-        servicios: {
-          servicio1: "",
-          servicio2: "",
-          servicio3: "",
-          servicio4: "",
-          servicio5: "",
-        },
-        fotos: {
-          foto1: "",
-          foto2: "",
-          foto3: "",
-          foto4: "",
-          foto5: "",
-        },
-      });
+      // setShowPreview(true);
+      console.log(form);
+
+      const nuevoProducto = {
+        id: listaProductosBase.length + 1, // Aquí podrías usar un ID único, dependiendo de tu lógica
+        tipoRecurso: producto.tipoRecurso,
+        nombreProducto: producto.nombreProducto,
+        descripcion: producto.descripcion,
+        capacidadMaxima: producto.capacidadMáxima,
+        precio: producto.precio,
+        sede: producto.sede,
+        estadoDisponibilidad: producto.estadoDisponibilidad,
+        fotos: producto.fotos,
+      };
+      console.log(listaProductosBase);
+
+      // useEffect(() => {
+      const addToProdALista = () => {
+        const nuevoArrayProductos = [...listaProductosBase, nuevoProducto];
+        setListaProductosBase(nuevoArrayProductos);
+      };
+      addToProdALista();
+      // }, []);
+      console.log(listaProductosBase.length);
+      console.log(listaProductosBase);
       setVerError("");
     } else {
       <Error />;
@@ -254,7 +310,7 @@ const AgregarProducto = () => {
         <div className="titulo-form-inicio-sesion">Agrega productos</div>
       </div>
 
-      <form onSubmit={handleSubmitCrearCuenta}>
+      <form onSubmit={handleSubmitCrearProducto}>
         <div className="formularioAgregarProducto">
           <div className="campo-anotacion">
             <label className="anotacion" for="nombreProducto">
@@ -330,8 +386,28 @@ const AgregarProducto = () => {
           </div>
 
           <div className="campo-anotacion">
+            <label className="anotacion">Selecciona hasta 5 servicios *</label>
+            {serviciosArray.map((servicio) => (
+              <div key={servicio.id}>
+                <input
+                  type="checkbox"
+                  id={`servicio-${servicio.id}`}
+                  name={`servicio-${servicio.id}`}
+                  value={servicio.id}
+                  checked={selectedServiceIds.includes(servicio.id)}
+                  onChange={onChangeServicios}
+                  disabled={selectedServiceIds.length >= MAX_SELECTED_SERVICES && !selectedServiceIds.includes(servicio.id)}
+                />
+                <label htmlFor={`servicio-${servicio.id}`}>
+                  {servicio.tipo}
+                </label>
+              </div>
+            ))}
+          </div>
+
+          <div className="campo-anotacion">
             <label className="anotacion" for="precioProducto">
-            Precio del producto *
+              Precio del producto *
             </label>
             <input
               id="precioProducto"
@@ -410,13 +486,12 @@ const AgregarProducto = () => {
 
           {/* //////////////-----------------------------////////////// */}
           <div className="boton-acceso-agregar-producto">
-            {/* <button type="submit" value="Guardar">
-              {" "}
-              Guardar{" "}
-            </button> */}
-            <Boton  type="submit" value="Guardar" texto="Guardar" ></Boton>
-            <Boton texto="Cancelar" type="reset"></Boton>
-            
+            <button className="boton" type="submit" value="Guardar">
+              Guardar
+            </button>
+            <button className="boton" type="reset">
+              Cancelar
+            </button>
           </div>
         </div>
         {form && (
@@ -427,10 +502,9 @@ const AgregarProducto = () => {
 
         {VerError !== "" && <Error />}
       </form>
-      <div className="acceso-cuenta-o-usuarionuevo">
-        {/* <div>No tenés cuenta?</div>
-        <div>Se te olvidó tu contraseña?</div> */}
-      </div>
+      <div className="acceso-cuenta-o-usuarionuevo"></div>
+
+      {showPreview && <PreviewProduct producto={producto} />}
     </div>
   );
 };

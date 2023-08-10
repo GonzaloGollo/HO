@@ -3,9 +3,9 @@ import "./Modal.css";
 
 const Modal = ({ onClose, children }) => {
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
-        <div className="modal-close-button" onClick={onClose}>
+    <div className="modal-overlay-M">
+      <div className="modal-content-M">
+        <div className="modal-close-button-M" onClick={onClose}>
           Cerrar X
         </div>
 

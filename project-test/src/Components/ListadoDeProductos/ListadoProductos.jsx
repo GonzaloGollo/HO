@@ -3,11 +3,13 @@ import CardProducto from "./CardProducto";
 import { useState, useEffect, useContext } from "react";
 import "./ListadoProductos.css";
 import { ContextGlobal } from "../utils/global.context";
-import listadoProductosData from "../ListadoProductos.json";
-
-
+// import listadoProductosData from "../ListadoProductos.json";
+// import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ListadoProductos = ({ CantidadCards }) => {
+  const navigate = useNavigate();
+  // const history = useHistory();
   const { listaProductosBase, setListaProductosBase, cargarDatos } =
     useContext(ContextGlobal);
   console.log(" ----------Listado de Productos");
@@ -15,15 +17,14 @@ const ListadoProductos = ({ CantidadCards }) => {
   console.log(listaProductosBase.length);
 
   console.log(listaProductosBase);
-  
 
   const productoMas = {
-    id: 16,
+    id: 17,
     tipoRecurso: "Coworking",
     nombreProducto: "Prueba de nuevo producto",
     descripcion: " Otra descripcion otra descripcion",
     capacidadMáxima: 20,
-    precio: "$1500",
+    precio: "$1800",
     sede: "Chile",
     estadoDisponibilidad: false,
     idReservaVigente: 78,
@@ -50,36 +51,32 @@ const ListadoProductos = ({ CantidadCards }) => {
 
   console.log(productoMas);
 
-  // Carga infinita
-  // const carga = () => {
-  //   setListaProductosBase((prevListaProductos) => [
-  //     ...prevListaProductos,
-  //     productoMas,
-  //   ]);
-  //   carga();
-  // };
-
-  // const productoMasAdaptado = JSON.parse(productoMas);
   const listaPrevia = listaProductosBase;
 
-  // solo visualiza los de productoMas 2 veces, no el resto
-  // useEffect(() => {
-  //   setListaProductosBase{listaProductosBase} => [
-  //     ...listaProductosBase,
-  //     JSonCarga,
-  //   ]);
-  // }, []);
   const productoAdaptadoObjeto = productoMas;
 
   useEffect(() => {
-  const addToListJson = () => {
+    const addToListJson = () => {
+      const nuevaLista = [...listaProductosBase, productoAdaptadoObjeto];
+      setListaProductosBase(nuevaLista);
+    };
+    addToListJson();
+  }, []);
 
-    const nuevaLista = [...listaProductosBase, productoAdaptadoObjeto];
-    setListaProductosBase(nuevaLista);
-  };
-  addToListJson();
-  }, []); 
-
+  useEffect(() => {
+    const addToListJson = () => {
+      const nuevaLista = [...listaProductosBase, productoAdaptadoObjeto];
+      setListaProductosBase(nuevaLista);
+    };
+    if (
+      listaProductosBase.findIndex(
+        (item) => item.id === productoAdaptadoObjeto.id
+      ) === -1
+    ) {
+      // Verificamos si el objeto ya existe en la lista antes de agregarlo
+      addToListJson();
+    }
+  }, []);
 
   console.log(" Aca empieza a mostras el resultado de CARGA");
   console.log(listaProductosBase.length);
@@ -104,6 +101,7 @@ const ListadoProductos = ({ CantidadCards }) => {
     setPaginatedProducts(paginatedArray);
   }, [CantidadCards, listaProductosBase]);
 
+ 
   const handleNextPage = () => {
     setCurrentPage((prevPage) => prevPage + 1);
   };
@@ -120,7 +118,7 @@ const ListadoProductos = ({ CantidadCards }) => {
   console.log("Estructura de productoAdaptadoObjeto:", productoAdaptadoObjeto);
   console.log("Estructura de productoMas:", productoMas);
 
-  productoMas
+  productoMas;
 
   console.log("Length listaProductosBase:", listaProductosBase);
 
@@ -141,6 +139,7 @@ const ListadoProductos = ({ CantidadCards }) => {
               servicio1={producto.servicios.servicio1}
               servicio2={producto.servicios.servicio2}
               servicio3={producto.servicios.servicio3}
+              id={producto.id}
             />
           ))
         ) : (
@@ -154,11 +153,37 @@ const ListadoProductos = ({ CantidadCards }) => {
       </div>
 
       <div className="pagination">
+      {currentPage > 0 && (
+          <button onClick={handlePreviousPage}>Anterior</button>
+        )}
+        {currentPage < paginatedProducts.length - 1 && (
+          <>
+            <button onClick={handleNextPage}>Siguiente</button>
+         
+          </>
+        )}
+
+
         {currentPage > 0 && (
           <button onClick={handlePreviousPage}>Anterior</button>
         )}
         {currentPage < paginatedProducts.length - 1 && (
-          <button onClick={handleNextPage}>Siguiente</button>
+          <>
+            {/* <button onClick={handleNextPage}>Siguiente</button> */}
+            <button onClick={() => navigate(-1)}>Go back</button>
+          </>
+        )}
+        {currentPage < paginatedProducts.length - 1 && (
+          <>
+            {/* <button onClick={handleNextPage}>Siguiente</button> */}
+            <button onClick={() => navigate(1)}>Go forward</button>
+          </>
+        )}
+         {currentPage < paginatedProducts.length - 1 && (
+          <>
+            <button onClick={handleNextPage}>Siguiente</button>
+           
+          </>
         )}
       </div>
     </div>
