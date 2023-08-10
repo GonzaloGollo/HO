@@ -162,38 +162,40 @@ const ListadoProductos = ({ CantidadCards }) => {
         )}
       </div>
 
-      <div className="pagination">
-  
-       {currentPage > 0 && (
-          <button onClick={handlePreviousPage}>Anterior</button>
-        )}
-        {currentPage < paginatedProducts.length - 1 && (
-          <>
-            <button onClick={handleNextPage}>Siguiente</button>
-          </>
-        )}
-
-        {currentPage > 0 && (
-          <button onClick={handlePreviousPage}>Anterior</button>
-        )}
-        {currentPage < paginatedProducts.length - 1 && (
-          <>
-            <button onClick={handleNextPage}>Siguiente</button>
-            <button onClick={() => navigate(-1)}>Go back</button>
-          </> 
-        )}
-        {currentPage < paginatedProducts.length - 1 && (
+      <div className="pagination  pagination is-centered">
+      {currentPage < paginatedProducts.length - 1 && (
           <> 
       
-            <button onClick={() => navigate(1)}>Go forward</button>
+            <button className="pagination-previous" onClick={() => navigate(1)}>Principio</button>
           </>
         )}
+  
+      {currentPage > 0 && (
+          <button className="pagination-previous" onClick={handlePreviousPage}>Anterior</button>
+        )}
         {currentPage < paginatedProducts.length - 1 && (
+          <>
+            <button className="pagination-next" onClick={handleNextPage}>Siguiente</button>
+          </>
+        )} 
+{/* ////////////// */}
+
+        {/* {currentPage > 0 && (
+          <button onClick={handlePreviousPage}>Anterior</button>
+        )} */}
+        {currentPage < paginatedProducts.length - 1 && (
+          <>
+            {/* <button onClick={handleNextPage}>Siguiente</button> */}
+            <button className="pagination-link" onClick={() => navigate(-1)}>Volver</button>
+          </> 
+        )}
+       
+        {/* {currentPage < paginatedProducts.length - 1 && (
           <>
             <button onClick={handleNextPage}>Siguiente</button>
           </>
         )}  
-        
+         */}
       </div>
 
     </div>

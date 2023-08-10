@@ -6,10 +6,11 @@
   height: 50px;
   width: 100%;
   padding: 0 2rem;
-  background-color: #2E4F4F;
-  color: white;
+  background-color: #ffffff;
+  color: var(--colorGrey2);
   margin-top: auto;
   position: relative;
   bottom: 0px; 
-  
+  border-top: 1px solid var(--colorGrey4);
+  padding-top: 1rem;
 }

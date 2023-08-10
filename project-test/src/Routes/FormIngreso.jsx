@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Boton } from "../Components/Genericos/Boton";
 import "../Components/FormIngreso.css";
 import Error from "../Components/Error";
+import Recomendaciones from "../Components/Recomendaciones/Recomendaciones";
 
 const FormIngreso = () => {
   const textoBotonIniciar = "Iniciar";
@@ -83,6 +84,7 @@ const FormIngreso = () => {
   };
 
   return (
+    <> 
     <div className="pagina-formulario-Ingreso">
       <div className="encabezado-formulario">
         <div className="titulo-form-inicio-sesion">Inicia sesión ahora</div>
@@ -127,7 +129,10 @@ const FormIngreso = () => {
         <div>Se te olvidó tu contraseña?</div>
       </div>
     </div>
+    <Recomendaciones CantidadCards={3} />
+    </>
   );
+ 
 };
 
 export default FormIngreso;
