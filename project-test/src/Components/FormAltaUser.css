@@ -59,3 +59,57 @@
     justify-content: space-between;
     align-items: center;
   }
+
+
+  /* ---------------------------- */
+  @import url("https://fonts.googleapis.com/css?family=Roboto:100");
+
+.boton {
+  background-color: white;
+  border: 1px solid var(--colorGrey4);
+  box-shadow: var(--BShadow);
+
+  border-radius: var(--bRadiusButton);
+  color: #676867;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  max-height: 1.5rem;
+  max-width: 150px;
+  overflow: hidden;
+  line-height: 2rem;
+  padding: 1rem 1.5rem;
+  position: relative;
+  transition: 0.3s transform ease;
+  will-change: transform;
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.boton::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-shadow: none;
+  transform: translate(-100%, 0) rotate(1deg);
+  transform-origin: top;
+  transition: 0.15s transform ease;
+  will-change: transform;
+  z-index: -1;
+}
+
+.boton:hover::after {
+  transform: translate(0, 0);
+}
+
+.boton:hover {
+  border: 1px solid var(--BGrey);
+
+  transform: scale(1.05);
+  box-shadow: var(--BShadowD);
+}

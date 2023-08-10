@@ -193,29 +193,6 @@ const onChangeConfirmacionPassword = (e) => {
               onChange={onChangeConfirmacionEmail}
             />
           </div>
-{/* 
-          <div  className="campo-anotacion">
-            <div className="anotacion">Dirección *</div>
-            <input
-              className="campo-formulario"
-              type="text"
-              placeholder="Dirección"
-              value={usuario.direccion}
-              onChange={onChangeDireccion}
-            />
-          </div>
-
-          <div  className="campo-anotacion">
-            <div className="anotacion">Número de telefono *</div>
-            <input
-              className="campo-formulario"
-              type="text"
-              placeholder="Número de telefono"
-              value={usuario.telefono}
-              onChange={onChangeTelefono}
-            />
-          </div> */}
-
           
           <div  className="campo-anotacion">
             <div className="anotacion">Password *</div>
@@ -227,7 +204,6 @@ const onChangeConfirmacionPassword = (e) => {
               onChange={onChangePassword}
             />
           </div>
-
 
           <div  className="campo-anotacion">
             <div className="anotacion">Confirmacion Password *</div>
@@ -242,8 +218,9 @@ const onChangeConfirmacionPassword = (e) => {
 
 
 {/* //////////////-----------------------------////////////// */}
-            <Boton className="botonCrearUser" texto={textoBotonGuardarForm} type="submit" value="Acceso"/>
-        
+            {/* <Boton className="botonCrearUser" texto={textoBotonGuardarForm} type="submit" value="Acceso"/> */}
+            <button className="boton" type="submit" value="Acceso">Crear Cuenta</button>
+
         </div>
         {form && (
           <h5>

@@ -1,11 +1,14 @@
 
 .pagina-formulario {
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     width: 360px;
-    height: 350px;
+    /* height: auto; */
+    padding-top: 18rem;
+    padding-bottom: 2rem;
     margin: auto auto;
 
   }
@@ -14,8 +17,11 @@
     color:rgb(3, 141, 165);
   }
 
-  .formulario {
-    
+  .formulario-inicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
   }
 
   .campo-anotacion {
@@ -34,16 +40,7 @@
    
   }
 
-  .boton-acceso {
 
-    text-align: center;
-    line-height: 30px;
-    background-color:  rgb(3, 141, 165);
-    width: 340px;
-    height: 30px;
-    border-radius: 10px 10px 10px 10px;
-    color: white;
-  }
 
   .acceso-cuenta-o-usuarionuevo {
     color:  rgb(3, 141, 165);
@@ -54,3 +51,56 @@
     justify-content: space-between;
     align-items: center;
   }
+/* -------------------------------------------------- */
+
+  @import url("https://fonts.googleapis.com/css?family=Roboto:100");
+
+.boton {
+  background-color: white;
+  border: 1px solid var(--colorGrey4);
+  box-shadow: var(--BShadow);
+
+  border-radius: var(--bRadiusButton);
+  color: #676867;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  max-height: 1.5rem;
+  max-width: 150px;
+  overflow: hidden;
+  line-height: 2rem;
+  padding: 1rem 1.5rem;
+  position: relative;
+  transition: 0.3s transform ease;
+  will-change: transform;
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.boton::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-shadow: none;
+  transform: translate(-100%, 0) rotate(1deg);
+  transform-origin: top;
+  transition: 0.15s transform ease;
+  will-change: transform;
+  z-index: -1;
+}
+
+.boton:hover::after {
+  transform: translate(0, 0);
+}
+
+.boton:hover {
+  border: 1px solid var(--BGrey);
+
+  transform: scale(1.05);
+  box-shadow: var(--BShadowD);
+}

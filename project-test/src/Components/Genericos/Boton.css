@@ -1,35 +1,7 @@
-/* .boton {
-  width: 120px;
-  height: 28px;
-  color: black;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  border-radius: 11px 11px 11px 11px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.boton:hover{
-    font-weight: 600;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-}
-
- */
-
 @import url("https://fonts.googleapis.com/css?family=Roboto:100");
 
-/* * {
-  box-sizing: border-box;
-} */
-
-
-
 .boton {
-    /* box-shadow: var(--hoverBShadow); */
-  /* border-radius: 3rem; */
-    background-color: white;
+  background-color: white;
   border: 1px solid var(--colorGrey4);
   box-shadow: var(--BShadow);
 
@@ -39,7 +11,7 @@
   font-size: 1rem;
   font-weight: 300;
   max-height: 1.5rem;
-  max-width:  150px;
+  max-width: 150px;
   overflow: hidden;
   line-height: 2rem;
   padding: 1rem 1.5rem;
@@ -50,19 +22,16 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-
 }
 
 .boton::after {
-  /* background-color: #ff385c; */
   content: "";
-  /* display: block; */
   height: 100%;
   width: 100%;
   position: absolute;
   left: 0;
   top: 0;
-  box-shadow:none;
+  box-shadow: none;
   transform: translate(-100%, 0) rotate(1deg);
   transform-origin: top;
   transition: 0.15s transform ease;
@@ -76,14 +45,7 @@
 
 .boton:hover {
   border: 1px solid var(--BGrey);
-  
-  transform: scale(1.05);
-  /*  font-weight: 500;
-  will-change: transform;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
-  /* box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4); */
 
+  transform: scale(1.05);
   box-shadow: var(--BShadowD);
 }
-
-

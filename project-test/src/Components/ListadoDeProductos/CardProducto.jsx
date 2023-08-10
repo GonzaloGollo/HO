@@ -39,7 +39,26 @@ const CardProducto = ({
           </div>
         </div>
 
-        {/* 
+       
+      </Link>
+    
+    </div>
+  );
+};
+
+CardProducto.propTypes = {
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  descripcion: PropTypes.string.isRequired,
+  precio: PropTypes.string.isRequired,
+  tipoRecurso: PropTypes.string.isRequired,
+  servicio1: PropTypes.string.isRequired,
+};
+
+export default CardProducto;
+
+
+ {/* 
         <div className="texto-card">
           <h3 className="titulo-card-producto">{title}</h3>
           <div className="descripcion-tipo-precio">
@@ -55,8 +74,7 @@ const CardProducto = ({
           </div>
           <p className="precio">{precio}</p>
         </div> */}
-      </Link>
-      {/* 
+          {/* 
       <div className="card-body-producto"> 
         <div className="titulo-descripcion-tipo-servicios">
             <h3 className="titulo-card-producto">{title}</h3>
@@ -74,17 +92,3 @@ const CardProducto = ({
         </div>
       </div>
       */}
-    </div>
-  );
-};
-
-CardProducto.propTypes = {
-  title: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  descripcion: PropTypes.string.isRequired,
-  precio: PropTypes.string.isRequired,
-  tipoRecurso: PropTypes.string.isRequired,
-  servicio1: PropTypes.string.isRequired,
-};
-
-export default CardProducto;

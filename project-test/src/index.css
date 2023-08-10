@@ -50,8 +50,9 @@ body {
   font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
-  height: 100vh; 
-  display: block;
+  height: 100%; 
+  /* display: block; */
+ 
 }
 
 header,

@@ -13,6 +13,7 @@ import FormIngreso from "../../Routes/FormIngreso";
 import { ContextGlobal } from "../utils/global.context";
 import { useModalContext } from "../utils/global.contextModal";
 
+
 const Navbar = () => {
     const { showModal, closeModal, openModal, productos } =
     useContext(ContextGlobal);

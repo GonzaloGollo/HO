@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-
+import { Boton } from "../Components/Genericos/Boton";
 import "../Components/FormIngreso.css";
 import Error from "../Components/Error";
 
 const FormIngreso = () => {
+  const textoBotonIniciar = "Iniciar";
+
   const [usuario, setUsuario] = useState({
     nombre: "",
     email: "",
@@ -87,7 +89,7 @@ const FormIngreso = () => {
       </div>
 
       <form onSubmit={handleSubmit}>
-        <div className="formulario">
+        <div className="formulario-inicio">
           <div  className="campo-anotacion">
             <div className="anotacion">Username *</div>
             <input
@@ -108,10 +110,10 @@ const FormIngreso = () => {
               onChange={onChangeEmail}
             />
           </div>
-          <div  className="boton-acceso">
-          <div type="submit" value="Acceso" /> Acceso </div>
-          
-        </div>
+         
+          <button className="boton" texto={textoBotonIniciar} type="submit" value="Acceso">Acceso</button>
+          </div>
+     
         {form && (
           <h5>
             Gracias usuario.nombre!! Te contactaremos cuanto antes vía mail

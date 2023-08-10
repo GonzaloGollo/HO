@@ -2,11 +2,19 @@ import React from "react";
 import CardProducto from "./CardProducto";
 import { useState, useEffect, useContext } from "react";
 import "./ListadoProductos.css";
+// import { ContextGlobal } from "../utils/global.context";
 import listadoProductosData from "../ListadoProductos.json";
 
 const ListadoProductos = ({ CantidadCards }) => {
 
-  const productos = listadoProductosData;
+  const [listaProductosBase, setListaProductosBase] = useState([]);
+
+  useEffect(() => {
+    const cargarDatos = async () => {
+      setListaProductosBase(listadoProductosData);
+    };
+    cargarDatos();
+  }, []);
 
   const chunk = (arr, size) => {
     const chunkedArray = [];
@@ -20,11 +28,11 @@ const ListadoProductos = ({ CantidadCards }) => {
   const [currentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
-    const randomProducts = [...productos].sort(() => Math.random() - 0.5);
+    const randomProducts = [...listaProductosBase].sort(() => Math.random() - 0.5);
 
     const paginatedArray = chunk(randomProducts, CantidadCards);
     setPaginatedProducts(paginatedArray);
-  }, [CantidadCards]);
+  }, [CantidadCards, listaProductosBase]);
 
   const handleNextPage = () => {
     setCurrentPage((prevPage) => prevPage + 1);
@@ -33,6 +41,8 @@ const ListadoProductos = ({ CantidadCards }) => {
   const handlePreviousPage = () => {
     setCurrentPage((prevPage) => prevPage - 1);
   };
+
+
 
   return (
     <div className="segmento-listado-productos">
@@ -48,15 +58,16 @@ const ListadoProductos = ({ CantidadCards }) => {
               url={producto.fotos.foto1} // Aquí usamos la URL de la foto
               precio={producto.precio}
               tipoRecurso={producto.tipoRecurso}
-
-              servicio1={producto.servicios.servicio1} 
-              servicio2={producto.servicios.servicio2} 
-              servicio3={producto.servicios.servicio3} 
-
+              servicio1={producto.servicios.servicio1}
+              servicio2={producto.servicios.servicio2}
+              servicio3={producto.servicios.servicio3}
             />
           ))
         ) : (
-          <h3> No encontramos productos para recomendar </h3>
+          <>
+            <h3> No encontramos productos para recomendar </h3>
+            <h3>Los datos del carga son  {listaProductosBase.ListadoProductos}</h3>
+          </>
         )}
       </div>
 
