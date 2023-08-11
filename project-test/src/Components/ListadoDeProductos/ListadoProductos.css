@@ -21,13 +21,13 @@
   /* max-width: 1900px; */
 }
 
-/* Estilos para pantallas medianas */
+
 @media (max-width: 900px) {
   .grid-container-listado-home {
     grid-template-columns: repeat(
       1,
       90%
-    ); /* Una columna con ancho del 90% de la página */
+    ); 
     margin-left: 15%;
   }
 }

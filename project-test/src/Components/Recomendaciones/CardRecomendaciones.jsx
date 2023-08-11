@@ -21,11 +21,11 @@ const CardRecomendaciones = ({
   return (
     <>
       <Link to={"/producto/" + id}>
-        <div className="container">
-          <div className="thumbnail">
+        <div className="container-reco">
+          <div className="thumbnail-reco">
             <img className="ImgCardReco" src={url} alt="Foto producto" />
           </div>
-          <div className="content">
+          <div className="content-reco">
             {/* <div className="texto-card-reco"> */}
               <h3 className="nombre-card-producto">{title}</h3>
               {/* <p className="tipo-recurso-card">{tipoRecurso}</p> */}

@@ -10,8 +10,8 @@ import { useLocalStorageList } from "../utils/useStorageList.js";
 
 const ListadoProductos = ({ CantidadCards }) => {
   const navigate = useNavigate();
-
-
+  const pasaPaginaSiguiente = ">";
+  const irAPaginaAnterior = "<"
   const { listaProductosBase, setListaProductosBase } =
     useContext(ContextGlobal);
   const [storedFormValue] = useLocalStorageList("formularioProducto", {});
@@ -163,32 +163,37 @@ const ListadoProductos = ({ CantidadCards }) => {
       </div>
 
       <div className="pagination  pagination is-centered">
+{/* 
       {currentPage < paginatedProducts.length - 1 && (
+          <>
+        
+            <button className="pagination-link" onClick={() => navigate(-1)}>Volver</button>
+          </> 
+        )} 
+        */}
+      {/* {currentPage < paginatedProducts.length - 1 && (
           <> 
       
             <button className="pagination-previous" onClick={() => navigate(1)}>Principio</button>
           </>
-        )}
+        )} */}
   
       {currentPage > 0 && (
-          <button className="pagination-previous" onClick={handlePreviousPage}>Anterior</button>
+          <button className="pagination-previous" onClick={handlePreviousPage}>{irAPaginaAnterior}</button>
         )}
         {currentPage < paginatedProducts.length - 1 && (
           <>
-            <button className="pagination-next" onClick={handleNextPage}>Siguiente</button>
+            <button className="pagination-next" onClick={handleNextPage}>{pasaPaginaSiguiente}</button>
           </>
         )} 
+
+        
 {/* ////////////// */}
 
         {/* {currentPage > 0 && (
           <button onClick={handlePreviousPage}>Anterior</button>
         )} */}
-        {currentPage < paginatedProducts.length - 1 && (
-          <>
-            {/* <button onClick={handleNextPage}>Siguiente</button> */}
-            <button className="pagination-link" onClick={() => navigate(-1)}>Volver</button>
-          </> 
-        )}
+      
        
         {/* {currentPage < paginatedProducts.length - 1 && (
           <>

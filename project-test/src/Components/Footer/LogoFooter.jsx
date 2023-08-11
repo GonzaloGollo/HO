@@ -7,7 +7,7 @@ const LogoFooter = () => {
       <div className="logo">
       <img className="logo-footer" src="/images/LogoVerde2.PNG"/>
       </div>
-      <p>© 2023 WorkPlace, Inc.</p>
+      <p className="registrado">© 2023 Registrado.</p>
     </div>
   );
 };
