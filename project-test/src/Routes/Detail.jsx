@@ -1,5 +1,6 @@
 import React from "react";
 import "../Components/Detail.css";
+import "../Components/Screen.css";
 import { useNavigate } from "react-router-dom";
 import {
   MdArrowBackIosNew,
@@ -19,8 +20,13 @@ const Detail = () => {
   const navigate = useNavigate();
   const { listaProductosBase, showModal, closeModal, openModal } =
     useContext(ContextGlobal);
+
+
   const [productoID, setProductoID] = useState(null);
   const { id } = useParams();
+  const [selectedFullScreenImage, setSelectedFullScreenImage] = useState(null);
+  const [showScreen, setShowScreen] = useState(false);
+
 
   useEffect(() => {
     const foundProduct = listaProductosBase.find(
@@ -33,6 +39,19 @@ const Detail = () => {
     // Handle case when product is not found
     return <div>Product not found</div>;
   }
+
+  const openScreen = (imageSrc) => {
+    setSelectedFullScreenImage(imageSrc);
+    setShowScreen(true);
+    openModal(); // Abre el modal al cambiar a la pantalla completa
+  };
+
+  const closeScreen = () => {
+    setSelectedFullScreenImage(null);
+    setShowScreen(false);
+    closeModal(); // Cierra el modal al volver de la pantalla completa
+  };
+
 
   return (
     <>
@@ -50,38 +69,60 @@ const Detail = () => {
             </h3>
           </div>
         </div>
-
+        
         <div className="galeria-detalleservicios-compra">
           <div className="grid-container-galeria">
+
+
+            
             <img
               className="item-grid-fotos1 foto-producto block"
               src={productoID.fotos.foto1}
+              onClick={() => {
+                openModal(productoID.fotos.foto1);
+                openScreen(productoID.fotos.foto1);}}
             />
             <img
               className="item-grid-fotos2 foto-producto block"
               src={productoID.fotos.foto2}
+              onClick={() => {
+                openModal(productoID.fotos.foto2);
+                openScreen(productoID.fotos.foto2);}}
             />
             <img
               className="item-grid-fotos3 foto-producto block"
               src={productoID.fotos.foto3}
+              onClick={() => {
+                openModal(productoID.fotos.foto3);
+                openScreen(productoID.fotos.foto3);}}
             />
             <img
               className="item-grid-fotos4 foto-producto block"
               src={productoID.fotos.foto4}
+              onClick={() => {
+                openModal(productoID.fotos.foto4);
+                openScreen(productoID.fotos.foto4);}}
             />
             <img
               className="item-grid-fotos5 foto-producto block"
               src={productoID.fotos.foto5}
+              onClick={() => {
+                openModal(productoID.fotos.foto5);
+                openScreen(productoID.fotos.foto5);}}
             />
           </div>
 
-          <button className="ver-mas" onClick={openModal}>
+          {/* <button className="ver-mas" onClick={openModal}>
             + Ver más
-          </button>
+          </button> */}
 
           {showModal && (
             <Modal onClose={closeModal}>
-              <Screen />
+             <img
+                className="modal-img-previsual"
+                alt="Imagen de previsualización"
+                src={selectedFullScreenImage}
+              />
             </Modal>
           )}
 

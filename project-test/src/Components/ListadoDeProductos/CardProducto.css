@@ -120,10 +120,10 @@
 .descripcion-card-home {
   max-height: 30px;
   line-height: 20px;
-  font-size: var(--fsizeS);
+  font-size: var(--fsizep);
   width: 90%;
   line-height: 14px;
-  color: var(--colorGrey2);
+  color: var(--colorGrey1);
   margin-top: 4px;
   /* ----------- Borrar despues de poner dinamicas las categorias */
    white-space: wrap;  
