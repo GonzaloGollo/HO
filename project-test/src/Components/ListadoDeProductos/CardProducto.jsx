@@ -52,7 +52,7 @@ CardProducto.propTypes = {
   descripcion: PropTypes.string.isRequired,
   precio: PropTypes.string.isRequired,
   tipoRecurso: PropTypes.string.isRequired,
-  servicio1: PropTypes.string.isRequired,
+  // servicio1: PropTypes.string.isRequired,
 };
 
 export default CardProducto;
