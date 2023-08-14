@@ -117,8 +117,8 @@ const FormIngreso = () => {
           </div>
      
         {form && (
-          <h5>
-            Gracias usuario.nombre!! Te contactaremos cuanto antes vía mail
+          <h5 className="msj-form-guardado">
+            Gracias!! Has ingresado como usuario a HomeOFF !
           </h5>
         )}
 
@@ -129,7 +129,7 @@ const FormIngreso = () => {
         <div>Se te olvidó tu contraseña?</div>
       </div>
     </div>
-    <Recomendaciones CantidadCards={3} />
+    {/* <Recomendaciones CantidadCards={3} /> */}
     </>
   );
  

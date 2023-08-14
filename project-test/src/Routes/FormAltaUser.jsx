@@ -224,8 +224,8 @@ const onChangeConfirmacionPassword = (e) => {
 
         </div>
         {form && (
-          <h5>
-            Gracias usuario.nombre!! Te contactaremos cuanto antes vía mail
+          <h5 className="msj-form-guardado">
+            Gracias !! Te has registrado como usuario de HomeOFF!!
           </h5>
         )}
 
