@@ -10,6 +10,7 @@ const FormIngreso = () => {
   const [usuario, setUsuario] = useState({
     nombre: "",
     email: "",
+    pass:"",
     // direccion: "",
     // email: "",
   });
@@ -40,6 +41,11 @@ const FormIngreso = () => {
     setVerError("");
   };
 
+  const onChangePass = (e) => {
+    setUsuario({ ...usuario, pass: e.target.value });
+    setVerError("");
+  };
+
   const validarNombre = (n) => {
     const regex = /^[A-Za-z\s]{5,30}$/;
     if (regex.test(n)) {
@@ -60,12 +66,24 @@ const FormIngreso = () => {
     }
   };
 
+
+  const validarPass = (em) => {
+    const emSinEspacio = em.trim();
+
+    const passRegexp = new RegExp( /^(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(.{8,})$/);
+    if (passRegexp.test(emSinEspacio)) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const isUsernameValid = validarNombre(usuario.nombre);
     const isEmailValid = validarEmail(usuario.email);
-
-    if (isUsernameValid && isEmailValid) {
+    const isPassValid = validarPass(usuario.pass);
+    if (isUsernameValid && isEmailValid  && isPassValid) {
       setForm(true);
       setUsuario({
         nombre: "",
@@ -103,7 +121,7 @@ const FormIngreso = () => {
             />
           </div>
           <div  className="campo-anotacion">
-            <div className="anotacion">Password *</div>
+            <div className="anotacion">Email *</div>
             <input
               className="campo-formulario"
               type="text"
@@ -112,6 +130,27 @@ const FormIngreso = () => {
               onChange={onChangeEmail}
             />
           </div>
+          {!validarEmail(usuario.email) && (
+        <p style={{ color: 'red' }}>
+          Eladfssdfsdfsdfsdfayúscula, 1 carácter no alfanumérico y tener al menos 8 caracteres.
+        </p>
+      )}
+
+          <div  className="campo-anotacion">
+            <div className="anotacion">Password *</div>
+            <input
+              className="campo-formulario"
+              type="text"
+              placeholder="Password"
+              value={usuario.pass}
+              onChange={onChangePass}
+            />
+          </div>
+          {!validarPass(usuario.pass) && (
+        <p style={{ color: 'red' }}>
+          La contraseña debe contener al menos 1 letra mayúscula, 1 carácter no alfanumérico y tener al menos 8 caracteres.
+        </p>
+      )}
          
           <button className="boton" texto={textoBotonIniciar} type="submit" value="Acceso">Acceso</button>
           </div>

@@ -9,6 +9,7 @@
   --BGrey:#DDDDDD;
   --red: #ff385c;
   --blue: rgb(3, 141, 165);
+  --green: #9DD6B3;
   --fweightXL: 900;
   --fweightM: 600;
   --fweight5: 500;
@@ -21,6 +22,11 @@
   --BShadowD4:3px 3px 3px var(--colorGrey4);
   --bRadiusButton:20px;
   --bRadImg: 20px;
+  --fsizeTSXL:70px;
+  --fsizeTSL:60px;
+  --fsizeTXL:50px;
+  --fsizeTL:40px;
+  --fsizeTT:30px;
   --fsizeT:26px;
   --fsizeSecc:20px;
   --fsixeCatBig:17px;

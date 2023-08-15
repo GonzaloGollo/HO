@@ -1,9 +1,10 @@
 .flexing {
   display: flex;
   flex-direction: column;
-  height: 60vh;
-  margin-top: 12rem;
-  margin-bottom: 2%;
+  height: 55vh;
+
+  gap: 0.5rem;
+  margin: 12rem 2rem 2% 2rem;
 }
 
 @media ( min-width: 1000px) {
@@ -15,30 +16,39 @@
 .section {
   flex: 1;
   position: relative;
-  transition: 1.2s ease;
+  transition: 1.6s ease;
   border-radius: 11px 11px 11px 11px;
   -webkit-border-radius: 11px 11px 11px 11px;
   -moz-border-radius: 11px 11px 11px 11px;
   box-shadow: var(--BShadow);
   border-radius: var(--bRadiusButton);
+ 
 }
 
 .section--yellow {
-  background-image:url('/images/240_F_610971454_DBLcfDXBVOeIJQMGBNbE0r5Szfx3e9OL.jpg') no-repeat;
-
+  background-image:url('/images/240_F_610971454_DBLcfDXBVOeIJQMGBNbE0r5Szfx3e9OL.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .section--pink {
-  background-color: pink;
+  background-image:url('/images/Domicilio Fiscal y Jurídic.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size:fill
 }
 
 .section--green {
-  background-color: green;
+  background-image:url('/images/Oficina de planta completa.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
 
 .section:hover,
 .section:active,
 .section.focus {
-  flex: 3;
+  flex: 8;
+  background-size: cover;
 }
 
 .section:hover .title,
@@ -56,12 +66,18 @@
 }
 
 .section .title {
-    font-size: var(--fsizeSecc);
+   font-size: var(--fsizeTT);
+  /*
+  color: white; */
+
+  /* font-size: var(--fsizeTSXL);
+  font-weight:var(--fweightXL) ; */
+  color: var(--green);
     left: 50%;
     margin: 0;
     position: absolute;
     top:50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -40%);
     transition: 0.5s ease;
 }
 
@@ -69,8 +85,22 @@
 @media screen and( min-width: 1000px) {
     .section .title {
       
-        transform: translate(-50%, -50%) rotate(90deg);
+        transform: translate(-50%, -40%) rotate(90deg);
     }
     
   }
+
+
+.section .precio {
+  font-size: var(--fsizeTSL);
+  font-weight:var(--fweightXL) ;
+  color: var(--green);
+  left: 50%;
+  margin: 0;
+  position: absolute;
+  top:60%;
+  transform: translate(-50%, -20%);
+  transition: 0.5s ease;
+ 
   
+}
