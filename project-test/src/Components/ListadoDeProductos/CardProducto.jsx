@@ -50,45 +50,9 @@ CardProducto.propTypes = {
   title: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   descripcion: PropTypes.string.isRequired,
-  precio: PropTypes.string.isRequired,
+  precio: PropTypes.number.isRequired,
   tipoRecurso: PropTypes.string.isRequired,
   // servicio1: PropTypes.string.isRequired,
 };
 
 export default CardProducto;
-
-
- {/* 
-        <div className="texto-card">
-          <h3 className="titulo-card-producto">{title}</h3>
-          <div className="descripcion-tipo-precio">
-            
-            <div className="descripcion-tipo">
-              <p className="descripcion-card-home p-sinmargin">{descripcion}</p>
-              <p className="tipo-recurso-card p-sinmargin">{tipoRecurso}</p>
-
-              <p className="servicio-card">{servicio1}</p>
-              <p className="servicio-card">{servicio2}</p>
-              <p className="servicio-card">{servicio3}</p>
-            </div>
-          </div>
-          <p className="precio">{precio}</p>
-        </div> */}
-          {/* 
-      <div className="card-body-producto"> 
-        <div className="titulo-descripcion-tipo-servicios">
-            <h3 className="titulo-card-producto">{title}</h3>
-            <div className="descripcion-tipo">
-                <p className="descripcion-card-home p-sinmargin">{descripcion}</p>
-                <p className="tipo-recurso-card p-sinmargin">{tipoRecurso}</p>
-                <p className="servicio-card">{servicio1}</p>
-                <p className="servicio-card">{servicio2}</p>
-              <p className="servicio-card">{servicio3}</p>
-            </div>
-        </div>
-
-        <div className="precio">
-            <p className="precio">{precio}</p>
-        </div>
-      </div>
-      */}

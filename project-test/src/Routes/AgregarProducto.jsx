@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import{useLocalStorage} from '../Components/utils/useLocalStorage'
+import { useLocalStorage } from "../Components/utils/useLocalStorage";
 import "../Components/AgregarProducto.css";
 import Error from "../Components/Error";
 import { Boton } from "../Components/Genericos/Boton";
@@ -7,22 +7,34 @@ import PreviewProduct from "../Components/PreviewProduct.jsx";
 import { ContextGlobal } from "../Components/utils/global.context";
 
 const AgregarProducto = () => {
-  const { listaProductosBase, setListaProductosBase } =
+  //// Variables y constantes ////
+  const urlBase = "http://52.32.210.155:8080/api/v1/recursos/";
+  const jwt = localStorage.getItem("jwt");
+  const { productosBKLista, setProductosBKLista, getDatosBKLista } =
     useContext(ContextGlobal);
 
   const [showPreview, setShowPreview] = useState(false);
   const [selectedServiceIds, setSelectedServiceIds] = useState([]);
   const MAX_SELECTED_SERVICES = 5;
 
+  /////// Preparar obbjeto para enviar al servidor    ///////
+
+  const [nuevoProducto, setNuevoProducto] = useState({
+    nombre: "",
+    descripcion: "",
+    capacidadMáxima: 0,
+    precioUnitario: 0,
+    idSede: 0,
+    imageURL: "",
+    imageURL2: "",
+    imageURL3: "",
+    imageURL4: "",
+    imageURL5: "",
+    tipoDeRecurso: "",
+    estadoRecurso: "",
+  });
 
   /////////////////////////////
-  const [storedFormValue, setStoredFormValue] = useLocalStorage("formularioProducto", {});
-
-  useEffect(() => {
-    if (storedFormValue) {
-      setProducto(storedFormValue);
-    }
-  }, [storedFormValue]);
 
   const sedesArray = [
     {
@@ -57,11 +69,11 @@ const AgregarProducto = () => {
     },
     {
       id: 4,
-      tipo: "Sala Flexible",
+      tipo: "Oficina House",
     },
     {
       id: 5,
-      tipo: "Sala Auditorio",
+      tipo: "Oficina Abierta",
     },
   ];
 
@@ -72,27 +84,27 @@ const AgregarProducto = () => {
     },
     {
       id: 2,
-      cantidad: "2",
+      cantidad: 2,
     },
     {
       id: 3,
-      cantidad: "3",
+      cantidad: 3,
     },
     {
       id: 4,
-      cantidad: "4",
+      cantidad: 4,
     },
     {
       id: 5,
-      cantidad: "5",
+      cantidad: 5,
     },
     {
       id: 10,
-      cantidad: "10",
+      cantidad: 10,
     },
     {
       id: 20,
-      cantidad: "20",
+      cantidad: 20,
     },
   ];
 
@@ -131,189 +143,141 @@ const AgregarProducto = () => {
     },
   ];
 
-  const [producto, setProducto] = useState({
-    id: "",
-    tipoRecurso: "",
-    nombreProducto: "",
-    descripcion: "",
-    capacidadMáxima: 0,
-    precio: "",
-    sede: "",
-    estadoDisponibilidad: false,
-    idReservaVigente: "",
-    servicios: {
-      servicio1: "",
-      servicio2: "",
-      servicio3: "",
-      servicio4: "",
-      servicio5: "",
-    },
-    fotos: {
-      foto1: "",
-      foto2: "",
-      foto3: "",
-      foto4: "",
-      foto5: "",
-    },
-  });
-
   const [form, setForm] = useState(false);
-
-  const [VerError, setVerError] = useState("");
 
   //////////////////OnChanges///////////////
 
-  const onChangeNombreProducto = (e) => {
-    setProducto({ ...producto, nombreProducto: e.target.value });
-    setVerError("");
+  const onChangeNombre = (e) => {
+    setNuevoProducto({ ...nuevoProducto, nombre: e.target.value });
   };
 
   const onChangeDescripcion = (e) => {
-    setProducto({ ...producto, descripcion: e.target.value });
-    setVerError("");
-  };
-  const onChangeTipoRecurso = (e) => {
-    setProducto({ ...producto, tipoRecurso: e.target.value });
-    setVerError("");
+    setNuevoProducto({ ...nuevoProducto, descripcion: e.target.value });
   };
 
   const onChangeCapacidadMáxima = (e) => {
-    setProducto({ ...producto, capacidadMáxima: e.target.value });
-    setVerError("");
+    setNuevoProducto({ ...nuevoProducto, capacidadMáxima: e.target.value });
   };
 
-  const onChangePrecioProducto = (e) => {
-    setProducto({ ...producto, precio: e.target.value });
-    setVerError("");
+  const onChangePreciounitario = (e) => {
+    setNuevoProducto({ ...nuevoProducto, precioUnitario: e.target.value });
   };
 
   const onChangeSede = (e) => {
-    setProducto({ ...producto, sede: e.target.value });
-    setVerError("");
+    setNuevoProducto({ ...nuevoProducto, idSede: e.target.value });
   };
-
-  const onChangeDisponibilidad = (e) => {
-    setProducto({ ...producto, estadoDisponibilidad: e.target.value });
-    setVerError("");
-  };
-
-  const onChangeServicios = (e) => {
-    const selectedServiceId = e.target.value;
-
-    if (selectedServiceIds.includes(selectedServiceId)) {
-      setSelectedServiceIds(selectedServiceIds.filter(id => id !== selectedServiceId));
-    } else {
-      if (selectedServiceIds.length < MAX_SELECTED_SERVICES) {
-        setSelectedServiceIds([...selectedServiceIds, selectedServiceId]);
-      }
-    }
-
-    setVerError("");
-  };
-  
 
   const onChangeFoto = (e) => {
     const fotos = e.target.files; // Obtener los archivos seleccionados
     const fotosArray = Array.from(fotos); // Convertir FileList en un array
-
     // Crear un objeto con las URLs temporales de las fotos seleccionadas
     const fotosTempUrls = fotosArray.map((foto) => URL.createObjectURL(foto));
 
-    setProducto({
-      ...producto,
-      fotos: {
-        foto1: fotosTempUrls[0] || "",
-        foto2: fotosTempUrls[1] || "",
-        foto3: fotosTempUrls[2] || "",
-        foto4: fotosTempUrls[3] || "",
-        foto5: fotosTempUrls[4] || "",
-      },
+    setNuevoProducto({
+      ...nuevoProducto,
+      imageURL: fotosTempUrls[0] || "",
+      imageURL2: fotosTempUrls[1] || "",
+      imageURL3: fotosTempUrls[2] || "",
+      imageURL4: fotosTempUrls[3] || "",
+      imageURL5: fotosTempUrls[4] || "",
     });
-
-    setVerError("");
   };
+
+  const onChangeTipoRecurso = (e) => {
+    setNuevoProducto({ ...nuevoProducto, tipoDeRecurso: e.target.value });
+  };
+
+  const onChangeDisponibilidad = (e) => {
+    setNuevoProducto({
+      ...nuevoProducto,
+      estadoRecurso: e.target.value,
+    });
+  };
+
+  // const onChangeServicios = (e) => {
+  //   const selectedServiceId = e.target.value;
+
+  //   if (selectedServiceIds.includes(selectedServiceId)) {
+  //     setSelectedServiceIds(
+  //       selectedServiceIds.filter((id) => id !== selectedServiceId)
+  //     );
+  //   } else {
+  //     if (selectedServiceIds.length < MAX_SELECTED_SERVICES) {
+  //       setSelectedServiceIds([...selectedServiceIds, selectedServiceId]);
+  //     }
+  //   }
+  // };
 
   ///////////////Validaciones ///////////////////
   const validarNombreProducto = (n) => {
     const regex = /^[A-Za-z\s]{6,40}$/;
-    if (regex.test(n)) {
-      return true;
-    } else {
-      return false;
-    }
+    return regex.test(n);
   };
 
+  /////////handleSubmit //////
   const handleSubmitCrearProducto = (e) => {
     e.preventDefault();
-    const isUsernameValid = validarNombreProducto(producto.nombreProducto);
-
+    const isUsernameValid = validarNombreProducto(nuevoProducto.nombre);
+    console.log(nuevoProducto);
     if (isUsernameValid) {
       setForm(true);
       // setShowPreview(true);
       console.log(form);
 
-      const nuevoProducto = {
-        id: listaProductosBase.length + 1, // Aquí podrías usar un ID único, dependiendo de tu lógica
-        tipoRecurso: producto.tipoRecurso,
-        nombreProducto: producto.nombreProducto,
-        descripcion: producto.descripcion,
-        capacidadMaxima: producto.capacidadMáxima,
-        precio: producto.precio,
-        sede: producto.sede,
-        estadoDisponibilidad: producto.estadoDisponibilidad,
-        fotos: producto.fotos,
+      const nuevoProductoData = {
+        nombre: nuevoProducto.nombre,
+        descripcion: nuevoProducto.descripcion,
+        capacidadMáxima: nuevoProducto.capacidadMáxima,
+        precioUnitario: nuevoProducto.precioUnitario,
+        idSede: nuevoProducto.idSede,
+        imageURL: fotosTempUrls[0] || "",
+        imageURL2: fotosTempUrls[1] || "",
+        imageURL3: fotosTempUrls[2] || "",
+        imageURL4: fotosTempUrls[3] || "",
+        imageURL5: fotosTempUrls[4] || "",
+        tipoRecurso: nuevoProducto.tipoRecurso,
+        estadoDisponibilidad: nuevoProducto.estadoDisponibilidad,
       };
-      console.log(listaProductosBase);
 
-      setListaProductosBase((prevList) => {
-        const newList = Array.isArray(prevList) ? prevList : [];
-        return [...newList, nuevoProducto];
-      });
-    
-      // useEffect(() => {
-      // const addToProdALista = () => {
-      //   const nuevoArrayProductos = [...listaProductosBase, nuevoProducto];
-      //   setListaProductosBase(nuevoArrayProductos);
-      // };
-      // addToProdALista();
-      // // }, []);
-      console.log("Muestra el valor de StoredValue");
-      console.log(listaProductosBase);
+      console.log(nuevoProducto);
 
-      console.log("Muestra el valor de StoredValue");
-      console.log(storedFormValue);
-      console.log(listaProductosBase.length);
-      console.log(listaProductosBase);
-      setVerError("");
+      const configuraciones = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(nuevoProductoData),
+      };
+
+      fetch(`${urlBase}save`, configuraciones)
+        .then((respuesta) => respuesta.json())
+        .then((info) => {
+          console.log("Nuevo Producto 👇" + info);
+          getDatosBKLista();
+        })
+        .catch((error) => console.log(error));
+
+      console.log("Muestra el valor de toda la Lista ");
+      console.log(productosBKLista);
+
+      /////ERROR ????////////////////////////
     } else {
-      <Error />;
       setForm(false);
-      setProducto({
-        id: "",
-        tipoRecurso: "",
-        nombreProducto: "",
+      setNuevoProducto({
+        nombre: "",
         descripcion: "",
-        capacidadMáxima: "",
-        precio: "",
-        sede: "",
-        estadoDisponibilidad: "",
-        idReservaVigente: "",
-        servicios: {
-          servicio1: "",
-          servicio2: "",
-          servicio3: "",
-          servicio4: "",
-          servicio5: "",
-        },
-        fotos: {
-          foto1: "",
-          foto2: "",
-          foto3: "",
-          foto4: "",
-          foto5: "",
-        },
+        capacidadMáxima: 0,
+        precioUnitario: 0,
+        idSede: 0,
+        imageURL: "",
+        imageURL2: "",
+        imageURL3: "",
+        imageURL4: "",
+        imageURL5: "",
+        tipoDeRecurso: "",
+        estadoRecurso: "",
       });
-      setVerError("Por favor chequea que la información sea correcta");
+      /////////////// VER ERROR ///////
     }
   };
 
@@ -334,8 +298,8 @@ const AgregarProducto = () => {
               className="campo-formulario"
               type="text"
               placeholder="Ingresa el nombre del producto "
-              value={producto.nombreProducto}
-              onChange={onChangeNombreProducto}
+              value={nuevoProducto.nombreProducto}
+              onChange={onChangeNombre}
             />
           </div>
 
@@ -348,7 +312,7 @@ const AgregarProducto = () => {
               className="campo-formulario"
               type="text"
               placeholder="Ingrese una descripcion"
-              value={producto.descripcion}
+              value={nuevoProducto.descripcion}
               onChange={onChangeDescripcion}
             />
           </div>
@@ -362,7 +326,7 @@ const AgregarProducto = () => {
               className="campo-formulario"
               type="text"
               placeholder="Elija un tipo de recurso"
-              value={producto.tipoRecurso}
+              value={nuevoProducto.tipoDeRecurso}
               onChange={onChangeTipoRecurso}
             >
               {tipoRecursoArray.map((tipoRecurso) => (
@@ -383,7 +347,7 @@ const AgregarProducto = () => {
               className="campo-formulario"
               type="text"
               placeholder="Elija una capacidad máxima"
-              value={producto.capacidadMáxima}
+              value={nuevoProducto.capacidadMáxima}
               onChange={onChangeCapacidadMáxima}
             >
               {capacidadArray.map((cant) => (
@@ -398,7 +362,7 @@ const AgregarProducto = () => {
             </select>
           </div>
 
-          <div className="campo-anotacion">
+          {/* <div className="campo-anotacion">
             <label className="anotacion">Selecciona hasta 5 servicios *</label>
             {serviciosArray.map((servicio) => (
               <div key={servicio.id}>
@@ -409,14 +373,17 @@ const AgregarProducto = () => {
                   value={servicio.id}
                   checked={selectedServiceIds.includes(servicio.id)}
                   onChange={onChangeServicios}
-                  disabled={selectedServiceIds.length >= MAX_SELECTED_SERVICES && !selectedServiceIds.includes(servicio.id)}
+                  disabled={
+                    selectedServiceIds.length >= MAX_SELECTED_SERVICES &&
+                    !selectedServiceIds.includes(servicio.id)
+                  }
                 />
                 <label htmlFor={`servicio-${servicio.id}`}>
                   {servicio.tipo}
                 </label>
               </div>
             ))}
-          </div>
+          </div> */}
 
           <div className="campo-anotacion">
             <label className="anotacion" for="precioProducto">
@@ -427,8 +394,8 @@ const AgregarProducto = () => {
               className="campo-formulario"
               type="number"
               placeholder="Ingresa el precio del producto "
-              value={producto.precio}
-              onChange={onChangePrecioProducto}
+              value={nuevoProducto.precioUnitario}
+              onChange={onChangePreciounitario}
             />
           </div>
 
@@ -441,7 +408,7 @@ const AgregarProducto = () => {
               className="campo-formulario"
               type="text"
               placeholder="Elija una Sede"
-              value={producto.sede}
+              value={nuevoProducto.idSede}
               onChange={onChangeSede}
             >
               {sedesArray.map((sede) => (
@@ -461,7 +428,7 @@ const AgregarProducto = () => {
               className="campo-formulario"
               type="text"
               placeholder="Elija un tipo de recurso"
-              value={producto.estadoDisponibilidad}
+              value={nuevoProducto.estadoRecurso}
               onChange={onChangeDisponibilidad}
             >
               <option className="item-grid" value={true}>
@@ -487,16 +454,6 @@ const AgregarProducto = () => {
             />
           </div>
 
-          {/* 
-          idReservaVigente: "",
-    servicios: {
-      servicio1: "",
-      servicio2: "",
-      servicio3: "",
-      servicio4: "",
-      servicio5: "",
-    }, */}
-
           {/* //////////////-----------------------------////////////// */}
           <div className="boton-acceso-agregar-producto">
             <button className="boton" type="submit" value="Guardar">
@@ -513,12 +470,11 @@ const AgregarProducto = () => {
           </h5>
         )}
 
-        {VerError !== "" && <Error />}
+        {/* {VerError !== "" && <Error />} */}
       </form>
       <div className="acceso-cuenta-o-usuarionuevo"></div>
 
-      {showPreview && <PreviewProduct producto={producto} />}
-
+      {/* {showPreview && <PreviewProduct producto={nuevoProducto} />} */}
     </div>
   );
 };
