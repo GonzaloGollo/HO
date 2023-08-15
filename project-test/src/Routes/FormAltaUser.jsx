@@ -5,141 +5,191 @@ import Error from "../Components/Error";
 
 const FormAltaUser = () => {
   const textoBotonGuardarForm = "Crear Cuenta";
-  
+
+  //Repo de validaciones
+  const [nombreValido, setNombreValido] = useState(true);
+  const [apellidoValido, setApellidoValido] = useState(true);
+  const [emailValido, setEmailValido] = useState(true);
+  const [confirmacionEmailValido, setConfirmacionEmailValido] = useState(true);
+  // const [direccionValida, setDireccionValida] = useState(true);
+  // const [paisValido, setPaisValido] = useState(true);
+  // const [telefono, setTelefonoValido] = useState(true);
+  const [passwordValido, setPasswordValido] = useState(true);
+  const [confirmacionPasswordValido, setConfirmacionPasswordValido] =
+    useState(true);
+
+  /// Definicion de User/Objeto
   const [usuario, setUsuario] = useState({
     nombre: "",
     apellido: "",
     email: "",
     confirmacionEmail: "",
-    direccion: "",
-    pais: "",
+    // direccion: "",
+    // pais: "",
     telefono: "",
     password: "",
     confirmarPassword: "",
-    // direccion: "",
-    // email: "",
   });
 
-  // const [producto, setProducto] = useState({
-  //     nombreProducto: "",
-  //         direccion: "",
-  //         descripcion: "",
-  //         servicios: "",
-  //         fotos: "",
-  //         costoPorDia: 0,
-  //         disponible:false,
-  //         contactoEmail:"",
-
-  // })
+  /// Definicion de Form
 
   const [form, setForm] = useState(false);
-
-  const [VerError, setVerError] = useState("");
 
   //////////////////OnChanges///////////////
 
   const onChangeNombre = (e) => {
     setUsuario({ ...usuario, nombre: e.target.value });
-    setVerError("");
   };
 
   const onChangeApellido = (e) => {
     setUsuario({ ...usuario, apellido: e.target.value });
-    setVerError("");
   };
 
   const onChangeEmail = (e) => {
     setUsuario({ ...usuario, email: e.target.value });
-    setVerError("");
   };
 
-  
   const onChangeConfirmacionEmail = (e) => {
     setUsuario({ ...usuario, confirmacionEmail: e.target.value });
-    setVerError("");
   };
 
-  const onChangeDireccion = (e) => {
-    setUsuario({ ...usuario, direccion: e.target.value });
-    setVerError("");
+  // const onChangeDireccion = (e) => {
+  //   setUsuario({ ...usuario, direccion: e.target.value });
+  //   setVerError("");
+  // };
+
+  // const onChangePais = (e) => {
+  //   setUsuario({ ...usuario, pais: e.target.value });
+  //   setVerError("");
+  // };
+
+  // const onChangeTelefono = (e) => {
+  //   setUsuario({ ...usuario, telefono: e.target.value });
+  //   setVerError("");
+  // };
+
+  const onChangePassword = (e) => {
+    setUsuario({ ...usuario, password: e.target.value });
   };
 
+  const onChangeConfirmacionPassword = (e) => {
+    setUsuario({ ...usuario, confirmarPassword: e.target.value });
+  };
 
- const onChangeTelefono = (e) => {
-  setUsuario({ ...usuario, telefono: e.target.value });
-  setVerError("");
-};
+  ///////////////Validaciones ///////////////////
 
-  
-const onChangePassword = (e) => {
-  setUsuario({ ...usuario, password: e.target.value });
-  setVerError("");
-};
-
-const onChangeConfirmacionPassword = (e) => {
-  setUsuario({ ...usuario, confirmarPassword: e.target.value });
-  setVerError("");
-};
-  // confirmacionEmail: "",
-  // confirmarPassword: "",
-
-
-
-///////////////Validaciones ///////////////////
   const validarNombre = (n) => {
-    const regex = /^[A-Za-z\s]{5,30}$/;
+    const regex = /^[A-Za-z\s]{3,30}$/;
     if (regex.test(n)) {
+      setNombreValido(true);
       return true;
     } else {
+      setNombreValido(false);
       return false;
     }
   };
 
   const validarApellido = (n) => {
-    const regex = /^[A-Za-z\s]{5,30}$/;
+    const regex = /^[A-Za-z\s]{2,30}$/;
     if (regex.test(n)) {
+      setApellidoValido(true);
       return true;
     } else {
+      setApellidoValido(false);
       return false;
     }
   };
 
-
-  const validarEmail = (em) => {
-    const emSinEspacio = em.trim();
-
-    const emailRegexp = new RegExp(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/);
-    if (emailRegexp.test(emSinEspacio)) {
+  const validarEmail = (e) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{3}$/;
+    if (regex.test(e)) {
+      setEmailValido(true);
       return true;
     } else {
+      setEmailValido(false);
       return false;
     }
   };
 
+  const validarConfirmacionEmail = (e) => {
+    if (usuario.confirmacionEmail === usuario.email) {
+      setConfirmacionEmailValido(true);
+      return true;
+    } else {
+      setConfirmacionEmailValido(false);
+      return false;
+    }
+  };
+
+  const validarPassword = (p) => {
+    const emSinEspacio = p.trim();
+    const passRegexp = new RegExp(/^(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(.{8,})$/);
+    if (passRegexp.test(emSinEspacio)) {
+      setPasswordValido(true);
+      return true;
+    } else {
+      setPasswordValido(false);
+      return false;
+    }
+  };
+
+  const validarConfirmacionPassword = (e) => {
+    if (usuario.confirmarPassword === usuario.password) {
+      setConfirmacionPasswordValido(true);
+      return true;
+    } else {
+      setConfirmacionPasswordValido(false);
+      return false;
+    }
+  };
+
+  ////// Validacion Form /////
+  const validarFormulario = () => {
+    return (
+      validarNombre(usuario.nombre) &&
+      validarApellido(usuario.apellido) &&
+      validarEmail(usuario.email) &&
+      validarConfirmacionEmail(usuario.confirmacionEmail) &&
+      validarPassword(usuario.password) &&
+      validarConfirmacionPassword(usuario.confirmacionPasswordValido)
+    );
+  };
+
+  /////////handleSubmit //////
   const handleSubmitCrearCuenta = (e) => {
     e.preventDefault();
-    const isUsernameValid = validarNombre(usuario.nombre);
-    const isApellidoValid = validarApellido(usuario.apellido);
-
-    const isEmailValid = validarEmail(usuario.email);
-
-    if (isUsernameValid && isApellidoValid && isEmailValid) {
+    if (validarFormulario()) {
       setForm(true);
+      console.log("Datos Enviados");
+      console.log(usuario);
+      // dfsf ENVIAR DATOS
+
       setUsuario({
         nombre: "",
-        email: "",
         apellido: "",
+        email: "",
+        confirmacionEmail: "",
+        // direccion: "",
+        // pais: "",
+        telefono: "",
+        password: "",
+        confirmarPassword: "",
       });
-      setVerError("");
     } else {
-      <Error />;
+      console.log("Datos NO Enviados");
+      console.log(usuario);
       setForm(false);
       setUsuario({
         nombre: "",
-        email: "",
         apellido: "",
+        email: "",
+        confirmacionEmail: "",
+        // direccion: "",
+        // pais: "",
+        telefono: "",
+        password: "",
+        confirmarPassword: "",
       });
-      setVerError("Por favor chequea que la información sea correcta");
     }
   };
 
@@ -151,7 +201,7 @@ const onChangeConfirmacionPassword = (e) => {
 
       <form onSubmit={handleSubmitCrearCuenta}>
         <div className="formularioAltaUser">
-          <div  className="campo-anotacion">
+          <div className="campo-anotacion">
             <div className="anotacion">Username *</div>
             <input
               className="campo-formulario"
@@ -161,8 +211,11 @@ const onChangeConfirmacionPassword = (e) => {
               onChange={onChangeNombre}
             />
           </div>
+          {!nombreValido && (
+            <Error mensajeError="El nombre debe tener entre 3 y 30 caracteres y solo contener letras." />
+          )}
 
-          <div  className="campo-anotacion">
+          <div className="campo-anotacion">
             <div className="anotacion">Apellido *</div>
             <input
               className="campo-formulario"
@@ -172,30 +225,41 @@ const onChangeConfirmacionPassword = (e) => {
               onChange={onChangeApellido}
             />
           </div>
+          {!apellidoValido && (
+            <Error mensajeError="El apellido debe tener entre 2 y 30 caracteres y solo contener letras." />
+          )}
 
-          <div  className="campo-anotacion">
+          <div className="campo-anotacion">
             <div className="anotacion">Email *</div>
             <input
               className="campo-formulario"
-              type="text"
+              type="email"
               placeholder="Email"
               value={usuario.email}
               onChange={onChangeEmail}
+              style={{ borderColor: emailValido ? "" : "red" }}
             />
           </div>
+          {!emailValido && (
+            <Error mensajeError="El email debe tener al menos 3 caracteres antes del arroba y tener un formato válido." />
+          )}
 
-          <div  className="campo-anotacion">
+          <div className="campo-anotacion">
             <div className="anotacion">Confirmar Email *</div>
             <input
               className="campo-formulario"
-              type="text"
+              type="email"
               placeholder="Confirmar Email"
               value={usuario.confirmacionEmail}
               onChange={onChangeConfirmacionEmail}
+              style={{ borderColor: confirmacionEmailValido ? "" : "red" }}
             />
           </div>
-          
-          <div  className="campo-anotacion">
+          {!confirmacionEmailValido && (
+            <Error mensajeError="Los emails no coinciden" />
+          )}
+
+          <div className="campo-anotacion">
             <div className="anotacion">Password *</div>
             <input
               className="campo-formulario"
@@ -205,31 +269,34 @@ const onChangeConfirmacionPassword = (e) => {
               onChange={onChangePassword}
             />
           </div>
+          {!passwordValido && (
+            <Error mensajeError="La contraseña debe tener al menos 8 caracteres, incluir una letra mayúscula y un carácter no alfanumérico." />
+          )}
 
-          <div  className="campo-anotacion">
+          <div className="campo-anotacion">
             <div className="anotacion">Confirmacion Password *</div>
             <input
               className="campo-formulario"
-              type="text"
-              placeholder="Password"
-              value={usuario.confirmacionPassword}
+              type="password"
+              placeholder="Confirmar password"
+              value={usuario.confirmarPassword}
               onChange={onChangeConfirmacionPassword}
             />
           </div>
+          {!confirmacionPasswordValido && (
+            <Error mensajeError="Los passwords no coinciden" />
+          )}
 
-
-{/* //////////////-----------------------------////////////// */}
-            {/* <Boton className="botonCrearUser" texto={textoBotonGuardarForm} type="submit" value="Acceso"/> */}
-            <button className="boton" type="submit" value="Acceso">Crear Cuenta</button>
-
+          {/* //////////////-----------------------------////////////// */}
+          <button className="boton" type="submit" value="Acceso">
+            Crear Cuenta
+          </button>
         </div>
         {form && (
           <h5 className="msj-form-guardado">
             Gracias !! Te has registrado como usuario de HomeOFF!!
           </h5>
         )}
-
-        {VerError !== "" && <Error />}
       </form>
       <div className="acceso-cuenta-o-usuarionuevo">
         <div>No tenés cuenta?</div>

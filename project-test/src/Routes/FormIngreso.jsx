@@ -3,18 +3,23 @@ import "../Components/FormIngreso.css";
 import Error from "../Components/Error";
 
 const FormIngreso = () => {
-  // const textoBotonIniciar = "Iniciar";
+    //Repo de validaciones
+
   const [nombreValido, setNombreValido] = useState(true);
   const [emailValido, setEmailValido] = useState(true);
   const [passwordValido, setPasswordValido] = useState(true);
 
+  /// Definicion de User/Objeto
   const [usuario, setUsuario] = useState({
     nombre: "",
     email: "",
     password: "",
   });
 
+  /// Definicion de Form
   const [form, setForm] = useState(false);
+
+    //////////////////OnChanges///////////////
 
   const onChangeNombre = (e) => {
     setUsuario({ ...usuario, nombre: e.target.value });
@@ -72,6 +77,7 @@ const FormIngreso = () => {
     );
   };
 
+  /////////handleSubmit //////
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validarFormulario()) {
