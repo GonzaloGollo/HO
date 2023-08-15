@@ -12,50 +12,18 @@ const ListadoProductos = ({ CantidadCards }) => {
   const navigate = useNavigate();
   const pasaPaginaSiguiente = ">";
   const irAPaginaAnterior = "<"
-  const { listaProductosBase, setListaProductosBase } = useContext(ContextGlobal);
+  // const { listaProductosBase, setListaProductosBase, productosBKLista, setProductosBKLista, getDatosBKLista } = useContext(ContextGlobal);
+  const {  productosBKLista, setProductosBKLista, getDatosBKLista } = useContext(ContextGlobal);
 
   const [storedFormValue] = useLocalStorageList("formularioProducto", {});
 
   console.log(" ----------Listado de Productos");
 
-  console.log(listaProductosBase.length);
+  // console.log(listaProductosBase.length);
 
-  console.log(listaProductosBase);
+  // console.log(listaProductosBase);
 
-  // const productoMas = {
-  //   id: 17,
-  //   tipoRecurso: "Coworking",
-  //   nombreProducto: "Prueba de nuevo producto",
-  //   descripcion: " Otra descripcion otra descripcion",
-  //   capacidadMáxima: 20,
-  //   precio: "$1800",
-  //   sede: "Chile",
-  //   estadoDisponibilidad: false,
-  //   idReservaVigente: 78,
-  //   servicios: {
-  //     servicio1: "WIFI",
-  //     servicio2: "Fotocopiadora",
-  //     servicio3: "Impresora",
-  //     servicio4: "",
-  //     servicio5: "",
-  //   },
-  //   fotos: {
-  //     foto1:
-  //       "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/Coworking/coworking2.jpg",
-  //     foto2:
-  //       "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/Coworking/coworking3.jpg",
-  //     foto3:
-  //       "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/Coworking/coworking4.jpg",
-  //     foto4:
-  //       "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/Coworking/coworking5.jpg",
-  //     foto5:
-  //       "https://c2-team4-images-test-bucket.s3.amazonaws.com/Imagenes09Ago2023/Coworking/coworking7.jpg",
-  //   },
-  // };
-
-  // console.log(productoMas);
-
-  const listaPrevia = listaProductosBase;
+  // const listaPrevia = listaProductosBase;
 
   // const productoAdaptadoObjeto = productoMas;
 
@@ -82,28 +50,34 @@ const ListadoProductos = ({ CantidadCards }) => {
   //   }
   // }, []);
 
-  console.log(" Aca empieza a mostras el resultado de CARGA");
-  console.log(listaProductosBase.length);
+  // console.log(" Aca empieza a mostras el resultado de CARGA");
+  // console.log(listaProductosBase.length);
 
 
-  useEffect(() => {
-    if (
-      listaPrevia.findIndex(
-        (item) => item.id === storedFormValue.id
-      ) === -1
-    )
-    if (storedFormValue) {
-      setListaProductosBase((prevList) => [...prevList, storedFormValue]);
-    }
-  }, [storedFormValue]);
 
   
 
-  console.log("Tipo de listaProductosBase:", typeof listaProductosBase);
-  console.log("Estructura de listaProductosBase:", listaProductosBase);
+  // useEffect(() => {
+  //   if (
+  //     listaPrevia.findIndex(
+  //       (item) => item.id === storedFormValue.id
+  //     ) === -1
+  //   )
+  //   if (storedFormValue) {
+  //     setListaProductosBase((prevList) => [...prevList, storedFormValue]);
+  //   }
+  // }, [storedFormValue]);
+
+  
+
+  // console.log("Tipo de listaProductosBase:", typeof listaProductosBase);
+  // console.log("Estructura de listaProductosBase:", listaProductosBase);
 
 
-  console.log("Length listaProductosBase:", listaProductosBase);
+  // console.log("Length listaProductosBase:", listaProductosBase);
+
+
+
 
 
   const chunk = (arr, size) => {
@@ -118,13 +92,13 @@ const ListadoProductos = ({ CantidadCards }) => {
   const [currentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
-    const randomProducts = [...listaProductosBase].sort(
+    const randomProducts = [...productosBKLista].sort(
       () => Math.random() - 0.5
     );
 
     const paginatedArray = chunk(randomProducts, CantidadCards);
     setPaginatedProducts(paginatedArray);
-  }, [CantidadCards, listaProductosBase]);
+  }, [CantidadCards, productosBKLista]);
 
   const handleNextPage = () => {
     setCurrentPage((prevPage) => prevPage + 1);
@@ -160,7 +134,7 @@ const ListadoProductos = ({ CantidadCards }) => {
           <>
             <h3> No encontramos productos para recomendar </h3>
             <h3>
-              Los datos del carga son {listaProductosBase.ListadoProductos}
+              Los datos del carga son {productosBKLista.ListadoProductos}
             </h3>
           </>
         )}

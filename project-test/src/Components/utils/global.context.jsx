@@ -4,19 +4,18 @@ import {useLocalStorageList} from '../utils/useStorageList.js'
 export const ContextGlobal = createContext();
 export const ContextProvider = ({ children }) => {
 
-  const [listaProductosBase, setListaProductosBase] = useLocalStorageList("listaProductosBase", listadoProductosData);
+  // const [listaProductosBase, setListaProductosBase] = useLocalStorageList("listaProductosBase", listadoProductosData);
 
   ///////// este funcionaba
   // const [listaProductosBase, setListaProductosBase] = useState([]);
-    useEffect(() => {
-      const cargarDatos = async () => {
-        // Verificar si listaProductosBase ya está cargada para evitar duplicados
-        if (listaProductosBase.length === 0) {
-          setListaProductosBase(listadoProductosData);
-        }
-      };
-      cargarDatos();
-    }, [listaProductosBase]);
+    // useEffect(() => {
+    //   const cargarDatos = async () => {
+    //     if (listaProductosBase.length === 0) {
+    //       setListaProductosBase(listadoProductosData);
+    //     }
+    //   };
+    //   cargarDatos();
+    // }, [listaProductosBase]);
 
   ///Modal Fotos ////
   const [showModal, setShowModal] = useState(false);
@@ -28,11 +27,34 @@ export const ContextProvider = ({ children }) => {
   const closeModal = () => {
     setShowModal(false);
   };
+
+/////////GetDatosLista //////////////
+ const [productosBKLista, setProductosBKLista] = useState([]);
+
+ const getDatosBKLista = async () => {
+   const res = await fetch("http://52.32.210.155:8080/api/v1/recursos/list");
+  const data = await res.json();
+
+  setProductosBKLista(data);
+  console.log(productosBKLista);
+};
+
+useEffect(() => {
+  getDatosBKLista();
+}, []);
+
+
+
+
+
   return (
     <ContextGlobal.Provider
       value={{
-        listaProductosBase,
-        setListaProductosBase,
+        productosBKLista, 
+        setProductosBKLista,
+        getDatosBKLista,
+        // listaProductosBase,
+        // setListaProductosBase,
         showModal,
         selectedImage,
         closeModal,
