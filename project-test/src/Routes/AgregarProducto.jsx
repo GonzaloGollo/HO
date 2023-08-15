@@ -21,15 +21,15 @@ const AgregarProducto = () => {
 
   const [nuevoProducto, setNuevoProducto] = useState({
     nombre: "",
-    descripcion: "",
+    descripción: "",
     capacidadMáxima: 0,
     precioUnitario: 0,
     idSede: 0,
     imageURL: "",
-    imageURL2: "",
-    imageURL3: "",
-    imageURL4: "",
-    imageURL5: "",
+    imageUrl01: "",
+    imageUrl02: "",
+    imageUrl03: "",
+    imageUrl04: "",
     tipoDeRecurso: "",
     estadoRecurso: "",
   });
@@ -58,22 +58,27 @@ const AgregarProducto = () => {
     {
       id: 1,
       tipo: "Oficina Privada",
+      valor:"OFICINAPRIVADA"
     },
     {
       id: 2,
       tipo: "Coworking",
+      valor:"COWORKING"
     },
     {
       id: 3,
       tipo: "Sala de Reuniones",
+      valor:"SALAREUNION"
     },
     {
       id: 4,
       tipo: "Oficina House",
+      valor:"SALAFLEXIBLE"
     },
     {
       id: 5,
       tipo: "Oficina Abierta",
+      valor:"OFICINAPRIVADA"
     },
   ];
 
@@ -152,7 +157,7 @@ const AgregarProducto = () => {
   };
 
   const onChangeDescripcion = (e) => {
-    setNuevoProducto({ ...nuevoProducto, descripcion: e.target.value });
+    setNuevoProducto({ ...nuevoProducto, descripción: e.target.value });
   };
 
   const onChangeCapacidadMáxima = (e) => {
@@ -176,10 +181,10 @@ const AgregarProducto = () => {
     setNuevoProducto({
       ...nuevoProducto,
       imageURL: fotosTempUrls[0] || "",
-      imageURL2: fotosTempUrls[1] || "",
-      imageURL3: fotosTempUrls[2] || "",
-      imageURL4: fotosTempUrls[3] || "",
-      imageURL5: fotosTempUrls[4] || "",
+      imageUrl01: fotosTempUrls[1] || "",
+      imageUrl02: fotosTempUrls[2] || "",
+      imageUrl03: fotosTempUrls[3] || "",
+      imageUrl04: fotosTempUrls[4] || "",
     });
   };
 
@@ -214,29 +219,32 @@ const AgregarProducto = () => {
     return regex.test(n);
   };
 
+  const validarFormulario = () => {
+    validarNombreProducto(nuevoProducto.nombre);
+  };
+
   /////////handleSubmit //////
   const handleSubmitCrearProducto = (e) => {
     e.preventDefault();
-    const isUsernameValid = validarNombreProducto(nuevoProducto.nombre);
     console.log(nuevoProducto);
-    if (isUsernameValid) {
+    if (validarFormulario) {
       setForm(true);
       // setShowPreview(true);
-      console.log(form);
+      // console.log(form);
 
       const nuevoProductoData = {
         nombre: nuevoProducto.nombre,
-        descripcion: nuevoProducto.descripcion,
+        descripción: nuevoProducto.descripción,
         capacidadMáxima: nuevoProducto.capacidadMáxima,
         precioUnitario: nuevoProducto.precioUnitario,
         idSede: nuevoProducto.idSede,
-        imageURL: fotosTempUrls[0] || "",
-        imageURL2: fotosTempUrls[1] || "",
-        imageURL3: fotosTempUrls[2] || "",
-        imageURL4: fotosTempUrls[3] || "",
-        imageURL5: fotosTempUrls[4] || "",
-        tipoRecurso: nuevoProducto.tipoRecurso,
-        estadoDisponibilidad: nuevoProducto.estadoDisponibilidad,
+        imageURL: nuevoProducto.imageURL,
+        imageURL2: nuevoProducto.imageUrl01,
+        imageURL3: nuevoProducto.imageUrl02,
+        imageURL4: nuevoProducto.imageUrl03,
+        imageURL5: nuevoProducto.imageUrl04,
+        tipoRecurso: nuevoProducto.tipoDeRecurso,
+        estadoRecurso: nuevoProducto.estadoRecurso,
       };
 
       console.log(nuevoProducto);
@@ -250,7 +258,12 @@ const AgregarProducto = () => {
       };
 
       fetch(`${urlBase}save`, configuraciones)
-        .then((respuesta) => respuesta.json())
+        .then((respuesta) => {
+          if (!respuesta.ok) {
+            throw new Error("Error al enviar los datos");
+          }
+          return respuesta.json();
+        })
         .then((info) => {
           console.log("Nuevo Producto 👇" + info);
           getDatosBKLista();
@@ -260,20 +273,24 @@ const AgregarProducto = () => {
       console.log("Muestra el valor de toda la Lista ");
       console.log(productosBKLista);
 
+      useEffect(() => {
+        getDatosBKLista();
+      }, []);
+
       /////ERROR ????////////////////////////
     } else {
       setForm(false);
       setNuevoProducto({
         nombre: "",
-        descripcion: "",
+        descripción: "",
         capacidadMáxima: 0,
         precioUnitario: 0,
         idSede: 0,
         imageURL: "",
-        imageURL2: "",
-        imageURL3: "",
-        imageURL4: "",
-        imageURL5: "",
+        imageURL01: "",
+        imageURL02: "",
+        imageURL03: "",
+        imageURL04: "",
         tipoDeRecurso: "",
         estadoRecurso: "",
       });
@@ -304,15 +321,15 @@ const AgregarProducto = () => {
           </div>
 
           <div className="campo-anotacion">
-            <label className="anotacion" for="descripcion">
+            <label className="anotacion" for="descripción">
               Descripcion *
             </label>
             <textarea
-              id="descripcion"
+              id="descripción"
               className="campo-formulario"
               type="text"
               placeholder="Ingrese una descripcion"
-              value={nuevoProducto.descripcion}
+              value={nuevoProducto.descripción}
               onChange={onChangeDescripcion}
             />
           </div>
@@ -326,14 +343,14 @@ const AgregarProducto = () => {
               className="campo-formulario"
               type="text"
               placeholder="Elija un tipo de recurso"
-              value={nuevoProducto.tipoDeRecurso}
+              value={nuevoProducto.tipoDeRecurso.value}
               onChange={onChangeTipoRecurso}
             >
               {tipoRecursoArray.map((tipoRecurso) => (
                 <option
                   key={tipoRecurso.id}
                   className="item-grid"
-                  value={tipoRecurso.id}
+                  value={tipoRecurso.valor}
                 >
                   {tipoRecurso.tipo}{" "}
                 </option>
