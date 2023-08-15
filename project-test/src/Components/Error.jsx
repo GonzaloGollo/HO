@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
 
-const Error = () => {
+const Error = ({ mensajeError }) => {
+
+
   return (
-    <div className='error-comp'>Disculpas! Ha surgido un error con los datos registrados.</div>
-  )
-}
+    <div className="error-comp">
+      {mensajeError}
+    </div>
+  );
+};
 
-export default Error
+export default Error;
