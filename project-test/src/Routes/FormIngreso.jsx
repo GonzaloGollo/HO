@@ -3,126 +3,104 @@ import "../Components/FormIngreso.css";
 import Error from "../Components/Error";
 
 const FormIngreso = () => {
-  const [errores, setErrores] = useState({
-    mensajeErrorPass: "",
-    mensajeErrorMail: "",
-    mensajeErrorNombre: "",
-  });
-
-  const textoBotonIniciar = "Iniciar";
+  // const textoBotonIniciar = "Iniciar";
+  const [nombreValido, setNombreValido] = useState(true);
+  const [emailValido, setEmailValido] = useState(true);
+  const [passwordValido, setPasswordValido] = useState(true);
 
   const [usuario, setUsuario] = useState({
     nombre: "",
     email: "",
-    pass: "",
+    password: "",
   });
+
   const [form, setForm] = useState(false);
 
-  // const [VerError, setVerError] = useState("");
-
   const onChangeNombre = (e) => {
-    setErrores({
-      ...errores,
-      mensajeErrorNombre: "", // Limpias el mensaje de error correspondiente
-    });
     setUsuario({ ...usuario, nombre: e.target.value });
-    setVerError("");
   };
 
   const onChangeEmail = (e) => {
-    setErrores({
-      ...errores,
-      mensajeErrorMail: "", // Limpias el mensaje de error correspondiente
-    });
     setUsuario({ ...usuario, email: e.target.value });
-    setVerError("");
   };
 
   const onChangePass = (e) => {
-    setErrores({
-      ...errores,
-      mensajeErrorPass: "", // Limpias el mensaje de error correspondiente
-    });
-    setUsuario({ ...usuario, pass: e.target.value });
-    setVerError("");
+    setUsuario({ ...usuario, password: e.target.value });
   };
+
   const validarNombre = (n) => {
     const regex = /^[A-Za-z\s]{3,30}$/;
     if (regex.test(n)) {
-      setErrores({
-        ...errores,
-        mensajeErrorNombre: "", // Limpias el mensaje de error correspondiente
-      });
+      setNombreValido(true);
       return true;
     } else {
-      setErrores({
-        ...errores,
-        mensajeErrorNombre: "Debe ingresar un nombre con mas de 3 y menos de 30 caracteres.",
-      });
+      setNombreValido(false);
       return false;
     }
   };
-  
-  const validarEmail = (em) => {
-    const emSinEspacio = em.trim();
-  
-    const emailRegexp = new RegExp(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/);
-    if (emailRegexp.test(emSinEspacio)) {
-      setErrores({
-        ...errores,
-        mensajeErrorMail: "", // Limpias el mensaje de error correspondiente
-      });
+
+  const validarEmail = (e) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{3}$/;
+    if (regex.test(e)) {
+      setEmailValido(true);
       return true;
     } else {
-      setErrores({
-        ...errores,
-        mensajeErrorMail: "Por favor ingrese un email válido.",
-      });
+      setEmailValido(false);
       return false;
     }
   };
-  
-  const validarPass = (em) => {
-    const emSinEspacio = em.trim();
-    const passRegexp = new RegExp(/^(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(.{8,})$/);
+
+  const validarPassword = (p) => {
+    // const regex = /^(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(.{8,})$/;
+    const emSinEspacio = p.trim();
+
+    const passRegexp = new RegExp( /^(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(.{8,})$/);
     if (passRegexp.test(emSinEspacio)) {
-      setErrores({
-        ...errores,
-        mensajeErrorPass: "", // Limpias el mensaje de error correspondiente
-      });
+      setPasswordValido(true);
       return true;
     } else {
-      setErrores({
-        ...errores,
-        mensajeErrorPass: "La contraseña debe tener al menos 1 letra mayúscula, 1 carácter no alfanumérico y tener al menos 8 caracteres.",
-      });
+      setPasswordValido(false);
       return false;
-    }
+    }
+ 
+    // if (regex.test(p)) {
+    //   setPasswordValido(true);
+    //   return true;
+    // } else {
+    //   setPasswordValido(false);
+    //   return false;
+    // }
   };
+
+  const validarFormulario = () => {
+    return (
+      validarNombre(usuario.nombre) &&
+      validarEmail(usuario.email) &&
+      validarPassword(usuario.password)
+    );
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    form.reset();
-    const isUsernameValid = validarNombre(usuario.nombre);
-    const isEmailValid = validarEmail(usuario.email);
-    const isPassValid = validarPass(usuario.pass);
-    if (isUsernameValid && isEmailValid && isPassValid) {
+    if (validarFormulario()) {
       setForm(true);
+      console.log("Datos Enviados");
+      console.log(usuario);
+      // dfsf ENVIAR DATOS
       setUsuario({
         nombre: "",
         email: "",
+        password: "",
       });
-      setVerError("");
-      setMensajeErrorPass("");
-      setMensajeErrorMail("");
-      setMensajeErrorNombre("");
     } else {
-      // No necesitas <Error /> aquí
       setForm(false);
+      console.log("Datos No Enviados");
+      console.log(usuario);
       setUsuario({
         nombre: "",
         email: "",
+        password: "",
       });
-      setVerError("Por favor chequea que la información sea correcta");
     }
   };
 
@@ -145,14 +123,8 @@ const FormIngreso = () => {
                 onChange={onChangeNombre}
               />
             </div>
-            {!validarNombre(usuario.nombre) && (
-              <div>
-                {/* <p style={{ color: "red", textAlign: "center" }}>
-                Debe ingresar un nombre con mas de 3 y menos de 30 caracteres.
-              </p> */}
-
-                <Error mensajeError={errores.mensajeErrorNombre} />
-              </div>
+            {!nombreValido && (
+              <Error mensajeError="El nombre debe tener entre 3 y 30 caracteres y solo contener letras." />
             )}
 
             <div className="campo-anotacion">
@@ -165,39 +137,25 @@ const FormIngreso = () => {
                 onChange={onChangeEmail}
               />
             </div>
-            {!validarEmail(usuario.email) && (
-              // <p style={{ color: "red", textAlign: "center" }}>
-              //   Por favor ingrese un email válido.
-              // </p>
-              <div>
-                {/* <Error mensajeError={errores.mensajeErrorMail} /> */}
-              </div>
+            {!emailValido && (
+              <Error mensajeError="El email debe tener al menos 3 caracteres antes del arroba y tener un formato válido." />
             )}
 
             <div className="campo-anotacion">
               <div className="anotacion">Password *</div>
               <input
                 className="campo-formulario"
-                type="text"
+                type="password"
                 placeholder="Password"
-                value={usuario.pass}
+                value={usuario.password}
                 onChange={onChangePass}
               />
             </div>
-            {/* {!validarPass(usuario.pass) && ( */}
-              // <p style={{ color: "red", textAlign: "center" }}>
-              //   La contraseña debe tener al menos 1 letra mayúscula, 1 carácter
-              //   no alfanumérico y tener al menos 8 caracteres.
-              // </p>
-              // <Error mensajeError={errores.mensajeErrorPass} />
-            {/* // )} */}
+            {!passwordValido && (
+              <Error mensajeError="La contraseña debe tener al menos 8 caracteres, incluir una letra mayúscula y un carácter no alfanumérico." />
+            )}
 
-            <button
-              className="boton"
-              texto={textoBotonIniciar}
-              type="submit"
-              value="Acceso"
-            >
+            <button className="boton" type="submit" value="Acceso">
               Acceso
             </button>
           </div>
