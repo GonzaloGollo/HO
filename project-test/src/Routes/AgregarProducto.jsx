@@ -25,11 +25,11 @@ const AgregarProducto = () => {
     capacidadMáxima: 0,
     precioUnitario: 0,
     idSede: 0,
-    imageURL: "",
-    imageUrl01: "",
-    imageUrl02: "",
-    imageUrl03: "",
-    imageUrl04: "",
+    imagenURL: "",
+    imagenUrl01: "",
+    imagenUrl02: "",
+    imagenUrl03: "",
+    imagenUrl04: "",
     tipoDeRecurso: "",
     estadoRecurso: "",
   });
@@ -180,11 +180,11 @@ const AgregarProducto = () => {
 
     setNuevoProducto({
       ...nuevoProducto,
-      imageURL: fotosTempUrls[0] || "",
-      imageUrl01: fotosTempUrls[1] || "",
-      imageUrl02: fotosTempUrls[2] || "",
-      imageUrl03: fotosTempUrls[3] || "",
-      imageUrl04: fotosTempUrls[4] || "",
+      imagenURL: fotosTempUrls[0] || "",
+      imagenUrl01: fotosTempUrls[1] || "",
+      imagenUrl02: fotosTempUrls[2] || "",
+      imagenUrl03: fotosTempUrls[3] || "",
+      imagenUrl04: fotosTempUrls[4] || "",
     });
   };
 
@@ -238,11 +238,11 @@ const AgregarProducto = () => {
         capacidadMáxima: nuevoProducto.capacidadMáxima,
         precioUnitario: nuevoProducto.precioUnitario,
         idSede: nuevoProducto.idSede,
-        imageURL: nuevoProducto.imageURL,
-        imageURL2: nuevoProducto.imageUrl01,
-        imageURL3: nuevoProducto.imageUrl02,
-        imageURL4: nuevoProducto.imageUrl03,
-        imageURL5: nuevoProducto.imageUrl04,
+        imagenURL: nuevoProducto.imagenURL,
+        imagenURL2: nuevoProducto.imagenUrl01,
+        imagenURL3: nuevoProducto.imagenUrl02,
+        imagenURL4: nuevoProducto.imagenUrl03,
+        imagenURL5: nuevoProducto.imagenUrl04,
         tipoRecurso: nuevoProducto.tipoDeRecurso,
         estadoRecurso: nuevoProducto.estadoRecurso,
       };
@@ -273,9 +273,9 @@ const AgregarProducto = () => {
       console.log("Muestra el valor de toda la Lista ");
       console.log(productosBKLista);
 
-      useEffect(() => {
-        getDatosBKLista();
-      }, []);
+      // useEffect(() => {
+      //   getDatosBKLista();
+      // }, []);
 
       /////ERROR ????////////////////////////
     } else {
@@ -286,11 +286,11 @@ const AgregarProducto = () => {
         capacidadMáxima: 0,
         precioUnitario: 0,
         idSede: 0,
-        imageURL: "",
-        imageURL01: "",
-        imageURL02: "",
-        imageURL03: "",
-        imageURL04: "",
+        imagenURL: "",
+        imagenURL01: "",
+        imagenURL02: "",
+        imagenURL03: "",
+        imagenURL04: "",
         tipoDeRecurso: "",
         estadoRecurso: "",
       });
@@ -343,7 +343,7 @@ const AgregarProducto = () => {
               className="campo-formulario"
               type="text"
               placeholder="Elija un tipo de recurso"
-              value={nuevoProducto.tipoDeRecurso.value}
+              value={nuevoProducto.tipoDeRecurso}
               onChange={onChangeTipoRecurso}
             >
               {tipoRecursoArray.map((tipoRecurso) => (
