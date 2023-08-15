@@ -51,7 +51,6 @@ const FormIngreso = () => {
   };
 
   const validarPassword = (p) => {
-    // const regex = /^(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(.{8,})$/;
     const emSinEspacio = p.trim();
 
     const passRegexp = new RegExp( /^(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(.{8,})$/);
@@ -63,13 +62,6 @@ const FormIngreso = () => {
       return false;
     }
  
-    // if (regex.test(p)) {
-    //   setPasswordValido(true);
-    //   return true;
-    // } else {
-    //   setPasswordValido(false);
-    //   return false;
-    // }
   };
 
   const validarFormulario = () => {
