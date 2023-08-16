@@ -28,6 +28,15 @@
   margin-bottom: 5px;
 }
 
+.border-error {
+  border: 1px solid red;
+}
+
+.border-valid {
+  border: 1px solid green;
+}
+
+
 .form-control input {
   border: 2px solid #f0f0f0;
   border-radius: 4px;
@@ -36,40 +45,18 @@
   padding: 10px;
   width: 350px;
 }
-
+/* 
 .form-control input:focus {
   outline: 0;
   border-color: #777;
-}
+} */
 
-.error-form {
+/* Error .error-form {
   font-size: 16px;
   color: #2ecc71;
-}
+} */
 
-.circulo-check {
-  color: #2ecc71;
-  visibility: visible;
-}
-
-.circulo-error {
-  color: red;
-  visibility: visible;
-}
-
-.mensaje-error { 
-  color: #e74c3c;
-position: absolute;
-bottom: 0;
-left: 0;
-visibility: hidden;
-}
-
-.mensaje-error {
-  visibility: visible;
-}
-
-.form button {
+/* .form button {
   background-color: #f0f0f0;
   border: 2px solid #8e44ad;
   border-radius: 4px;
@@ -82,9 +69,7 @@ visibility: hidden;
   width: 100%;
 
 
-}
-
-
+} */
 
 
 /* //////////////////////////////////////////////////// */
@@ -102,7 +87,7 @@ visibility: hidden;
   align-items: center;
 }
 
-.pack-campo {
+/* .pack-campo {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -116,7 +101,7 @@ visibility: hidden;
 
 .anotacion {
   color: #717171;
-}
+} */
 
 .campo-formulario {
   border-radius: 10px 10px 10px 10px;
@@ -138,21 +123,21 @@ visibility: hidden;
 
 @import url("https://fonts.googleapis.com/css?family=Roboto:100");
 
-.boton {
+.boton-form-inicio {
   background-color: white;
   border: 1px solid var(--colorGrey4);
   box-shadow: var(--BShadow);
 
   border-radius: var(--bRadiusButton);
-  color: #676867;
-  font-family: "Roboto", sans-serif;
+ color: var(--colorGrey1); 
+  /* font-family: "Roboto", sans-serif; */
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 600;
   max-height: 1.5rem;
-  max-width: 150px;
+  max-width: 200px;
   overflow: hidden;
   line-height: 2rem;
-  padding: 1rem 1.5rem;
+  padding: 1rem 2rem;
   position: relative;
   transition: 0.3s transform ease;
   will-change: transform;
@@ -163,7 +148,7 @@ visibility: hidden;
   margin: 2rem 0 1rem 0;
 }
 
-.boton::after {
+.boton-form-inicio::after {
   content: "";
   height: 100%;
   width: 100%;
@@ -178,13 +163,13 @@ visibility: hidden;
   z-index: -1;
 }
 
-.boton:hover::after {
+.boton-form-inicio:hover::after {
   transform: translate(0, 0);
 }
 
-.boton:hover {
+.boton-form-inicio:hover {
   border: 1px solid var(--BGrey);
 
-  transform: scale(1.05);
+  transform: scale(1.009);
   box-shadow: var(--BShadowD);
 }
