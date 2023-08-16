@@ -1,15 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100");
 
-.boton {
+.boton-generico {
   background-color: white;
   border: 1px solid var(--colorGrey4);
-  box-shadow: var(--BShadow);
+  box-shadow: var(  --BShadow1);
 
   border-radius: var(--bRadiusButton);
-  color: #676867;
-  font-family: "Roboto", sans-serif;
+  color: var(--colorGrey1);
+  /* font-family: "Roboto", sans-serif; */
   font-size: 1rem;
-  font-weight: 300;
+  font-weight:var(--fweight5);
   max-height: 1.5rem;
   max-width: 150px;
   overflow: hidden;
@@ -24,7 +24,7 @@
   align-items: center;
 }
 
-.boton::after {
+.boton-generico::after {
   content: "";
   height: 100%;
   width: 100%;
@@ -39,13 +39,13 @@
   z-index: -1;
 }
 
-.boton:hover::after {
+.boton-generico:hover::after {
   transform: translate(0, 0);
 }
 
-.boton:hover {
+.boton-generico:hover {
   border: 1px solid var(--BGrey);
-
-  transform: scale(1.05);
-  box-shadow: var(--BShadowD);
+  transform: scale(1.01);
+  /* transform: scale(1.05); */
+  box-shadow: var(  --BShadow);
 }

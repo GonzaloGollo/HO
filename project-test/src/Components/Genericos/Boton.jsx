@@ -3,7 +3,7 @@ import "./Boton.css";
 
 export const Boton = ({ texto }) => {
   return (
-  <div className='boton'>{texto}</div>
+  <div className='boton-generico'>{texto}</div>
 
 
   );

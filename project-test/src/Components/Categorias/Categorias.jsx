@@ -14,6 +14,7 @@ import {
   HiMiniComputerDesktop,
 } from "react-icons/hi2";
 import { GiOfficeChair } from "react-icons/gi";
+import FiltroCategorias from "../Genericos/FiltroCategorias";
 
 const Categorias = ({NombreCategoria}) => {
   return (
@@ -60,7 +61,7 @@ const Categorias = ({NombreCategoria}) => {
         <div className="nombre-icono-categoria ofi-abierta">Oficina abierta</div>
       </div>
 
-     
+      <FiltroCategorias></FiltroCategorias>
     </div>
   );
 };

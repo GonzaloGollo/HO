@@ -253,11 +253,11 @@ const AgregarProducto = () => {
 
       const configuraciones = {
         method: "POST",
+        body: JSON.stringify(nuevoProductoData),
         headers: {
-          authorization: jwt,
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(nuevoProductoData),
+       
       };
 
       fetch(`${urlBase}save`, configuraciones)
