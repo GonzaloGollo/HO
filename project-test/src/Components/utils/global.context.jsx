@@ -43,7 +43,29 @@ useEffect(() => {
   getDatosBKLista();
 }, []);
 
+/////////////////////////////////////////////////////
+  /////////GetOdontosID //////////////
+  const [datoBKID, setDatoBKID] = useState([]);
 
+  const getDatoBKID = async (id) => {
+    try {
+      const res = await fetch(`http://52.32.210.155:8080/api/v1/recursos/list`);
+      if (!res.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await res.json();
+      console.log("console del Listado en json");
+      console.log(data);
+      const productoID = data.find((item) => item.idRecurso === id);
+      console.log("console de producto ID encontrado");
+      console.log(productoID);
+      setDatoBKID(productoID);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+///////////////////////////////////////////
 
 
 
@@ -53,6 +75,9 @@ useEffect(() => {
         productosBKLista, 
         setProductosBKLista,
         getDatosBKLista,
+        datoBKID, 
+        setDatoBKID, 
+        getDatoBKID,
         // listaProductosBase,
         // setListaProductosBase,
         showModal,

@@ -3,13 +3,13 @@
 .boton-generico {
   background-color: white;
   border: 1px solid var(--colorGrey4);
-  box-shadow: var(  --BShadow1);
+  box-shadow: var(--BShadow1);
 
   border-radius: var(--bRadiusButton);
   color: var(--colorGrey1);
   /* font-family: "Roboto", sans-serif; */
   font-size: 1rem;
-  font-weight:var(--fweight5);
+  font-weight: var(--fweight5);
   max-height: 1.5rem;
   max-width: 150px;
   overflow: hidden;
@@ -47,5 +47,5 @@
   border: 1px solid var(--BGrey);
   transform: scale(1.01);
   /* transform: scale(1.05); */
-  box-shadow: var(  --BShadow);
+  box-shadow: var(--BShadow);
 }

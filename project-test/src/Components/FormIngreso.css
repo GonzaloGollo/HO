@@ -1,62 +1,142 @@
 
 .pagina-formulario-Ingreso {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 400px;
-    height: auto;
-    padding-top: 16rem;
-    padding-bottom: 3rem;
-    margin: 0 auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 400px;
+  height: auto;
+  padding-top: 16rem;
+  padding-bottom: 3rem;
+  margin: 0 auto;
+}
+
+/* .form {
+  padding: 30px 40px;
+  margin-top: 13rem;
+} */
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form-control label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.form-control input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-size: var(--fsizeCat);
+  padding: 10px;
+  width: 350px;
+}
+
+.form-control input:focus {
+  outline: 0;
+  border-color: #777;
+}
+
+.error-form {
+  font-size: 16px;
+  color: #2ecc71;
+}
+
+.circulo-check {
+  color: #2ecc71;
+  visibility: visible;
+}
+
+.circulo-error {
+  color: red;
+  visibility: visible;
+}
+
+.mensaje-error { 
+  color: #e74c3c;
+position: absolute;
+bottom: 0;
+left: 0;
+visibility: hidden;
+}
+
+.mensaje-error {
+  visibility: visible;
+}
+
+.form button {
+  background-color: #f0f0f0;
+  border: 2px solid #8e44ad;
+  border-radius: 4px;
+  color: #f0f0f0;
+  display: block;
+  font-size: var(--fsizeCat);
+  padding: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+  width: 100%;
 
 
-  }
-
-
-  .titulo-form-inicio-sesion {
-    font-size: 30px;
-    color:rgb(3, 141, 165);
-  }
-
-  .formulario-inicio {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .campo-anotacion {
-    margin: 1rem 0rem;
-  }
-
-  .anotacion {
-    color: #717171;
-  }
-
-  .campo-formulario {
-    border-radius: 10px 10px 10px 10px;
-    width: 340px;
-    height: 30px;
-    background-color:white;
-   
-  }
+}
 
 
 
-  .acceso-cuenta-o-usuarionuevo {
-    color:  rgb(3, 141, 165);
-    font-weight: 700;
-    width: 340px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
+
+/* //////////////////////////////////////////////////// */
+
+
+.titulo-form-inicio-sesion {
+  font-size: 30px;
+  color: rgb(3, 141, 165);
+}
+
+.formulario-inicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.pack-campo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.campo-anotacion {
+  margin: 1rem 0rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.anotacion {
+  color: #717171;
+}
+
+.campo-formulario {
+  border-radius: 10px 10px 10px 10px;
+  width: 340px;
+  height: 30px;
+  background-color: white;
+}
+
+.acceso-cuenta-o-usuarionuevo {
+  color: rgb(3, 141, 165);
+  font-weight: 700;
+  width: 340px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 /* -------------------------------------------------- */
 
-  @import url("https://fonts.googleapis.com/css?family=Roboto:100");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100");
 
 .boton {
   background-color: white;
@@ -108,4 +188,3 @@
   transform: scale(1.05);
   box-shadow: var(--BShadowD);
 }
-

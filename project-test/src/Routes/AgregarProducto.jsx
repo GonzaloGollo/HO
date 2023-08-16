@@ -221,57 +221,125 @@ const AgregarProducto = () => {
     return regex.test(n);
   };
 
-  const validarFormulario = () => {
-    validarNombreProducto(nuevoProducto.nombre);
-  };
+  // const validarFormulario = () => {
+  //   validarNombreProducto(nuevoProducto.nombre);
+  // };
 
   /////////handleSubmit //////
   const handleSubmitCrearProducto = (e) => {
     e.preventDefault();
-    console.log(nuevoProducto);
-    if (validarFormulario) {
+
+    if (validarNombreProducto()) {
       setForm(true);
       // setShowPreview(true);
       // console.log(form);
 
-      const nuevoProductoData = {
-        nombre: nuevoProducto.nombre,
-        descripción: nuevoProducto.descripción,
-        capacidadMáxima: 1,
-        precioUnitario: 10.0,
-        idSede: nuevoProducto.idSede,
-        imagenURL: nuevoProducto.imagenURL,
-        imagenUrl01: nuevoProducto.imagenUrl01,
-        imagenUrl02: nuevoProducto.imagenUrl02,
-        imagenUrl03: nuevoProducto.imagenUrl03,
-        imagenUrl04: nuevoProducto.imagenUrl04,
-        tipoDeRecurso: nuevoProducto.tipoDeRecurso,
-        estadoRecurso: nuevoProducto.estadoRecurso,
+      // const nuevoProductoData = {
+      //   nombre: "Sala sala sala",
+      //   descripción: "Sala sala sala",
+      //   capacidadMáxima: 1,
+      //   precioUnitario: 10.0,
+      //   idSede: 1,
+      //   // imagenURL: nuevoProducto.imagenURL,
+      //   // imagenUrl01: nuevoProducto.imagenUrl01,
+      //   // imagenUrl02: nuevoProducto.imagenUrl02,
+      //   // imagenUrl03: nuevoProducto.imagenUrl03,
+      //   // imagenUrl04: nuevoProducto.imagenUrl04,
+      //   imagenURL:
+      //     "https://drive.google.com/file/d/107pyQ8NvKzFtg6I9ZRUPe88eavWb95RT/view?usp=drive_link",
+      //   imagenUrl01:
+      //     "https://drive.google.com/file/d/107pyQ8NvKzFtg6I9ZRUPe88eavWb95RT/view?usp=drive_link",
+      //   imagenUrl02:
+      //     "https://drive.google.com/file/d/107pyQ8NvKzFtg6I9ZRUPe88eavWb95RT/view?usp=drive_link",
+      //   imagenUrl03:
+      //     "https://drive.google.com/file/d/107pyQ8NvKzFtg6I9ZRUPe88eavWb95RT/view?usp=drive_link",
+      //   imagenUrl04:
+      //     "https://drive.google.com/file/d/107pyQ8NvKzFtg6I9ZRUPe88eavWb95RT/view?usp=drive_link",
+
+      //   tipoDeRecurso: "OFICINAPRIVADA",
+      //   estadoRecurso: "DISPONIBLE",
+      //   IdRecurso: 0,
+      // };
+      // console.log("------------------Info data nuevo producto------------------");
+      // console.log(nuevoProducto);
+
+      // console.log("------------------Info paquete enviado en nuevoProductoData ------------------");
+      // console.log(nuevoProductoData);
+
+      const bodyBase = {
+        nombre: "xxxxxxxxxxxxxxxx",
+        descripción: "xxxxxxxxxxxxxxxxxxxxx",
+        capacidadMáxima: 5,
+        precioUnitario: 999.11,
+        idSede: 2,
+        imagenURL:
+        "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada.jpg",
+        imagenUrl01:
+          "https://c2-team4-images-test-bucket.s3.amazonaws.com/lockers.jpg",
+        tipoDeRecurso: "OFICINAPRIVADA",
+        imagenUrl02:
+          "https://c2-team4-images-test-bucket.s3.amazonaws.com/mobiliario.jpg",
+          imagenUrl03:
+          "https://c2-team4-images-test-bucket.s3.amazonaws.com/oficinaprivada2.jpg",
+        imagenUrl04:
+          "https://c2-team4-images-test-bucket.s3.amazonaws.com/lockers.jpg",
+        tipoDeRecurso: "OFICINAPRIVADA",
+        estadoRecurso: "DISPONIBLE",
+        categoria_id: 3,
+        IdRecurso: 0,
       };
+    
+      console.log("ver body------------------------------------------------");
+      console.log(JSON.stringify(bodyBase));
 
-      console.log(nuevoProducto);
+      async function enviarDatos() {
+        try {
+          const response = await fetch(
+            "https://ecommerce-grupo4-k3d49f6tz-maorojas.vercel.app/api/v1/recursos/save",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(bodyBase),
+            }
+          );
 
-      const configuraciones = {
-        method: "POST",
-        body: JSON.stringify(nuevoProductoData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-       
-      };
-
-      fetch(`${urlBase}save`, configuraciones)
-        .then((respuesta) => {
-          if (!respuesta.ok) {
-            throw new Error("Error al enviar los datos");
+          if (!response.ok) {
+            throw new Error("Error en la solicitud fetch");
           }
-          return respuesta.json();
-        })
-        .then((info) => {
-          console.log("Nuevo Producto 👇" + info);
-          getDatosBKLista();
-        })
-        .catch((error) => console.log(error));
+          const data = await response.json();
+          console.log(data);
+
+     
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    
+
+      enviarDatos();
+      // const configuraciones = {
+      //   method: "POST",
+      //   body: JSON.stringify(nuevoProductoData),
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+
+      // };
+
+      // fetch(`${urlBase}save`, configuraciones)
+      //   .then((respuesta) => {
+      //     if (!respuesta.ok) {
+      //       throw new Error("Error al enviar los datos");
+      //     }
+      //     return respuesta.json();
+      //   })
+      //   .then((info) => {
+      //     console.log("Nuevo Producto 👇" + info);
+      //     getDatosBKLista();
+      //   })
+      //   .catch((error) => console.log(error));
 
       console.log("Muestra el valor de toda la Lista ");
       console.log(productosBKLista);
