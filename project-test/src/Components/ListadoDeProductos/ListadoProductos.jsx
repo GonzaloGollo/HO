@@ -1,5 +1,7 @@
 import React from "react";
 import CardProducto from "./CardProducto";
+import "../ListadoDeProductos/CardProducto.css";
+
 import { useState, useEffect, useContext } from "react";
 import "./ListadoProductos.css";
 import { ContextGlobal } from "../utils/global.context";
@@ -51,7 +53,7 @@ const ListadoProductos = ({ CantidadCards }) => {
         {paginatedProducts.length ? (
           paginatedProducts[currentPage].map((producto, idRecurso) => (
             <CardProducto
-              className=".item-grid "
+              className=".item-grid"
               key={producto.idRecurso}
               title={producto.nombre}
               descripcion={producto.descripción}

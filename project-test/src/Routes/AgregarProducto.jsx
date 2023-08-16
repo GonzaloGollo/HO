@@ -5,6 +5,8 @@ import Error from "../Components/Error";
 import { Boton } from "../Components/Genericos/Boton";
 import PreviewProduct from "../Components/PreviewProduct.jsx";
 import { ContextGlobal } from "../Components/utils/global.context";
+import "../Components/Genericos/CardProductoSimulado.css";
+import CardProductoSimulado from "../Components/Genericos/CardProductoSimulado";
 
 const AgregarProducto = () => {
   //// Variables y constantes ////
@@ -22,16 +24,16 @@ const AgregarProducto = () => {
   const [nuevoProducto, setNuevoProducto] = useState({
     nombre: "",
     descripción: "",
-    capacidadMáxima: 0,
-    precioUnitario: 0,
-    idSede: 0,
+    capacidadMáxima: 1,
+    precioUnitario: 1,
+    idSede: 1,
     imagenURL: "",
     imagenUrl01: "",
     imagenUrl02: "",
     imagenUrl03: "",
     imagenUrl04: "",
-    tipoDeRecurso: "",
-    estadoRecurso: "",
+    tipoDeRecurso: "OFICINAPRIVADA",
+    estadoRecurso: "DISPONIBLE",
   });
 
   /////////////////////////////
@@ -58,27 +60,27 @@ const AgregarProducto = () => {
     {
       id: 1,
       tipo: "Oficina Privada",
-      valor:"OFICINAPRIVADA"
+      valor: "OFICINAPRIVADA",
     },
     {
       id: 2,
       tipo: "Coworking",
-      valor:"COWORKING"
+      valor: "COWORKING",
     },
     {
       id: 3,
       tipo: "Sala de Reuniones",
-      valor:"SALAREUNION"
+      valor: "SALAREUNION",
     },
     {
       id: 4,
       tipo: "Oficina House",
-      valor:"SALAFLEXIBLE"
+      valor: "SALAFLEXIBLE",
     },
     {
       id: 5,
       tipo: "Oficina Abierta",
-      valor:"OFICINAPRIVADA"
+      valor: "OFICINAPRIVADA",
     },
   ];
 
@@ -235,15 +237,15 @@ const AgregarProducto = () => {
       const nuevoProductoData = {
         nombre: nuevoProducto.nombre,
         descripción: nuevoProducto.descripción,
-        capacidadMáxima: nuevoProducto.capacidadMáxima,
-        precioUnitario: nuevoProducto.precioUnitario,
+        capacidadMáxima: 1,
+        precioUnitario: 10.0,
         idSede: nuevoProducto.idSede,
         imagenURL: nuevoProducto.imagenURL,
-        imagenURL2: nuevoProducto.imagenUrl01,
-        imagenURL3: nuevoProducto.imagenUrl02,
-        imagenURL4: nuevoProducto.imagenUrl03,
-        imagenURL5: nuevoProducto.imagenUrl04,
-        tipoRecurso: nuevoProducto.tipoDeRecurso,
+        imagenUrl01: nuevoProducto.imagenUrl01,
+        imagenUrl02: nuevoProducto.imagenUrl02,
+        imagenUrl03: nuevoProducto.imagenUrl03,
+        imagenUrl04: nuevoProducto.imagenUrl04,
+        tipoDeRecurso: nuevoProducto.tipoDeRecurso,
         estadoRecurso: nuevoProducto.estadoRecurso,
       };
 
@@ -252,6 +254,7 @@ const AgregarProducto = () => {
       const configuraciones = {
         method: "POST",
         headers: {
+          authorization: jwt,
           "Content-Type": "application/json",
         },
         body: JSON.stringify(nuevoProductoData),
@@ -299,87 +302,88 @@ const AgregarProducto = () => {
   };
 
   return (
-    <div className="pagina-formulario-alta-producto">
-      <div className="encabezado-formulario">
-        <div className="titulo-form-inicio-sesion">Agrega productos</div>
-      </div>
+    <div className="division-form-preview">
+      <div className="pagina-formulario-alta-producto">
+        <div className="encabezado-formulario">
+          <div className="titulo-form-inicio-sesion">Agrega productos</div>
+        </div>
 
-      <form onSubmit={handleSubmitCrearProducto}>
-        <div className="formularioAgregarProducto">
-          <div className="campo-anotacion">
-            <label className="anotacion" for="nombreProducto">
-              Nombre del producto *
-            </label>
-            <input
-              id="nombreProducto"
-              className="campo-formulario"
-              type="text"
-              placeholder="Ingresa el nombre del producto "
-              value={nuevoProducto.nombreProducto}
-              onChange={onChangeNombre}
-            />
-          </div>
+        <form onSubmit={handleSubmitCrearProducto}>
+          <div className="formularioAgregarProducto">
+            <div className="campo-anotacion">
+              <label className="anotacion" for="nombreProducto">
+                Nombre del producto *
+              </label>
+              <input
+                id="nombreProducto"
+                className="campo-formulario"
+                type="text"
+                placeholder="Ingresa el nombre del producto "
+                value={nuevoProducto.nombre}
+                onChange={onChangeNombre}
+              />
+            </div>
 
-          <div className="campo-anotacion">
-            <label className="anotacion" for="descripción">
-              Descripcion *
-            </label>
-            <textarea
-              id="descripción"
-              className="campo-formulario"
-              type="text"
-              placeholder="Ingrese una descripcion"
-              value={nuevoProducto.descripción}
-              onChange={onChangeDescripcion}
-            />
-          </div>
+            <div className="campo-anotacion">
+              <label className="anotacion" for="descripción">
+                Descripcion *
+              </label>
+              <textarea
+                id="descripción"
+                className="campo-formulario"
+                type="text"
+                placeholder="Ingrese una descripcion"
+                value={nuevoProducto.descripción}
+                onChange={onChangeDescripcion}
+              />
+            </div>
 
-          <div className="campo-anotacion">
-            <label className="anotacion" for="tipoRecurso">
-              Tipo de Recurso *
-            </label>
-            <select
-              id="tipoRecurso"
-              className="campo-formulario"
-              type="text"
-              placeholder="Elija un tipo de recurso"
-              value={nuevoProducto.tipoDeRecurso}
-              onChange={onChangeTipoRecurso}
-            >
-              {tipoRecursoArray.map((tipoRecurso) => (
-                <option
-                  key={tipoRecurso.id}
-                  className="item-grid"
-                  value={tipoRecurso.valor}
-                >
-                  {tipoRecurso.tipo}{" "}
-                </option>
-              ))}
-            </select>
-          </div>
+            <div className="campo-anotacion">
+              <label className="anotacion" for="tipoRecurso">
+                Tipo de Recurso *
+              </label>
+              <select
+                id="tipoRecurso"
+                className="campo-formulario"
+                type="text"
+                placeholder="Elija un tipo de recurso"
+                value={nuevoProducto.tipoDeRecurso}
+                onChange={onChangeTipoRecurso}
+              >
+                {tipoRecursoArray.map((tipoRecurso) => (
+                  <option
+                    key={tipoRecurso.id}
+                    className="item-grid"
+                    value={tipoRecurso.valor}
+                  >
+                    {tipoRecurso.tipo}{" "}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-          <div className="campo-anotacion">
-            <div className="anotacion">Capacidad máxima *</div>
-            <select
-              className="campo-formulario"
-              type="text"
-              placeholder="Elija una capacidad máxima"
-              value={nuevoProducto.capacidadMáxima}
-              onChange={onChangeCapacidadMáxima}
-            >
-              {capacidadArray.map((cant) => (
-                <option
-                  key={cant.id}
-                  className="item-grid"
-                  value={cant.cantidad}
-                >
-                  {cant.cantidad}{" "}
-                </option>
-              ))}
-            </select>
-          </div>
+            <div className="campo-anotacion">
+              <div className="anotacion">Capacidad máxima *</div>
+              <select
+                className="campo-formulario"
+                type="number"
+                placeholder="Elija una capacidad máxima"
+                value={nuevoProducto.capacidadMáxima}
+                onChange={onChangeCapacidadMáxima}
+              >
+                {capacidadArray.map((cant) => (
+                  <option
+                    key={cant.id}
+                    className="item-grid"
+                    value={cant.cantidad}
+                  >
+                    {cant.cantidad}{" "}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-          {/* <div className="campo-anotacion">
+            {/* <div className="campo-anotacion">
             <label className="anotacion">Selecciona hasta 5 servicios *</label>
             {serviciosArray.map((servicio) => (
               <div key={servicio.id}>
@@ -402,25 +406,25 @@ const AgregarProducto = () => {
             ))}
           </div> */}
 
-          <div className="campo-anotacion">
-            <label className="anotacion" for="precioProducto">
-              Precio del producto *
-            </label>
-            <input
-              id="precioProducto"
-              className="campo-formulario"
-              type="number"
-              placeholder="Ingresa el precio del producto "
-              value={nuevoProducto.precioUnitario}
-              onChange={onChangePreciounitario}
-            />
-          </div>
+            <div className="campo-anotacion">
+              <label className="anotacion" for="precioProducto">
+                Precio del producto *
+              </label>
+              <input
+                id="precioProducto"
+                className="campo-formulario"
+                type="number"
+                placeholder="Ingresa el precio del producto "
+                value={nuevoProducto.precioUnitario}
+                onChange={onChangePreciounitario}
+              />
+            </div>
 
-          <div className="campo-anotacion">
-            <label className="anotacion" for="sede">
-              Elija una Sede *
-            </label>
-            <select
+            <div className="campo-anotacion">
+              <label className="anotacion" for="sede">
+                Elija una Sede *
+              </label>
+              {/* <select
               id="sede"
               className="campo-formulario"
               type="text"
@@ -428,70 +432,98 @@ const AgregarProducto = () => {
               value={nuevoProducto.idSede}
               onChange={onChangeSede}
             >
-              {sedesArray.map((sede) => (
-                <option key={sede.id} className="item-grid" value={sede.id}>
-                  {sede.nombre}{" "}
+              <option className="item-grid" value={nuevoProducto.idSede}>
+                Argentina
+              </option>
+              <option className="item-grid" value={nuevoProducto.idSede}>
+                Colombia
+              </option>
+              <option className="item-grid" value={nuevoProducto.idSede}>
+                Chile
+              </option>
+              
+            </select> */}
+
+              <select
+                id="sede"
+                className="campo-formulario"
+                type="text"
+                placeholder="Elija una Sede"
+                value={nuevoProducto.idSede}
+                onChange={onChangeSede}
+              >
+                {sedesArray.map((sede) => (
+                  <option key={sede.id} className="item-grid" value={sede.id}>
+                    {sede.nombre}{" "}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="campo-anotacion">
+              <label className="anotacion" for="disponible">
+                Esta Disponible? *
+              </label>
+              <select
+                id="disponible"
+                className="campo-formulario"
+                type="text"
+                placeholder="Elija un tipo de recurso"
+                value={nuevoProducto.estadoRecurso}
+                onChange={onChangeDisponibilidad}
+              >
+                <option className="item-grid" value={true}>
+                  DISPONIBLE
                 </option>
-              ))}
-            </select>
+                <option className="item-grid" value={false}>
+                  NODISPONIBLE
+                </option>
+              </select>
+            </div>
+
+            <div className="campo-anotacion">
+              <label className="anotacion" for="fotos">
+                Ingresa las fotos del producto *
+              </label>
+              <input
+                type="file"
+                id="fotos"
+                name="fotos"
+                accept=".jpg, .jpeg, .png"
+                onChange={onChangeFoto}
+                multiple
+              />
+            </div>
+
+            {/* //////////////-----------------------------////////////// */}
+            <div className="boton-acceso-agregar-producto">
+              <button className="boton" type="submit" value="Guardar">
+                Guardar
+              </button>
+              <button className="boton" type="reset">
+                Cancelar
+              </button>
+            </div>
           </div>
-
-          <div className="campo-anotacion">
-            <label className="anotacion" for="disponible">
-              Esta Disponible? *
-            </label>
-            <select
-              id="disponible"
-              className="campo-formulario"
-              type="text"
-              placeholder="Elija un tipo de recurso"
-              value={nuevoProducto.estadoRecurso}
-              onChange={onChangeDisponibilidad}
-            >
-              <option className="item-grid" value={true}>
-                Si
-              </option>
-              <option className="item-grid" value={false}>
-                No
-              </option>
-            </select>
-          </div>
-
-          <div className="campo-anotacion">
-            <label className="anotacion" for="fotos">
-              Ingresa las fotos del producto *
-            </label>
-            <input
-              type="file"
-              id="fotos"
-              name="fotos"
-              accept=".jpg, .jpeg, .png"
-              onChange={onChangeFoto}
-              multiple
-            />
-          </div>
-
-          {/* //////////////-----------------------------////////////// */}
-          <div className="boton-acceso-agregar-producto">
-            <button className="boton" type="submit" value="Guardar">
-              Guardar
-            </button>
-            <button className="boton" type="reset">
-              Cancelar
-            </button>
-          </div>
-        </div>
-        {form && (
-          <h5 className="msj-form-guardado">
-            Gracias !! Tu producto ha sido guardado!
-          </h5>
-        )}
-
-        {/* {VerError !== "" && <Error />} */}
-      </form>
-      <div className="acceso-cuenta-o-usuarionuevo"></div>
-
-      {/* {showPreview && <PreviewProduct producto={nuevoProducto} />} */}
+          {form && (
+            <h5 className="msj-form-guardado">
+              Gracias !! Tu producto ha sido guardado!
+            </h5>
+          )}
+        </form>
+        <div className="acceso-cuenta-o-usuarionuevo"></div>
+      </div>
+      <div className="segmento-preview">
+        <h1 className="titulo-preview">Preview Carga de producto</h1>
+        <CardProductoSimulado
+          className="card-simulada"
+          title={nuevoProducto.nombre}
+          descripcion={nuevoProducto.descripción}
+          url={nuevoProducto.imagenURL}
+          precio={nuevoProducto.precioUnitario}
+          tipoRecurso={nuevoProducto.tipoDeRecurso}
+        />
+      </div>
     </div>
   );
 };

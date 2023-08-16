@@ -35,7 +35,7 @@ const CardProducto = ({
           </div>
 
           <div className="precio-contenedor">
-            <p className="precio-card-home">{precio}</p>
+            <p className="precio-card-home">${precio}</p>
           </div>
         </div>
 
