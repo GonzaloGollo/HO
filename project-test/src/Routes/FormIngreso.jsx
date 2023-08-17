@@ -137,10 +137,11 @@ const FormIngreso = () => {
 
         <form onSubmit={handleSubmit}>
           <div className="formulario-inicio">
-            <div className="form-control">
+            
+            <div className="form-control-ingreso">
               <label for="nombre">Username *</label>
               <input
-                className={` ${nombreValido ? "border-valid" : "border-error"}`}
+                style={{ borderColor: nombreValido ? "" : "red" }}
                 type="text"
                 placeholder="Ingresa tu nombre"
                 value={usuario.nombre}
@@ -159,10 +160,10 @@ const FormIngreso = () => {
               )}
             </div>
 
-            <div className="form-control">
+            <div className="form-control-ingreso">
               <label for="email">Email *</label>
               <input
-                className={` ${emailValido ? "border-valid" : "border-error"}`}
+                style={{ borderColor: emailValido ? "" : "red" }}
                 type="text"
                 placeholder="ejemplo@gmail.com"
                 value={usuario.email}
@@ -180,7 +181,7 @@ const FormIngreso = () => {
               )}
             </div>
 
-            <div className="form-control">
+            <div className="form-control-ingreso">
               <label for="pass">Password *</label>
               <input
                 className={` ${passwordValido ? "border-valid" : "border-error"}`}
@@ -188,6 +189,7 @@ const FormIngreso = () => {
                 placeholder="Password"
                 value={usuario.password}
                 onChange={onChangePass}
+                style={{ borderColor: passwordValido ? "" : "red" }}
                 id="pass"
               />
 

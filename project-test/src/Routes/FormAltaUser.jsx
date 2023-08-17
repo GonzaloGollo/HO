@@ -21,9 +21,6 @@ const FormAltaUser = () => {
     apellido: "",
     email: "",
     confirmacionEmail: "",
-    // direccion: "",
-    // pais: "",
-    telefono: "",
     password: "",
     confirmarPassword: "",
   });
@@ -68,7 +65,7 @@ const FormAltaUser = () => {
   const onChangeConfirmacionPassword = (e) => {
     const newValue = e.target.value;
     setUsuario({ ...usuario, confirmarPassword: newValue });
-    validarPassword(newValue);
+    validarConfirmacionPassword(newValue);
   };
 
   ///////////////Validaciones ///////////////////
@@ -107,7 +104,8 @@ const FormAltaUser = () => {
   };
 
   const validarConfirmacionEmail = (e) => {
-    if (usuario.confirmacionEmail === usuario.email) {
+const confirmarConfEmailRecortado = e.trim();
+    if (confirmarConfEmailRecortado === usuario.email) {
       setConfirmacionEmailValido(true);
       return true;
     } else {
@@ -129,7 +127,8 @@ const FormAltaUser = () => {
   };
 
   const validarConfirmacionPassword = (e) => {
-    if (usuario.confirmarPassword === usuario.password) {
+    const confirmarConfirmacionPassword  = e.trim();
+    if (confirmarConfirmacionPassword == usuario.password.trim()) {
       setConfirmacionPasswordValido(true);
       return true;
     } else {
@@ -146,7 +145,7 @@ const FormAltaUser = () => {
       validarEmail(usuario.email) &&
       validarConfirmacionEmail(usuario.confirmacionEmail) &&
       validarPassword(usuario.password) &&
-      validarConfirmacionPassword(usuario.confirmacionPasswordValido)
+      validarConfirmacionPassword(usuario.confirmarPassword)
     );
   };
 
@@ -191,7 +190,7 @@ const FormAltaUser = () => {
       <form onSubmit={handleSubmitCrearCuenta}>
         <div className="formularioAltaUser">
           <div className="form-control">
-            <label for="nombre">Username *</label>
+            <label for="nombre">Nombre *</label>
             <input
               type="text"
               placeholder="Ingresa tu nombre"
@@ -250,13 +249,13 @@ const FormAltaUser = () => {
           </div>
 
           <div className="form-control">
-            <label for="confirmemail">Confirmar Email *</label>
+            <label for="confirmaremail">Confirma Email *</label>
             <input
               type="email"
               placeholder="Confirmar Email"
               value={usuario.confirmacionEmail}
               onChange={onChangeConfirmacionEmail}
-              id="confirmemail"
+              id="confirmaremail"
               style={{ borderColor: confirmacionEmailValido ? "" : "red" }}
             />
             {!confirmacionEmailValido ? (
@@ -288,13 +287,13 @@ const FormAltaUser = () => {
           
 
           <div className="form-control">
-            <label for="confirmpassword">Confirmar Password *</label>
+            <label for="confirmarpassword">Confirma Password *</label>
             <input
               type="password"
               placeholder="********"
               value={usuario.confirmarPassword}
-              id="confirmpassword"
-              style={{ borderColor: confirmacionEmailValido ? "" : "red" }}
+              id="confirmarpassword"
+              style={{ borderColor: confirmacionPasswordValido ? "" : "red" }}
 
               onChange={onChangeConfirmacionPassword}
             />

@@ -1,5 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,600;8..144,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500&display=swap");
 
+/* Sombras 
+box shadow: offset-x | offset-y | blur-radius | spread-radius | color  | inset
+
+text-shadow:  offset-x | offset-y | blur-radius | color
+  text-shadow: 4px 4px 5px #0005;
+
+texto - shadow multiples:  
+  text-shadow:
+    -1px -1px 3px #999,
+    0 0 1px darkred,
+    1px 1px 1px red,
+    2px 2px 1px #555,
+    3px 3px 1px #222,
+    4px 4px 1px #000;
+*/
+
+
 #root {
   --color: #111;
   --colorGrey1: #424242;

@@ -7,19 +7,19 @@
   align-items: center;
   width: 350px;
   height: auto;
-  padding-top: 11rem;
+  padding-top: 12rem;
   padding-bottom: 3rem;
   margin: 0 auto;
 }
 
 
-.form-control {
+.form-control-ingreso {
   margin-bottom: 10px;
   padding-bottom: 20px;
   position: relative;
 }
 
-.form-control label {
+.form-control-ingreso label {
   display: inline-block;
   margin-bottom: 5px;
 }
@@ -33,7 +33,7 @@
 }
 
 
-.form-control input {
+.form-control-ingreso input {
   border: 2px solid #f0f0f0;
   border-radius: 4px;
   display: block;
@@ -41,11 +41,7 @@
   padding: 10px;
   width: 350px;
 }
-/* 
-.form-control input:focus {
-  outline: 0;
-  border-color: #777;
-} */
+
 
 .error-form {
   font-size: var( --fsizeS);
@@ -143,7 +139,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* margin: 1rem 0 1rem 0; */
+  margin: 2rem 0 2rem 0; 
 }
 
 .boton-form-inicio::after {
