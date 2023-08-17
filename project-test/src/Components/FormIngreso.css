@@ -5,17 +5,13 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 400px;
+  width: 350px;
   height: auto;
-  padding-top: 16rem;
+  padding-top: 11rem;
   padding-bottom: 3rem;
   margin: 0 auto;
 }
 
-/* .form {
-  padding: 30px 40px;
-  margin-top: 13rem;
-} */
 
 .form-control {
   margin-bottom: 10px;
@@ -51,10 +47,11 @@
   border-color: #777;
 } */
 
-/* Error .error-form {
-  font-size: 16px;
-  color: #2ecc71;
-} */
+.error-form {
+  font-size: var( --fsizeS);
+  color: #cc2e2e;
+  width: 100%;
+}
 
 /* .form button {
   background-color: #f0f0f0;
@@ -78,6 +75,7 @@
 .titulo-form-inicio-sesion {
   font-size: 30px;
   color: rgb(3, 141, 165);
+  margin: 3rem 0rem;
 }
 
 .formulario-inicio {
@@ -121,7 +119,7 @@
 }
 /* -------------------------------------------------- */
 
-@import url("https://fonts.googleapis.com/css?family=Roboto:100");
+ @import url("https://fonts.googleapis.com/css?family=Roboto:100"); 
 
 .boton-form-inicio {
   background-color: white;
@@ -130,7 +128,7 @@
 
   border-radius: var(--bRadiusButton);
  color: var(--colorGrey1); 
-  /* font-family: "Roboto", sans-serif; */
+  font-family: "Roboto", sans-serif; 
   font-size: 1rem;
   font-weight: 600;
   max-height: 1.5rem;
@@ -145,7 +143,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 2rem 0 1rem 0;
+  /* margin: 1rem 0 1rem 0; */
 }
 
 .boton-form-inicio::after {

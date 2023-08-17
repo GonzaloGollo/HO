@@ -11,9 +11,6 @@ const FormAltaUser = () => {
   const [apellidoValido, setApellidoValido] = useState(true);
   const [emailValido, setEmailValido] = useState(true);
   const [confirmacionEmailValido, setConfirmacionEmailValido] = useState(true);
-  // const [direccionValida, setDireccionValida] = useState(true);
-  // const [paisValido, setPaisValido] = useState(true);
-  // const [telefono, setTelefonoValido] = useState(true);
   const [passwordValido, setPasswordValido] = useState(true);
   const [confirmacionPasswordValido, setConfirmacionPasswordValido] =
     useState(true);
@@ -38,42 +35,40 @@ const FormAltaUser = () => {
   //////////////////OnChanges///////////////
 
   const onChangeNombre = (e) => {
-    setUsuario({ ...usuario, nombre: e.target.value });
+    const newValue = e.target.value;
+    setUsuario({ ...usuario, nombre: newValue });
+    validarNombre(newValue);
   };
 
   const onChangeApellido = (e) => {
-    setUsuario({ ...usuario, apellido: e.target.value });
+    const newValue = e.target.value;
+    setUsuario({ ...usuario, apellido: newValue });
+    validarApellido(newValue);
+  
   };
 
   const onChangeEmail = (e) => {
-    setUsuario({ ...usuario, email: e.target.value });
+    const newValue = e.target.value;
+    setUsuario({ ...usuario, email: newValue });
+    validarEmail(newValue);  
   };
 
   const onChangeConfirmacionEmail = (e) => {
-    setUsuario({ ...usuario, confirmacionEmail: e.target.value });
+    const newValue = e.target.value;
+    setUsuario({ ...usuario, confirmacionEmail: newValue });
+    validarConfirmacionEmail(newValue);
   };
 
-  // const onChangeDireccion = (e) => {
-  //   setUsuario({ ...usuario, direccion: e.target.value });
-  //   setVerError("");
-  // };
-
-  // const onChangePais = (e) => {
-  //   setUsuario({ ...usuario, pais: e.target.value });
-  //   setVerError("");
-  // };
-
-  // const onChangeTelefono = (e) => {
-  //   setUsuario({ ...usuario, telefono: e.target.value });
-  //   setVerError("");
-  // };
-
   const onChangePassword = (e) => {
-    setUsuario({ ...usuario, password: e.target.value });
+    const newValue = e.target.value;
+    setUsuario({ ...usuario, password: newValue });
+    validarPassword(newValue);
   };
 
   const onChangeConfirmacionPassword = (e) => {
-    setUsuario({ ...usuario, confirmarPassword: e.target.value });
+    const newValue = e.target.value;
+    setUsuario({ ...usuario, confirmarPassword: newValue });
+    validarPassword(newValue);
   };
 
   ///////////////Validaciones ///////////////////
@@ -169,9 +164,6 @@ const FormAltaUser = () => {
         apellido: "",
         email: "",
         confirmacionEmail: "",
-        // direccion: "",
-        // pais: "",
-        telefono: "",
         password: "",
         confirmarPassword: "",
       });
@@ -184,9 +176,6 @@ const FormAltaUser = () => {
         apellido: "",
         email: "",
         confirmacionEmail: "",
-        // direccion: "",
-        // pais: "",
-        telefono: "",
         password: "",
         confirmarPassword: "",
       });
@@ -201,94 +190,123 @@ const FormAltaUser = () => {
 
       <form onSubmit={handleSubmitCrearCuenta}>
         <div className="formularioAltaUser">
-          <div className="campo-anotacion">
-            <div className="anotacion">Username *</div>
+          <div className="form-control">
+            <label for="nombre">Username *</label>
             <input
-              className="campo-formulario"
               type="text"
-              placeholder="Enter your Username or Email"
+              placeholder="Ingresa tu nombre"
               value={usuario.nombre}
               onChange={onChangeNombre}
-            />
-          </div>
-          {!nombreValido && (
-            <Error mensajeError="El nombre debe tener entre 3 y 30 caracteres y solo contener letras." />
-          )}
+              id="nombre"
+              style={{ borderColor: nombreValido ? "" : "red" }}
 
-          <div className="campo-anotacion">
-            <div className="anotacion">Apellido *</div>
+            />
+            {!nombreValido ? (
+              <p className="error-form">
+                Ingrese entre 3 y 30 caracteres y solo contener letras.
+              </p>
+            ) : (
+              ""
+            )}
+          </div>
+
+          <div className="form-control">
+            <label for="apellido">Apellido *</label>
             <input
-              className="campo-formulario"
               type="text"
               placeholder="Ingresa tu apellido"
               value={usuario.apellido}
               onChange={onChangeApellido}
+              id="apellido"
+              style={{ borderColor: apellidoValido ? "" : "red" }}
             />
+            {!apellidoValido ? (
+              <p className="error-form">
+                Ingrese entre 3 y 30 caracteres y solo contener letras.
+              </p>
+            ) : (
+              ""
+            )}
           </div>
-          {!apellidoValido && (
-            <Error mensajeError="El apellido debe tener entre 2 y 30 caracteres y solo contener letras." />
-          )}
 
-          <div className="campo-anotacion">
-            <div className="anotacion">Email *</div>
+          <div className="form-control">
+            <label for="email">Email *</label>
             <input
-              className="campo-formulario"
               type="email"
-              placeholder="Email"
+              placeholder="ejemplo@gmail.com"
               value={usuario.email}
               onChange={onChangeEmail}
+              id="email"
               style={{ borderColor: emailValido ? "" : "red" }}
             />
+            {!emailValido ? (
+              <p className="error-form">
+                Ingresar al menos 3 caracteres antes del @ y tener un
+                formato válido.
+              </p>
+            ) : (
+              ""
+            )}
           </div>
-          {!emailValido && (
-            <Error mensajeError="El email debe tener al menos 3 caracteres antes del arroba y tener un formato válido." />
-          )}
 
-          <div className="campo-anotacion">
-            <div className="anotacion">Confirmar Email *</div>
+          <div className="form-control">
+            <label for="confirmemail">Confirmar Email *</label>
             <input
-              className="campo-formulario"
               type="email"
               placeholder="Confirmar Email"
               value={usuario.confirmacionEmail}
               onChange={onChangeConfirmacionEmail}
+              id="confirmemail"
               style={{ borderColor: confirmacionEmailValido ? "" : "red" }}
             />
+            {!confirmacionEmailValido ? (
+              <p className="error-form">Los emails no coinciden.</p>
+            ) : (
+              ""
+            )}
           </div>
-          {!confirmacionEmailValido && (
-            <Error mensajeError="Los emails no coinciden" />
-          )}
 
-          <div className="campo-anotacion">
-            <div className="anotacion">Password *</div>
+          <div className="form-control">
+            <label for="Password">Password *</label>
             <input
-              className="campo-formulario"
-              type="text"
-              placeholder="Password"
+              type="password"
+              placeholder="********"
               value={usuario.password}
               onChange={onChangePassword}
+              id="password"
+              style={{ borderColor: passwordValido ? "" : "red" }}
             />
-          </div>
-          {!passwordValido && (
-            <Error mensajeError="La contraseña debe tener al menos 8 caracteres, incluir una letra mayúscula y un carácter no alfanumérico." />
+            {!passwordValido ? (
+            <p className="error-form">
+              La contraseña debe tener al menos 8 caracteres, incluir una letra
+              mayúscula y un carácter no alfanumérico.
+            </p>
+          ) : (
+            ""
           )}
+          </div>
+          
 
-          <div className="campo-anotacion">
-            <div className="anotacion">Confirmacion Password *</div>
+          <div className="form-control">
+            <label for="confirmpassword">Confirmar Password *</label>
             <input
-              className="campo-formulario"
               type="password"
-              placeholder="Confirmar password"
+              placeholder="********"
               value={usuario.confirmarPassword}
+              id="confirmpassword"
+              style={{ borderColor: confirmacionEmailValido ? "" : "red" }}
+
               onChange={onChangeConfirmacionPassword}
             />
+            {!confirmacionPasswordValido ? (
+              <p className="error-form">Los passwords no coinciden.</p>
+            ) : (
+              ""
+            )}
           </div>
-          {!confirmacionPasswordValido && (
-            <Error mensajeError="Los passwords no coinciden" />
-          )}
 
           {/* //////////////-----------------------------////////////// */}
-          <button className="boton" type="submit" value="Acceso">
+          <button className="boton-alta-user" type="submit" value="Acceso">
             Crear Cuenta
           </button>
         </div>
@@ -299,8 +317,8 @@ const FormAltaUser = () => {
         )}
       </form>
       <div className="acceso-cuenta-o-usuarionuevo">
-        <div>No tenés cuenta?</div>
-        <div>Se te olvidó tu contraseña?</div>
+        <p>¿No tenés cuenta?</p>
+        <p>¿Se te olvidó tu contraseña?</p>
       </div>
     </div>
   );

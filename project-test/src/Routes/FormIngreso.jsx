@@ -148,10 +148,12 @@ const FormIngreso = () => {
                 id="nombre"
               />
               {!nombreValido ? (
-                <Error
-                  className="error-form"
-                  mensajeError="Ingrese entre 3 y 30 caracteres y solo contener letras."
-                />
+                  <p className="error-form">Ingrese entre 3 y 30 caracteres y solo contener letras.</p>
+
+                // <Error
+                //   className="error-form"
+                //   mensajeError="Ingrese entre 3 y 30 caracteres y solo contener letras."
+                // />
               ) : (
                 ""
               )}
@@ -168,10 +170,11 @@ const FormIngreso = () => {
                 id="email"
               />
               {!emailValido ? (
-                <Error
-                  className="error-form"
-                  mensajeError="El email debe tener al menos 3 caracteres antes del arroba y tener un formato válido."
-                />
+                // <Error
+                //   className="error-form"
+                //   mensajeError="El email debe tener al menos 3 caracteres antes del arroba y tener un formato válido."
+                // />
+                <p className="error-form">Ingresar al menos 3 caracteres antes del arroba y tener un formato válido.</p>
               ) : (
                 ""
               )}
@@ -189,10 +192,11 @@ const FormIngreso = () => {
               />
 
               {!passwordValido ? (
-                <Error
-                  className="error-form"
-                  mensajeError="La contraseña debe tener al menos 8 caracteres, incluir una letra mayúscula y un carácter no alfanumérico."
-                />
+                <p className="error-form">La contraseña debe tener al menos 8 caracteres, incluir una letra mayúscula y un carácter no alfanumérico.</p>
+                // <Error
+                //   className="error-form"
+                //   mensajeError="La contraseña debe tener al menos 8 caracteres, incluir una letra mayúscula y un carácter no alfanumérico."
+                // />
               ) : (
                 ""
               )}
