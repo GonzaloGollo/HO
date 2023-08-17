@@ -39,21 +39,21 @@
   background-image: url("/images/240_F_610971454_DBLcfDXBVOeIJQMGBNbE0r5Szfx3e9OL.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  filter: grayscale(85%);
+  filter: grayscale(80%);
 }
 .section--pink {
   background-image: url("/images/Domicilio Fiscal y Jurídic.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-size: fill;
-  filter: grayscale(85%);
+  filter: grayscale(80%);
 }
 
 .section--green {
   background-image: url("/images/Oficina de planta completa.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  filter: grayscale(85%);
+  filter: grayscale(80%);
 }
 
 .section:hover,
@@ -68,7 +68,7 @@
 .section:active .title,
 .section.focus .title {
   text-align: center;
-  transform: translate(-50%, -38%) rotate(0);
+  transform: translate(-50%, -60%) rotate(0);
   filter: grayscale(0%);
   font-size: calc(2vw + 1.2rem);
 }
@@ -116,6 +116,7 @@
   top: 50%;
   transform: translate(-50%, -40%);
   transition: 1.5s ease;
+  
 }
 
 @media screen and( min-width: 1000px) {
